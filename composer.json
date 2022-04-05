@@ -1,7 +1,7 @@
 {
-    "name": "dms-nasleem/laravel",
+    "name": "efile/laravel",
     "type": "project",
-    "description": "Document Management System with Laravel Framework.",
+    "description": "File Management.",
     "keywords": ["framework", "laravel", "Document Managemen System"],
     "license": "MIT",
     "require": {
