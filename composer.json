@@ -2,7 +2,7 @@
     "name": "efile/laravel",
     "type": "project",
     "description": "File Management.",
-    "keywords": ["framework", "laravel", "Document Managemen System"],
+    "keywords": ["laravel", "eOffice PLATFORM"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
