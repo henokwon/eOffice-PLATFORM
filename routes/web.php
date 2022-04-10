@@ -42,3 +42,9 @@ Route::get('/buttons/text-icon', function () {
 
 require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
+
+
+
+Route::get('/{pathMatch}', function () {
+    return view('welcome');
+ })->where('pathMatch', ".*");

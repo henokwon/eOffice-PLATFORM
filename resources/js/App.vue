@@ -3,6 +3,7 @@
 <template>
 <!-- <NavBar/> -->
 <Department/>
+<!-- <router-link to="./customer-form">customer form</router-link> -->
 <router-view></router-view>
 
 
