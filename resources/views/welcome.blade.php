@@ -406,6 +406,7 @@
     {{-- Import js and tailwindcss file --}}
 
     <link rel="stylesheet" href="../css/app.css">
+    {{-- <link  href="{{mix('css/app.css')}}"> --}}
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 

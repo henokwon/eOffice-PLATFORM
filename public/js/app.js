@@ -39901,7 +39901,7 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "text-center py-2 my-2"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-3xl bg-black"
+  "class": "text-3xl"
 }, "Service Request Form")], -1
 /* HOISTED */
 );
@@ -39933,10 +39933,6 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   type: "submit",
   "class": "w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
 }, " Submit ", -1
-/* HOISTED */
-);
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, " Hi every Body", -1
 /* HOISTED */
 );
 
@@ -39997,7 +39993,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 8
   /* PROPS */
-  , ["required", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group form-check text-center mb-6\">\n        <input\n          v-model=\"checked\"\n          type=\"checkbox\"\n          class=\"\n            form-check-input\n            appearance-none\n            h-4\n            w-4\n            border border-gray-300\n            rounded-sm\n            bg-white\n            checked:bg-blue-600 checked:border-blue-600\n            focus:outline-none\n            transition\n            duration-200\n            mt-1\n            align-top\n            bg-no-repeat bg-center bg-contain\n            mr-2\n            cursor-pointer\n          \"\n          id=\"exampleCheck25\"\n          checked\n        />\n        <label\n          class=\"form-check-label inline-block text-gray-800\"\n          for=\"exampleCheck25\"\n          >Subscribe to our newsletter</label\n        >\n      </div> "), _hoisted_10, _hoisted_11], 32
+  , ["required", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group form-check text-center mb-6\">\n        <input\n          v-model=\"checked\"\n          type=\"checkbox\"\n          class=\"\n            form-check-input\n            appearance-none\n            h-4\n            w-4\n            border border-gray-300\n            rounded-sm\n            bg-white\n            checked:bg-blue-600 checked:border-blue-600\n            focus:outline-none\n            transition\n            duration-200\n            mt-1\n            align-top\n            bg-no-repeat bg-center bg-contain\n            mr-2\n            cursor-pointer\n          \"\n          id=\"exampleCheck25\"\n          checked\n        />\n        <label\n          class=\"form-check-label inline-block text-gray-800\"\n          for=\"exampleCheck25\"\n          >Subscribe to our newsletter</label\n        >\n      </div> "), _hoisted_10], 32
   /* HYDRATE_EVENTS */
   )]);
 }
