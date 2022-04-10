@@ -82,11 +82,15 @@ import { createApp } from 'vue'
 // import { createPinia } from 'pinia'
 // <font-awesome-icon icon="fa-solid fa-house-person-leave" />
 
-// import './index.css'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 // import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fas} from '@fortawesome/free-solid-svg-icons'
-// library.add(fas);
+// import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+ import { library } from '@fortawesome/fontawesome-svg-core'
+ import { fas} from '@fortawesome/free-solid-svg-icons'
+ library.add(fas);
 
 // import 'mdb-vue-ui-kit/css/mdb.min.css';
 
