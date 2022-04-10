@@ -40098,22 +40098,16 @@ document.addEventListener("alpine:init", function () {
 });
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].plugin(_alpinejs_collapse__WEBPACK_IMPORTED_MODULE_1__["default"]);
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start(); ///// It is the entry point for vue file
-
- // import { createPinia } from 'pinia'
 // <font-awesome-icon icon="fa-solid fa-house-person-leave" />
+
 
 
 
 
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_5__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.fas);
 
-__webpack_require__(/*! ../css/app.css */ "./resources/css/app.css"); // import 'mdb-vue-ui-kit/css/mdb.min.css';
 
-
-
-
-var app = (0,vue__WEBPACK_IMPORTED_MODULE_3__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_7__["default"]); // app.use(createPinia())
-
+var app = (0,vue__WEBPACK_IMPORTED_MODULE_3__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
 
 
 window.Swal = (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_9___default());

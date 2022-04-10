@@ -77,25 +77,18 @@ Alpine.start();
 
 ///// It is the entry point for vue file
 
-import { createApp } from 'vue'
-// import { createPinia } from 'pinia'
 // <font-awesome-icon icon="fa-solid fa-house-person-leave" />
+
+import { createApp } from 'vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
  import { library } from '@fortawesome/fontawesome-svg-core'
  import { fas} from '@fortawesome/free-solid-svg-icons'
  library.add(fas);
- require('../css/app.css');
-
-// import 'mdb-vue-ui-kit/css/mdb.min.css';
 
 import App from './App.vue'
 import router from './router/index.js'
 
 const app = createApp(App)
-
-// app.use(createPinia())
-
-
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import 'sweetalert2/dist/sweetalert2.css';
