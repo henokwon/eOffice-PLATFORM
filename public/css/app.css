@@ -1175,6 +1175,9 @@ select {
 .max-w-7xl {
 	max-width: 80rem;
 }
+.max-w-xl {
+	max-width: 36rem;
+}
 .flex-1 {
 	flex: 1 1 0%;
 }
@@ -1345,6 +1348,9 @@ select {
 }
 .border-b {
 	border-bottom-width: 1px;
+}
+.border-r {
+	border-right-width: 1px;
 }
 .border-gray-300 {
 	--tw-border-opacity: 1;
@@ -1549,6 +1555,9 @@ select {
 .font-semibold {
 	font-weight: 600;
 }
+.uppercase {
+	text-transform: uppercase;
+}
 .leading-5 {
 	line-height: 1.25rem;
 }
@@ -1560,6 +1569,9 @@ select {
 }
 .leading-tight {
 	line-height: 1.25;
+}
+.tracking-wider {
+	letter-spacing: 0.05em;
 }
 .text-gray-500 {
 	--tw-text-opacity: 1;
