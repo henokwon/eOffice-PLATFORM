@@ -4,11 +4,17 @@ const colors = require("tailwindcss/colors");
 module.exports = {
     mode: "jit",
     darkMode: "class",
+    content: [
+        "./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}",
+        "./resources/**/*.vue",
+      ],
     purge: [
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.js",
+        "./resources/**/*.vue",
+        
     ],
 
     theme: {
