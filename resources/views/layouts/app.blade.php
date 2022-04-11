@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -40,6 +40,7 @@
             >
 
                 <!-- Navbar -->
+
                 <x-navbar />
 
                 <!-- Page Heading -->
@@ -52,6 +53,7 @@
                 <!-- Page Content -->
                 <main class="px-4 sm:px-6 flex-1" id="app">
                     {{ $slot }}
+                    <router-view/>
                 </main>
 
                 <!-- Page Footer -->
@@ -65,4 +67,4 @@
 
 </body>
 
-</html> --}}
+</html>

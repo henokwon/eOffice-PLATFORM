@@ -9,7 +9,7 @@
 
     <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
         <div id="container">
-
+             You are loged in
         </div>
     </div>
 </x-app-layout>
