@@ -40,7 +40,6 @@
             >
 
                 <!-- Navbar -->
-
                 <x-navbar />
 
                 <!-- Page Heading -->
@@ -53,7 +52,6 @@
                 <!-- Page Content -->
                 <main class="px-4 sm:px-6 flex-1" id="app">
                     {{ $slot }}
-                    <router-view/>
                 </main>
 
                 <!-- Page Footer -->
