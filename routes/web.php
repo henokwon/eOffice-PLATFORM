@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
-use App\Http\Controllers\ChatController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +25,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
 
-//Route::get('/chatify', [ChatController::class, 'handleChat'])->name('chatify')->middleware(['auth', 'verified']);
+//Route::get('/dashboard', [HighchartController::class, 'handleChart']);
 // useless routes
 // Just to demo sidebar dropdown links active states.
 Route::get('/buttons/text', function () {
