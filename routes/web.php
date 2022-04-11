@@ -44,6 +44,13 @@ require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
 
 
+// Route::get('/s', function () {
+//     return view('buttons-showcase.vue');
+// });
+
+// Route::get('/customer-form', function () {
+//     return view('layouts.vue');
+// });
 
 Route::get('/{pathMatch}', function () {
     return view('welcome');
