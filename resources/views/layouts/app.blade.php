@@ -40,6 +40,7 @@
             >
 
                 <!-- Navbar -->
+            
                 <x-navbar />
 
                 <!-- Page Heading -->
@@ -48,7 +49,6 @@
                         {{ $header }}
                     </div>
                 </header>
-
                 <!-- Page Content -->
                 <main class="px-4 sm:px-6 flex-1" id="app">
                     {{ $slot }}

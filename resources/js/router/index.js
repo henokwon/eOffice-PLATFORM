@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DepartementsIndex from '../components/departements/DepartementsIndex.vue'
-import CustomerFormComponent from '../components/eService/customerFormComponent.vue'
+import CustomerFormComponent from '../components/eService/CustomerFormComponent.vue'
+import LeaveForm from '../components/eService/LeaveForm.vue'
+import TourForm from '../components/eService/TourForm.vue'
 const routes = [
     {
         path: '/departement',
@@ -10,6 +12,14 @@ const routes = [
     {
         path: '/customer-form',
         component: CustomerFormComponent,
+    },
+    {
+        path: "/leave-form",
+        component: LeaveForm,
+    },
+    {
+        path: '/tour-form',
+        component: TourForm,
     },
 ];
 

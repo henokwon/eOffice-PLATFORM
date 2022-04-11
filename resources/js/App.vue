@@ -1,7 +1,7 @@
 
 
 <template>
-<!-- <NavBar/> -->
+ <Navbar/> 
 <!-- <Department/> -->
 <router-link to="/customer-form"></router-link>
 
@@ -18,10 +18,11 @@
 // import NavBar from './components/NavBar.vue'
 // import LeaveForm from './components/LeaveForm.vue'
 import Department from './components/departements/DepartementsIndex.vue'
+import Navbar from './components/Navbar.vue'
 export default{
      components: {
 //    Form, NavBar,LeaveForm
-Department
+Department,Navbar
   },
 }
 </script>
