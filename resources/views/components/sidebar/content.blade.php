@@ -18,7 +18,7 @@
         <x-sidebar.sublink title="Electronic File" href="{{ route('buttons.text-icon') }}"
             :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown>
-
+<div id="app"></div>
     <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-gray-500">Departement</div>
 
     @php
