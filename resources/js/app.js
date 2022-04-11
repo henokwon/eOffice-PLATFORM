@@ -79,31 +79,31 @@ Alpine.start();
 
 // <font-awesome-icon icon="fa-solid fa-house-person-leave" />
 
-import { createApp } from 'vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
- import { library } from '@fortawesome/fontawesome-svg-core'
- import { fas} from '@fortawesome/free-solid-svg-icons'
- library.add(fas);
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas);
+
+
+
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/dist/sweetalert2.css';
+window.Swal = Swal;
+const toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timeProgressBar: true,
+});
+window.toast = toast;
+
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index.js'
 
 const app = createApp(App)
-
-import Swal from 'sweetalert2/dist/sweetalert2.js';
-import 'sweetalert2/dist/sweetalert2.css';
-window.Swal=Swal;
-const toast=Swal.mixin({
-toast:true,
-position:'top-end',
-showConfirmButton:false,
-timer:3000,
-timeProgressBar:true,
-});
-window.toast=toast;
-
-
 app.use(router)
- app.component('fa', FontAwesomeIcon)
-
+app.component('fa', FontAwesomeIcon)
 app.mount('#app')
