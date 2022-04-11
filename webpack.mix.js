@@ -11,6 +11,25 @@ const mix = require('laravel-mix');
  |
  */
 
+ module.exports = {
+    module: {
+      rules: [
+        {
+          test: /\.(png|jpg|gif)$/i,
+          use: [
+            {
+              loader: 'url-loader file-loader',  
+              options: {
+                limit: 8192
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+
+
 mix.js('resources/js/app.js', 'public/js').vue().postCss('resources/css/app.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),
