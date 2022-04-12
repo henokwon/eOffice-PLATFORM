@@ -29,6 +29,7 @@
         <Telephone
           template="(XXX) XXX-XXXX"
           label="Phone Number"
+          v-model="information.phone"
           :required="information.required"
         />
       </div>
@@ -107,17 +108,20 @@
   </div>
 </template>
 
-<script>
+<script >
 import axios from "axios";
 import BaseInput from "./basicInput/TextField.vue";
 import Telephone from "./basicInput/Telephone.vue";
 import TextArea from "./basicInput/TextArea.vue";
+import { useRouter } from "vue-router";
+
 export default {
   components: { BaseInput, Telephone, TextArea },
   data() {
     return {
       success: false,
       error: false,
+      router : useRouter(),
       information: {
         firstName: "",
         lastName: "",
@@ -137,28 +141,36 @@ export default {
       });
     },
     storeForm() {
-      dataForm = new dataForm();
+    //  dataForm = new dataForm();
 
-      dataform.append("firstName", this.information.firstName);
-      dataform.append("lastName", this.information.lastName);
-      dataform.append("email", this.information.email);
-      dataform.append("phone", this.information.phone);
-      dataform.append("description", this.information.detailOfRequest);
+    //   dataform.append("firstName", this.information.firstName);
+    //   dataform.append("lastName", this.information.lastName);
+    //   dataform.append("email", this.information.email);
+    //   dataform.append("phone", this.information.phone);
+    //   dataform.append("description", this.information.detailOfRequest);
 
-      console.log(this.information.firstName);
+       console.log(this.information.lastName);
 
       axios
-        .post("/customer", dataform)
+        .post("/customer", this.information)
         .then((response) => {
           console.log(response);
           // this.allerros = [];
           // this.form.name = "";
           // this.form.comments = "";
           // this.success = true;
+
+      this.router.push("/welcome");
+        console.log(" Hi vvvvvvv")
+      toast.fire({
+      icon: "success",
+      title: "Request sent success fully!!!",
+      });
         })
         .catch((error) => {
-          this.allerros = error.response.data.errors;
-          this.success = false;
+          // this.allerros = error.response.data.errors;
+          // this.success = false;
+          console.log(" Hi errrrrrrrrr")
         });
     },
 

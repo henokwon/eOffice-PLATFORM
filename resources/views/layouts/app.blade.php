@@ -53,6 +53,8 @@
                 <main class="px-4 sm:px-6 flex-1" id="app">
                     {{ $slot }}
                 </main>
+                @yield('content')
+             
 
                 <!-- Page Footer -->
                 <x-footer />

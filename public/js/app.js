@@ -39630,6 +39630,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _basicInput_TextField_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basicInput/TextField.vue */ "./resources/js/components/eService/basicInput/TextField.vue");
 /* harmony import */ var _basicInput_Telephone_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./basicInput/Telephone.vue */ "./resources/js/components/eService/basicInput/Telephone.vue");
 /* harmony import */ var _basicInput_TextArea_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./basicInput/TextArea.vue */ "./resources/js/components/eService/basicInput/TextArea.vue");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+
 
 
 
@@ -39644,6 +39646,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       success: false,
       error: false,
+      router: (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)(),
       information: {
         firstName: "",
         lastName: "",
@@ -39665,21 +39668,30 @@ __webpack_require__.r(__webpack_exports__);
     storeForm: function storeForm() {
       var _this = this;
 
-      dataForm = new dataForm();
-      dataform.append("firstName", this.information.firstName);
-      dataform.append("lastName", this.information.lastName);
-      dataform.append("email", this.information.email);
-      dataform.append("phone", this.information.phone);
-      dataform.append("description", this.information.detailOfRequest);
-      console.log(this.information.firstName);
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/customer", dataform).then(function (response) {
+      //  dataForm = new dataForm();
+      //   dataform.append("firstName", this.information.firstName);
+      //   dataform.append("lastName", this.information.lastName);
+      //   dataform.append("email", this.information.email);
+      //   dataform.append("phone", this.information.phone);
+      //   dataform.append("description", this.information.detailOfRequest);
+      console.log(this.information.lastName);
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/customer", this.information).then(function (response) {
         console.log(response); // this.allerros = [];
         // this.form.name = "";
         // this.form.comments = "";
         // this.success = true;
+
+        _this.router.push("/welcome");
+
+        console.log(" Hi vvvvvvv");
+        toast.fire({
+          icon: "success",
+          title: "Request sent success fully!!!"
+        });
       })["catch"](function (error) {
-        _this.allerros = error.response.data.errors;
-        _this.success = false;
+        // this.allerros = error.response.data.errors;
+        // this.success = false;
+        console.log(" Hi errrrrrrrrr");
       });
     },
     onSuccess: function onSuccess(message) {
@@ -40026,13 +40038,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Navbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Navbar");
-
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Navbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Department/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Navbar/>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Department/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/customer-form"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <RequestForm/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <LeaveForm/>\r\n <Form/> ")], 64
   /* STABLE_FRAGMENT */
@@ -40539,7 +40549,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "py-4 my-4",
-    onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.storeForm && $options.storeForm.apply($options, arguments);
     }, ["prevent"]))
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BaseInput, (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)(_ctx.$attrs, {
@@ -40565,13 +40575,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , ["modelValue", "required"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Telephone, {
     template: "(XXX) XXX-XXXX",
     label: "Phone Number",
+    modelValue: $data.information.phone,
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.information.phone = $event;
+    }),
     required: $data.information.required
   }, null, 8
   /* PROPS */
-  , ["required"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BaseInput, (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)(_ctx.$attrs, {
+  , ["modelValue", "required"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BaseInput, (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)(_ctx.$attrs, {
     label: "E-mail",
     modelValue: $data.information.email,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $data.information.email = $event;
     }),
     types: "email",
@@ -40582,7 +40596,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     label: "DETAILS OF REQUEST",
     required: $data.information.required,
     modelValue: $data.information.detailOfRequest,
-    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $data.information.detailOfRequest = $event;
     })
   }, null, 8

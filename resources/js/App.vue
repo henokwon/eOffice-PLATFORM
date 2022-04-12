@@ -1,7 +1,7 @@
 
 
 <template>
- <Navbar/> 
+ <!-- <Navbar/>  -->
 <!-- <Department/> -->
 <router-link to="/customer-form"></router-link>
 
