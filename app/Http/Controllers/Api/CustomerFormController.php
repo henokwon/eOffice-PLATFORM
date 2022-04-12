@@ -5,16 +5,34 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerFormRequest;
 use App\Http\Resources\CustomerFormResource;
+use App\Mail\CustomerRequest;
 use App\Models\CustomerForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CustomerFormController extends Controller
 {
     /**
+     * 
+     *   $data=request('firstName',' lastName','phone',' email',' detailOfRequest'); /return $data;
+    
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function sendData(Request $request){
+        $data=new CustomerForm();
+        $data->firstName=$request->firstName;
+        $data->lastName=$request->lastName;
+        $data->phone=$request->phone;
+        $data->emaile=$request->email;
+        $data->detailOfRequest=$request->detailOfRequest;
+        // return $data;
+     
+        Mail::to('kidanugashaw@gmail.com')->send(new CustomerRequest( $data));
+     
+
+    }
     public function index()
     {
         return CustomerFormResource::collection(CustomerForm::all());

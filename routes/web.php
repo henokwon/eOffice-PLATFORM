@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\CustomerFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
+use App\Models\CustomerForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +53,14 @@ Route::get('/chart', [HighchartController::class, 'handleChart']);
 // Route::get('/customer-form', function () {
 //     return view('layouts.vue');
 // });
+// Route::post('/customer', function () {
+//     //return view('layouts.vue');
+//     $data=request('firstName',' lastName','phone',' email',' detailOfRequest');
+//     return $data;
+// });
+Route::post('/customer',[CustomerFormController::class, 'sendData']);
 
 Route::get('/{pathMatch}', function () {
     return view('welcome');
  })->where('pathMatch', ".*");
+
