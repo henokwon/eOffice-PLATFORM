@@ -9,6 +9,7 @@
     <title>{{ config('app.name', 'K UI') }}</title>
 
     <!-- Fonts -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
@@ -31,31 +32,28 @@
             <!-- Sidebar -->
             <x-sidebar.sidebar />
             <!-- Page Wrapper -->
-            <div class="flex flex-col min-h-screen" 
-                :class="{ 
+            <div class="flex flex-col min-h-screen" :class="{ 
                     'lg:ml-64': isSidebarOpen,
                     'md:ml-16': !isSidebarOpen
-                }" 
-                style="transition-property: margin; transition-duration: 150ms;"
-            >
+                }" style="transition-property: margin; transition-duration: 150ms;">
 
                 <!-- Navbar -->
-            
+
                 <x-navbar />
 
                 <!-- Page Heading -->
                 <header>
                     <div class="p-4 sm:p-6">
-                        {{ $header }}
+                        {{ $header }}   
                     </div>
                 </header>
                 <!-- Page Content -->
-                <main class="px-4 sm:px-6 flex-1" id="app">
-                    {{ $slot }}
-                </main>
-                @yield('content')
-             
-
+                <div id="app">
+                    <main class="px-4 sm:px-6 flex-1">
+                        {{ $slot }}
+                    </main>
+                    @yield('content')
+                </div> 
                 <!-- Page Footer -->
                 <x-footer />
             </div>
