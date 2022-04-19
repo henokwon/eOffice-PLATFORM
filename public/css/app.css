@@ -2084,10 +2084,6 @@ select{
   --tw-border-opacity: 1;
   border-color: rgba(75, 85, 99, var(--tw-border-opacity));
 }
-.dark .dark\:border-gray-700{
-  --tw-border-opacity: 1;
-  border-color: rgba(55, 65, 81, var(--tw-border-opacity));
-}
 .dark .dark\:bg-dark-eval-1{
   --tw-bg-opacity: 1;
   background-color: rgba(34, 39, 56, var(--tw-bg-opacity));
@@ -2099,10 +2095,6 @@ select{
 .dark .dark\:bg-gray-900{
   --tw-bg-opacity: 1;
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-}
-.dark .dark\:bg-gray-800{
-  --tw-bg-opacity: 1;
-  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
 }
 .dark .dark\:bg-dark-eval-2{
   --tw-bg-opacity: 1;
@@ -2119,10 +2111,6 @@ select{
 .dark .dark\:text-gray-500{
   --tw-text-opacity: 1;
   color: rgba(107, 114, 128, var(--tw-text-opacity));
-}
-.dark .dark\:text-white{
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .dark .dark\:text-gray-300{
   --tw-text-opacity: 1;
@@ -2195,9 +2183,6 @@ select{
     margin-top: -1px;
     margin-bottom: -1px;
   }
-  .sm\:ml-0{
-    margin-left: 0px;
-  }
   .sm\:ml-10{
     margin-left: 2.5rem;
   }
@@ -2212,9 +2197,6 @@ select{
   }
   .sm\:hidden{
     display: none;
-  }
-  .sm\:h-20{
-    height: 5rem;
   }
   .sm\:max-w-md{
     max-width: 28rem;
@@ -2250,9 +2232,6 @@ select{
     margin-right: calc(2.5rem * var(--tw-space-x-reverse));
     margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
-  .sm\:rounded-lg{
-    border-radius: 0.5rem;
-  }
   .sm\:p-6{
     padding: 1.5rem;
   }
@@ -2277,12 +2256,6 @@ select{
   .sm\:pr-0{
     padding-right: 0px;
   }
-  .sm\:text-left{
-    text-align: left;
-  }
-  .sm\:text-right{
-    text-align: right;
-  }
 }
 @media (min-width: 768px){
   .md\:ml-16{
@@ -2301,9 +2274,6 @@ select{
     --tw-translate-x: 0px;
     transform: var(--tw-transform);
   }
-  .md\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .md\:flex-row{
     flex-direction: row;
   }
@@ -2312,12 +2282,6 @@ select{
   }
   .md\:justify-between{
     justify-content: space-between;
-  }
-  .md\:border-t-0{
-    border-top-width: 0px;
-  }
-  .md\:border-l{
-    border-left-width: 1px;
   }
 }
 @media (min-width: 1024px){

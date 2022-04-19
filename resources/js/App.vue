@@ -3,7 +3,7 @@
 <template>
  <!-- <Navbar/>  -->
 <!-- <Department/> -->
-<router-link to="/customer-form"></router-link>
+<!-- <router-link to="/customer-form">ggg</router-link> -->
 
 <router-view></router-view>
 
