@@ -8,7 +8,7 @@
        <a href="index.html">
         <!-- logo for regular state and mobile devices -->
          <div class="d-flex align-items-center justify-content-center">					 	
-            <img src="{{ asset('images/logo-dark.png') }}" alt="">
+            <img src="{{ asset('images/logo-eOffice.png') }}" alt="">
             <h3><b>eOffice</b> Admin</h3>
          </div>
       </a>
