@@ -3,33 +3,26 @@
 use App\Http\Controllers\Api\CustomerFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
-use App\Models\CustomerForm;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
 
-//Route::get('/dashboard', [HighchartController::class, 'handleChart']);
-// useless routes
-// Just to demo sidebar dropdown links active states.
+
+
+Route::get('/customer-form', function () {
+    return view('eService.customerForm');
+})->middleware(['auth'])->name('customer-form');
+Route::get('/leave-form', function () {
+    return view('eService.leaveForm');
+})->middleware(['auth'])->name('leave-form');
+Route::get('/tour-form', function () {
+    return view('eService.tourForm');
+})->middleware(['auth'])->name('tour-form');
+
+
 Route::get('/buttons/text', function () {
     return view('buttons-showcase.text');
 })->middleware(['auth'])->name('buttons.text');

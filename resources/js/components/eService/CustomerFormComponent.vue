@@ -1,4 +1,5 @@
 <template>
+<!-- If your content or parts of form is  -->
   <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto" style="padding-top: 65px">
     <div class="text-center py-2 my-2">
       <h1 class="text-3xl ">Service Request Form</h1>
@@ -141,36 +142,19 @@ export default {
       });
     },
     storeForm() {
-    //  dataForm = new dataForm();
-
-    //   dataform.append("firstName", this.information.firstName);
-    //   dataform.append("lastName", this.information.lastName);
-    //   dataform.append("email", this.information.email);
-    //   dataform.append("phone", this.information.phone);
-    //   dataform.append("description", this.information.detailOfRequest);
-
-       console.log(this.information.lastName);
-
       axios
         .post("/customer", this.information)
         .then((response) => {
           console.log(response);
-          // this.allerros = [];
-          // this.form.name = "";
-          // this.form.comments = "";
-          // this.success = true;
-
-      this.router.push("/welcome");
-        console.log(" Hi vvvvvvv")
+      this.router.push("/dashboard");
+      
       toast.fire({
       icon: "success",
       title: "Request sent success fully!!!",
       });
         })
         .catch((error) => {
-          // this.allerros = error.response.data.errors;
-          // this.success = false;
-          console.log(" Hi errrrrrrrrr")
+          console.log(" Something wrong hapen when you sent data to email        "+error);
         });
     },
 

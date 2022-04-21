@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Mail;
 class CustomerFormController extends Controller
 {
     /**
-     * 
-     *   $data=request('firstName',' lastName','phone',' email',' detailOfRequest'); /return $data;
-    
-     * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function sendData(Request $request){
@@ -26,21 +21,16 @@ class CustomerFormController extends Controller
         $data->lastName=$request->lastName;
         $data->phone=$request->phone;
         $data->emaile=$request->email;
-        $data->detailOfRequest=$request->detailOfRequest;
-        // return $data;
-     
+        $data->detailOfRequest=$request->detailOfRequest;   
         Mail::to('kidanugashaw@gmail.com')->send(new CustomerRequest( $data));
-     
-
     }
+
     public function index()
     {
         return CustomerFormResource::collection(CustomerForm::all());
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */

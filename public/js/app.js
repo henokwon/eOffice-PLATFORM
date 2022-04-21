@@ -39668,30 +39668,17 @@ __webpack_require__.r(__webpack_exports__);
     storeForm: function storeForm() {
       var _this = this;
 
-      //  dataForm = new dataForm();
-      //   dataform.append("firstName", this.information.firstName);
-      //   dataform.append("lastName", this.information.lastName);
-      //   dataform.append("email", this.information.email);
-      //   dataform.append("phone", this.information.phone);
-      //   dataform.append("description", this.information.detailOfRequest);
-      console.log(this.information.lastName);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/customer", this.information).then(function (response) {
-        console.log(response); // this.allerros = [];
-        // this.form.name = "";
-        // this.form.comments = "";
-        // this.success = true;
+        console.log(response);
 
-        _this.router.push("/welcome");
+        _this.router.push("/dashboard");
 
-        console.log(" Hi vvvvvvv");
         toast.fire({
           icon: "success",
           title: "Request sent success fully!!!"
         });
       })["catch"](function (error) {
-        // this.allerros = error.response.data.errors;
-        // this.success = false;
-        console.log(" Hi errrrrrrrrr");
+        console.log(" Something wrong hapen when you sent data to email        " + error);
       });
     },
     onSuccess: function onSuccess(message) {
@@ -40038,10 +40025,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Navbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Navbar");
+
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Navbar/>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Department/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/customer-form\">ggg</router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <RequestForm/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <LeaveForm/>\r\n <Form/> ")], 2112
-  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Navbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Department/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/customer-form\">ggg</router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <RequestForm/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <LeaveForm/>\r\n <Form/> ")], 64
+  /* STABLE_FRAGMENT */
   );
 }
 
@@ -40543,7 +40532,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_TextArea = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TextArea");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" If your content or parts of form is  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "py-4 my-4",
     onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.storeForm && $options.storeForm.apply($options, arguments);
@@ -40597,9 +40586,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 8
   /* PROPS */
-  , ["required", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group form-check text-center mb-6\">\n        <input\n          v-model=\"checked\"\n          type=\"checkbox\"\n          class=\"\n            form-check-input\n            appearance-none\n            h-4\n            w-4\n            border border-gray-300\n            rounded-sm\n            bg-white\n            checked:bg-blue-600 checked:border-blue-600\n            focus:outline-none\n            transition\n            duration-200\n            mt-1\n            align-top\n            bg-no-repeat bg-center bg-contain\n            mr-2\n            cursor-pointer\n          \"\n          id=\"exampleCheck25\"\n          checked\n        />\n        <label\n          class=\"form-check-label inline-block text-gray-800\"\n          for=\"exampleCheck25\"\n          >Subscribe to our newsletter</label\n        >\n      </div> "), _hoisted_10], 32
+  , ["required", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group form-check text-center mb-6\">\r\n        <input\r\n          v-model=\"checked\"\r\n          type=\"checkbox\"\r\n          class=\"\r\n            form-check-input\r\n            appearance-none\r\n            h-4\r\n            w-4\r\n            border border-gray-300\r\n            rounded-sm\r\n            bg-white\r\n            checked:bg-blue-600 checked:border-blue-600\r\n            focus:outline-none\r\n            transition\r\n            duration-200\r\n            mt-1\r\n            align-top\r\n            bg-no-repeat bg-center bg-contain\r\n            mr-2\r\n            cursor-pointer\r\n          \"\r\n          id=\"exampleCheck25\"\r\n          checked\r\n        />\r\n        <label\r\n          class=\"form-check-label inline-block text-gray-800\"\r\n          for=\"exampleCheck25\"\r\n          >Subscribe to our newsletter</label\r\n        >\r\n      </div> "), _hoisted_10], 32
   /* HYDRATE_EVENTS */
-  )]);
+  )])], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  );
 }
 
 /***/ }),
@@ -41177,7 +41168,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS, HYDRATE_EVENTS */
   , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input\n      type=\"checkbox\"\n      :checked=\"isChecked\"\n      :value=\"value\"\n      @change=\"updateInput\"\n    /> ")]);
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input\r\n      type=\"checkbox\"\r\n      :checked=\"isChecked\"\r\n      :value=\"value\"\r\n      @change=\"updateInput\"\r\n    /> ")]);
 }
 
 /***/ }),
