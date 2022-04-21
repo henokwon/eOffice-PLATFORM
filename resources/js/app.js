@@ -1,76 +1,15 @@
-require("./bootstrap");
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes React and other helpers. It's a great starting point while
+ * building robust, powerful web applications using React + Laravel.
+ */
 
-import Alpine from "alpinejs";
-import collapse from "@alpinejs/collapse";
-import PerfectScrollbar from "perfect-scrollbar";
+require('./bootstrap');
 
-window.PerfectScrollbar = PerfectScrollbar;
+/**
+ * Next, we will create a fresh React component instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
-document.addEventListener("alpine:init", () => {
-    Alpine.data("mainState", () => {
-        let lastScrollTop = 0;
-        const init = function () {
-            window.addEventListener("scroll", () => {
-                let st =
-                    window.pageYOffset || document.documentElement.scrollTop;
-                if (st > lastScrollTop) {
-                    // downscroll
-                    this.scrollingDown = true;
-                    this.scrollingUp = false;
-                } else {
-                    // upscroll
-                    this.scrollingDown = false;
-                    this.scrollingUp = true;
-                    if (st == 0) {
-                        //  reset
-                        this.scrollingDown = false;
-                        this.scrollingUp = false;
-                    }
-                }
-                lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-            });
-        };
-
-        const getTheme = () => {
-            if (window.localStorage.getItem("dark")) {
-                return JSON.parse(window.localStorage.getItem("dark"));
-            }
-            return (
-                !!window.matchMedia &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches
-            );
-        };
-        const setTheme = (value) => {
-            window.localStorage.setItem("dark", value);
-        };
-        return {
-            init,
-            isDarkMode: getTheme(),
-            toggleTheme() {
-                this.isDarkMode = !this.isDarkMode;
-                setTheme(this.isDarkMode);
-            },
-            isSidebarOpen: window.innerWidth > 1024,
-            isSidebarHovered: false,
-            handleSidebarHover(value) {
-                if (window.innerWidth < 1024) {
-                    return;
-                }
-                this.isSidebarHovered = value;
-            },
-            handleWindowResize() {
-                if (window.innerWidth <= 1024) {
-                    this.isSidebarOpen = false;
-                } else {
-                    this.isSidebarOpen = true;
-                }
-            },
-            scrollingDown: false,
-            scrollingUp: false,
-        };
-    });
-});
-
-Alpine.plugin(collapse);
-
-Alpine.start();
+require('./components/Example');
