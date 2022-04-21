@@ -6,7 +6,7 @@
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.link title="Customer form" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
+    <x-sidebar.link title="Dashboard" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
         <x-slot name="icon">
             {{-- <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" /> --}}
         </x-slot>
@@ -24,17 +24,31 @@
         <x-sidebar.sublink title="Electronic File" href="{{ route('buttons.text-icon') }}"
             :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown>
-{{-- <div id="app"></div> --}}
-<a href="/customer-form">customer form</a>
+
+
+
+    <x-sidebar.dropdown title="eService" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+        <x-slot name="icon">
+            <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+
+        <x-sidebar.sublink title="Service Request Form" href="{{ route('customer-form') }}"
+            :active="request()->routeIs('customer-form')" />
+        <x-sidebar.sublink title="Tour Form" href="{{ route('tour-form') }}"
+            :active="request()->routeIs('tour-form')" />
+        <x-sidebar.sublink title="Leave Form" href="{{ route('leave-form') }}"
+            :active="request()->routeIs('leave-form')" />
+    </x-sidebar.dropdown>
+{{-- <div id="app"></div>  --}}
+
+{{-- <a href="/customer-form">customer form</a>  --}}
 
     <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-gray-500">Departement</div>
 
     @php
         $links = array_fill(0, 5, '');
     @endphp
-
     @foreach ($links as $index => $link)
         <x-sidebar.link title="Dummy link {{ $index + 1 }}" href="#" />
     @endforeach
-       
 </x-perfect-scrollbar>

@@ -1,28 +1,16 @@
 
-
 <template>
-  <Navbar/>  
-<!-- <Department/> -->
-<!-- <router-link to="/customer-form">ggg</router-link> -->
-
+<!-- Nav bar -->
+  <laravelNav/>  
+  <!-- The content which is displayed  when you visite available link-->
 <router-view></router-view>
-
-
- <!-- <RequestForm/> -->
- <!-- <LeaveForm/>
- <Form/> -->
 </template>
 <script>
-// import RequestForm from './view/RequestForm.vue'
-// import Form from './components/Form.vue'
-// import NavBar from './components/NavBar.vue'
-// import LeaveForm from './components/LeaveForm.vue'
-import Department from './components/departements/DepartementsIndex.vue'
 import Navbar from './components/Navbar.vue'
+import laravelNav from './components/laraveNav.vue'
 export default{
      components: {
-//    Form, NavBar,LeaveForm
-Department,Navbar
+Navbar,laravelNav
   },
 }
 </script>
