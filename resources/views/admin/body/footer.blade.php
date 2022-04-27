@@ -5,9 +5,9 @@
     <a class="nav-link" href="javascript:void(0)">FAQ</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="#">www.eofficeplatform.com</a>
+    <a class="nav-link" href="#">www.eofficeplatform.com.et</a>
     </li>
   </ul>
   </div>
-  &copy; 2022 <a href="#">Psd to Html Expert</a>. All Rights Reserved.
+  &copy; 2021-2022 <a href="#">eOffice Platform</a>. All Rights Reserved.
 </footer>
