@@ -63,7 +63,7 @@
         </div>
       </div>
     </form>
-		          <p class="text-center">Don't have an account? <a data-toggle="tab" href="{{ route('register') }}">Sign Up</a></p>
+		          <p class="text-center">Don't have an account? <a href="{{ route('register') }}">Sign Up</a></p>
 		        </div>
 		      </div>
 				</div>
