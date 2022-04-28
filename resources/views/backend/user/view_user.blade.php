@@ -27,11 +27,11 @@
           <table id="example1" class="table table-bordered table-striped">
           <thead>
       <tr>
-        <th>SL</th>
+        <th width="5%">SL</th>
         <th>Role</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Action</th>
+        <th width="25%">Action</th>
 
       </tr>
     </thead>
@@ -39,11 +39,11 @@
       @foreach($allData as $key => $user)
       <tr>
         <td>{{ $key+1 }}</td>
-        <td> </td>
-        <td>{{ $usser->name }}</td>
+        <td>{{ $user->usertype }}</td>
+        <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>
-<a href="" class="btn btn-info">Edit</a>
+<a href="" class="btn btn-info" style="margin: 12px">Edit</a>
 <a href="" class="btn btn-danger">Delete</a>
         </td>
 
@@ -52,14 +52,7 @@
             
           </tbody>
           <tfoot>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
-            </tr>
+            
           </tfoot>
           </table>
         </div>
