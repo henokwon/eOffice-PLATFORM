@@ -63,7 +63,7 @@
         <div class="row align-items-center">
           <div class="col-lg-4 col-md-4">
             <div class="copyright">
-              <p> &copy; Grayic 2020 All right reserved. </p>
+              <p> &copy; Capstone Project 2022 All right reserved. </p>
             </div>
           </div>
           <div class="col-lg-5 col-md-6">

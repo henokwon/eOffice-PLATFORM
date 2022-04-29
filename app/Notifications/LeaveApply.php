@@ -16,11 +16,11 @@ class LeaveApply extends Notification implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($user)
-    {
-        //Inject the usser or employee to know which user is apply
-        $this->user = $user;
-    }
+    // public function __construct($user)
+    // {
+    //     //Inject the usser or employee to know which user is apply
+    //     $this->user = $user;
+    // }
 
     /**
      * Get the notification's delivery channels.
@@ -28,11 +28,11 @@ class LeaveApply extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return array
      */
-    public function via($notifiable)
-    {
-        // Specifiy the database as notification channal 
-        return ['database'];
-    }
+    // public function via($notifiable)
+    // {
+    //     // Specifiy the database as notification channal 
+    //     return ['database'];
+    // }
 
     /**
      * Get the mail representation of the notification.
@@ -40,13 +40,13 @@ class LeaveApply extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
-    }
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)
+    //                 ->line('The introduction to the notification.')
+    //                 ->action('Notification Action', url('/'))
+    //                 ->line('Thank you for using our application!');
+    // }
 
     /**
      * Get the array representation of the notification.
@@ -54,13 +54,13 @@ class LeaveApply extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
-    {
-        return [
-            //
-            'name' => $this->user->name,
-            'email' => $this->user->email,
+    // public function toArray($notifiable)
+    // {
+    //     return [
+    //         //
+    //         'name' => $this->user->name,
+    //         'email' => $this->user->email,
 
-        ];
-    }
+    //     ];
+    // }
 }
