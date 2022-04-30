@@ -3,16 +3,16 @@
 use App\Http\Controllers\Api\CustomerFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-
-Route::post('/service', [AuthenticatedSessionController::class, 'store'])
-                ->middleware('guest')->name('service');
 
 Route::get('/', function () {
     return view('landingPage');
 });
 
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
+Route::get('/service', function(){
+    return view('service');
+})->name('dashboard')->middleware(['auth', 'verified']);
+
 Route::get('/customerForm', [HighchartController::class, 'handleChart'])->name('customerForm')->middleware(['auth', 'verified']);
 
 Route::get('/customer-form', function () {
@@ -41,23 +41,8 @@ Route::get('/buttons/text-icon', function () {
 require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
 
-
-// Route::get('/s', function () {
-//     return view('buttons-showcase.vue');
-// });
-
-// Route::get('/customer-form', function () {
-//     return view('layouts.vue');
-// });
-// Route::post('/customer', function () {
-//     //return view('layouts.vue');
-//     $data=request('firstName',' lastName','phone',' email',' detailOfRequest');
-//     return $data;
-// });
 Route::post('/customer',[CustomerFormController::class, 'sendData']);
 
 Route::get('/{pathMatch}', function () {
     return view('welcome');
  })->where('pathMatch', ".*");
-
-
