@@ -31,7 +31,7 @@
                     <a href="#">Contact us</a>
                   </li>
                   <li class="sub-menu--item">
-                    <a href="#">Service</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Service</a>
                   </li>
                   <li class="sub-menu--item">
                       <a href="#">Another Link</a>
@@ -56,7 +56,7 @@
             </ul>
           </nav>
         </div>
-        <div class="header-btns  header-btn-l-17 ms-auto d-none d-xs-inline-flex align-items-center">
+        <div class="header-btns  header-btn-l-17 ms-auto  d-xs-inline-flex align-items-center">
             
       @if (Route::has('login'))
           @auth

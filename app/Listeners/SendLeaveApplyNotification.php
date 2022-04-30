@@ -32,11 +32,12 @@ class SendLeaveApplyNotification
      */
     public function handle($event)
     {
-    //     $admins = User::whereHas('roles', function ($query) {
-    //         $query->where('id', 1);
-    //     })->get();
+        // $admins = User::whereHas('roles', function ($query) {
+        //     $query->where('id', 1);
+        // })->get();
+        $admins=User::all();
 
-    // Notification::send($admins, new LeaveApply($event->user));
+    Notification::send($admins, new LeaveApply($event->user));
     }
   
 }

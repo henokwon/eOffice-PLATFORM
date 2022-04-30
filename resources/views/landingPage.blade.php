@@ -25,6 +25,7 @@
     @include('landingPageComponent.header')
     <!-- Hero Area -->
     @include('landingPageComponent.hero')
+    @include('landingPageComponent.modal')
     <!--Feature Area -->
     @include('landingPageComponent.feature')
     
