@@ -3,14 +3,17 @@
 use App\Http\Controllers\Api\CustomerFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+Route::post('/service', [AuthenticatedSessionController::class, 'store'])
+                ->middleware('guest')->name('service');
 
 Route::get('/', function () {
     return view('landingPage');
 });
 
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
-
-
+Route::get('/customerForm', [HighchartController::class, 'handleChart'])->name('customerForm')->middleware(['auth', 'verified']);
 
 Route::get('/customer-form', function () {
     return view('eService.customerForm');

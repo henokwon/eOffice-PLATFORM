@@ -9,30 +9,106 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Login to your account</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-        
-                <div id="login-form-wrap">
+
+                {{-- <div id="login-form-wrap">
 
                     <form id="login-form">
-                      <p>
-                      <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
-                      </p>
-                      <p>
-                      <input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i>
-                      </p>
-                      <p>
-                      <input type="submit" id="login" value="Login">
-                      </p>
+                      <label for="email">Email</label>
+                        <p>
+                            <input type="email" id="email" name="email" placeholder="Email Address" required><i
+                             class="validation"><span></span><span></span></i>
+                        </p>
+                        <p>
+                          <label for="password">Password</label>
+                        <p>
+                            <input type="password" id="password" name="password" required><i
+                                class="validation"><span></span><span></span></i>
+                        </p>
+                        <input type="submit" id="login" value="Login">
+                        </p>
                     </form>
                     <div id="create-account-wrap">
-                      <p>Not a member? <a href="#">Create Account</a><p>
-                    </div><!--create-account-wrap-->
-                  </div>
-
-            </div>
+                        <p>Not a member? <a href="#">Create Account</a>
+                        <p>
+                    </div>
+                    <!--create-account-wrap-->
+                </div> --}}
+                {{-- <div id="login-form-wrap"> --}}
+            
+                    <!-- Session Status -->
+                    <x-auth-session-status class="mb-4" :status="session('status')" />
+            
+                    <!-- Validation Errors -->
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            
+                    <form method="POST" action="{{ route('service') }}">
+                        @csrf
+                        <div class="grid gap-6">
+                            <!-- Email Address -->
+                            <div class="space-y-2">
+                                <x-label for="email" :value="__('Email')" />
+            
+                                <x-input-with-icon-wrapper>
+                                    <x-slot name="icon">
+                                        <x-heroicon-o-mail aria-hidden="true" class="w-5 h-5" />
+                                    </x-slot>
+                                    <x-input withicon id="email" class="block w-full" type="email" name="email"
+                                        :value="old('email')" placeholder="{{ __('Email') }}" required autofocus />
+                                </x-input-with-icon-wrapper>
+                            </div>
+            
+                            <!-- Password -->
+                            <div class="space-y-2">
+                                <x-label for="password" :value="__('Password')" />
+            
+                                <x-input-with-icon-wrapper>
+                                    <x-slot name="icon">
+                                        <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
+                                    </x-slot>
+                                    <x-input withicon id="password" class="block w-full" type="password" name="password" required
+                                        autocomplete="current-password" placeholder="{{ __('Password') }}" />
+                                </x-input-with-icon-wrapper>
+                            </div>
+            
+                            <!-- Remember Me -->
+                            <div class="flex items-center justify-between">
+                                <label for="remember_me" class="inline-flex items-center">
+                                    <input id="remember_me" type="checkbox"
+                                        class="text-purple-500 border-gray-300 rounded focus:border-purple-300 focus:ring focus:ring-purple-500 dark:border-gray-600 dark:bg-dark-eval-1 dark:focus:ring-offset-dark-eval-1"
+                                        name="remember">
+                                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                                </label>
+            
+                                @if (Route::has('password.request'))
+                                <a class="text-sm text-blue-500 hover:underline" href="{{ route('password.request') }}">
+                                    {{ __('Forgot your password?') }}
+                                </a>
+                                @endif
+                            </div>
+            
+                            <div>
+                                <x-button class="justify-center w-full gap-2">
+                                    <x-heroicon-o-login class="w-6 h-6" aria-hidden="true" />
+                                    <span>{{ __('Log in') }}</span>
+                                </x-button>
+                            </div>
+            
+                            @if (Route::has('register'))
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                {{ __('Don’t have an account?') }}
+                                <a href="{{ route('register') }}" class="text-blue-500 hover:underline">
+                                    {{ __('Register') }}
+                                </a>
+                            </p>
+                            @endif
+                        </div>
+                    </form>
+                </div>
+            {{-- </div> --}}
             {{-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Understood</button>
