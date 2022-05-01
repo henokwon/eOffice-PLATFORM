@@ -28,6 +28,9 @@
                         <div class="mobile-menu-close">&times;</div>
                     </div>
                     <ul class="site-menu-main">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link-item">Home</a>
+                        </li>
                         <li class="nav-item nav-item-has-children">
                             <a href="#" class="nav-link-item drop-trigger">Pages <i class="fas fa-angle-down"></i>
                             </a>
