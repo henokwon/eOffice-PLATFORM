@@ -39735,19 +39735,16 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_3___default().get("/api/leaveForm").then(function (response) {
         _this.leave_form = response.data;
         console.log(_this.leave_form);
+        console.log(_this.leave_form.email + 'Hkk dud');
       });
     },
     sendData: function sendData() {
-      var _this2 = this;
-
       axios__WEBPACK_IMPORTED_MODULE_3___default().post("/api/form/save", this.information).then(function (response) {
-        console.log(response);
-
-        _this2.router.push("/dashboard"); // toast.fire({
+        console.log(response); // this.router.push("/dashboard");
+        // toast.fire({
         // icon: "success",
         // title: "Request sent success fully!!!",
         // });
-
       })["catch"](function (error) {
         console.log(" Something wrong hapen when you sent data to email        " + error);
       });

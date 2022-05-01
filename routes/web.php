@@ -9,23 +9,18 @@ use App\Http\Controllers\TourFormController;
 Route::get('/', function () {
     return view('landingPage');
 });
-Route::get('/route', function () {
-    return view('eService.service');
-});
+Route::get('/service', function(){
+    return view('service');
+})->name('dashboard')->middleware(['auth', 'verified']);
 
 // eServic
 Route::post('/tour', [TourFormController::class,'sent']);
 Route::post('/customer',[CustomerFormController::class, 'sendData']);
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
 
-Route::get('/service', function(){
-    return view('service');
-})->name('dashboard')->middleware(['auth', 'verified']);
-
-Route::get('/customerForm', [HighchartController::class, 'handleChart'])->name('customerForm')->middleware(['auth', 'verified']);
+// Route::get('/customerForm', [HighchartController::class, 'handleChart'])->name('customerForm')->middleware(['auth', 'verified']);
 
 Route::get('eService/customer-form', function () {
-
     return view('eService.customerForm');
 })->middleware(['auth'])->name('eService.customer-form');
 Route::get('/eService/leave-form', function () {
@@ -56,8 +51,6 @@ Route::get('/buttons/text-icon', function () {
 
 require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
-
-Route::post('/customer',[CustomerFormController::class, 'sendData']);
 
 Route::get('/{pathMatch}', function () {
     return view('welcome');

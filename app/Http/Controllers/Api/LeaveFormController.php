@@ -18,19 +18,22 @@ class LeaveFormController extends Controller
      */
     public function index()
     {
-      dd(LeaveFormResource::collection(LeaveForm::all()));
+      // dd(LeaveFormResource::collection(LeaveForm::all()));
       return  LeaveFormResource::collection(LeaveForm::all());
     }
     public function data(){
-      return LeaveForm::all();
+      // $userID = 1;
+      // $user = User::find($userID);
+      return LeaveForm::find(1);
     }
-    public function sendData(Request $request){    
+    public function sendData(Request $request){  
+      // dd(Auth::user()->email)  ;
       $data=new LeaveForm();
       $data->first_name=$request->firstName;
       $data->last_name=$request->lastName;
       $data->phone=$request->phone;
-      // $data->email=Auth::user()->email;
-      $data->email=Auth::user()->email;
+      //  $data->email=Auth::user()->email;
+      $data->email="N@gmail.com";
       $data->department=$request->department;
       $data->start_date=$request->startDate;
       $data->end_date=$request->endDate;

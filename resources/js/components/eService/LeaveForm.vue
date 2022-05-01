@@ -167,6 +167,7 @@ getLeave_form(){
   axios.get("/api/leaveForm").then(response=>{
     this.leave_form=response.data;
     console.log(this.leave_form);
+    console.log(this.leave_form.email +'Hkk dud');
   })
 },
 sendData(){
@@ -174,7 +175,7 @@ sendData(){
         .post("/api/form/save", this.information)
         .then((response) => {
           console.log(response);
-      this.router.push("/dashboard");
+      // this.router.push("/dashboard");
       
       // toast.fire({
       // icon: "success",
