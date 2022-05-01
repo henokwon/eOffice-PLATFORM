@@ -4,8 +4,7 @@
         <div class="col-12 col-lg-8 text-center" data-aos="fade-down" data-aos-duration="800" data-aos-once="true">
           <div class="content section-heading-11">
             <h2>Choose a plan to start</h2>
-            <p>Wireframes are generally created by business analysts, user experience designers, developers, visual
-              designers, and by those with expertise</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi natus maiores minus tempore, omnis dolorem blanditiis rerum accusamus odio obcaecati odit nemo fuga ducimus dolorum quos magni est eum vero.</p>
           </div>
         </div>
       </div>
@@ -38,10 +37,10 @@
                 <li><del> <i class="icon icon-check-2-2"></i>Unlimited Emails</del></li>
               </ul>
             </div>
-            <div class="price-btn">
+            {{-- <div class="price-btn">
               <a class="btn" href="#">Start free 14 days trial</a>
               <p>No credit card required</p>
-            </div>
+            </div> --}}
           </div>
         </div>
         <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
@@ -67,7 +66,7 @@
             </div>
             <div class="price-btn">
               <a class="btn" href="#">Start free 14 days trial</a>
-              <p>No credit card required</p>
+              {{-- <p>No credit card required</p> --}}
             </div>
           </div>
         </div>

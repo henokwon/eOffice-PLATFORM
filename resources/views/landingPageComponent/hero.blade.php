@@ -5,7 +5,7 @@
           <div class="content text-center">
             <h1>Atmosphere to grow!</h1>
             <p>Good office and great leaders make a perfect match.</p>
-            <a href="#" class="btn">Start free 14 days trial</a>
+            <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Start</a>
             {{-- <span>No credit card required</span> --}}
           </div>
         </div>

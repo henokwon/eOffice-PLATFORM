@@ -6,7 +6,7 @@
       <div class="row footer-area-l-17-items justify-content-between" data-aos="fade-left" data-aos-duration="800" data-aos-once="true">
         <div class="col">
           <div class="footer-widget widget2">
-            <p class="widget-title">Store</p>
+            <p class="widget-title">Important links</p>
             <ul class="widget-links pl-0 list-unstyled ">
               <li><a href="">Catalog</a></li>
               <li><a href="">Popular</a></li>
@@ -37,7 +37,7 @@
         </div>
         <div class="col">
           <div class="footer-widget widget4">
-            <p class="widget-title">Team</p>
+            <p class="widget-title">Contact Us</p>
             <ul class="widget-links pl-0 list-unstyled ">
               <li><a href="">Catalog</a></li>
               <li><a href="">Popular</a></li>

@@ -55,11 +55,26 @@
                                 </li>
                             </ul>
                         </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link-item">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="https://uxtheme.net/product-support/" class="nav-link-item">Support</a>
+                        </li>
+                        <li class="nav-item nav-item-has-children">
+                            <a href="#" class="nav-link-item drop-trigger">More <i class="fas fa-angle-down"></i>
+                            </a>
+                            <ul class="sub-menu" id="submenu-9">
+                                <li class="sub-menu--item">
+                                    <a href="#">About eOffice</a>
+                                </li>
+                                <li class="sub-menu--item">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">FAQ</a>
+                                </li>
+                                <li class="sub-menu--item">
+                                    <a href="#">Terms and Policy</a>
+                                </li>
                         </li>
                     </ul>
                 </nav>
