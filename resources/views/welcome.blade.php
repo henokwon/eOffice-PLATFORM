@@ -429,8 +429,10 @@
 
         </div>
         @endif
-    </div>
-    <h1>This is Wellcome page</h1>
-</body>
 
+
+        <h1>This is Wellcome page</h1>
+        <a class="btn btn-primary " href="/uploadFile">Upload File</a>
+    </div>
+</body>
 </html>

@@ -7,9 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    Hello
-    <div id="appp">
-<route-view/>
-    </div>
+    <h5>{{$data->name}}</h5>
+    <h5>{{$data->description}}</h5>
+    <iframe src="/assets/{{$data->file}}" ></iframe>
 </body>
 </html>

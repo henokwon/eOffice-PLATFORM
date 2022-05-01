@@ -1,11 +1,11 @@
 <template>
-  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0  "  style="padding-top: 65px" >
+  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0">
     <div class="text-center py-2 my-2">
       <h1 class="text-3xl">Travel Request Form</h1>
-      <h5 class="text-xl">Please let us know when you're leaving us!</h5>
     </div>
     <hr />
-    <form class="py-4 my-4">
+    <form class="py-4 my-4" @submit.prevent="onsubmitForm">
+
       <div class="grid grid-cols-2 gap-4">
         <div class="form-group mb-6">
           <BaseInput
@@ -43,7 +43,7 @@
           :required="information.required"
         />
       </div>
-      <div class="form-group mb-6">
+      <!-- <div class="form-group mb-6">
         <BaseInput
           v-bind="$attrs"
           label="E-mail"
@@ -51,7 +51,7 @@
           types="email"
           :required="information.required"
         />
-      </div>
+      </div> -->
       <div class="form-group mb-6">
         <div>Department: {{ information.department }}</div>
 
@@ -86,7 +86,7 @@
           <BaseInput
             v-bind="$attrs"
             label="Depature Date"
-            v-model="information.startDate"
+            v-model="information.depaturDate"
             types="date"
             :required="information.required"
           />
@@ -95,7 +95,7 @@
           <BaseInput
             v-bind="$attrs"
             label="Return Date"
-            v-model="information.endDate"
+            v-model="information.returnDate"
             types="date"
             :required="information.required"
           />
@@ -107,7 +107,7 @@
           <BaseInput
             v-bind="$attrs"
             label="Depature City"
-            v-model="information.depatureDate"
+            v-model="information.depatureCity"
             types="text"
             :required="information.required"
           />
@@ -116,7 +116,7 @@
           <BaseInput
             v-bind="$attrs"
             label="Arival City"
-            v-model="information.returndDate"
+            v-model="information.arivalCity"
             types="text"
             :required="information.required"
           />
@@ -131,26 +131,7 @@
       </div>
       <div class="form-group mb-6 px-30" style="margin: auto; width: 100%">
         <h1 class="text-xl">Travel arrangements needed</h1>
-        <!-- <CheckBox
-          label="Flight"
-          :required="information.required"
-          v-model="information.travelNeeded"
-        />
-        <CheckBox
-          label="Hotel"
-          :required="information.required"
-          v-model="information.travelNeeded"
-        />
-        <CheckBox
-          label="Rental Car"
-          :required="information.required"
-          v-model="information.travelNeeded"
-        />
-        <CheckBox
-          label="Other"
-          :required="information.required"
-          v-model="information.travelNeeded"
-        /> -->
+
         <div>
           <input
             type="checkbox"
@@ -248,15 +229,15 @@
           <label for="other">Other </label>
         </div>
       </div>
-       <div class="form-group mb-6" v-if="other()">
-          <BaseInput
-            v-bind="$attrs"
-            label="If Other ....."
-            v-model="information.other"
-            types="text"
-            :required="information.required"
-          />
-        </div>
+      <div class="form-group mb-6" v-if="others()">
+        <BaseInput
+          v-bind="$attrs"
+          label="If Other ....."
+          v-model="information.other"
+          types="text"
+          :required="information.required"
+        />
+      </div>
       <button
         type="submit"
         class="
@@ -290,16 +271,21 @@ import BaseInput from "./basicInput/TextField.vue";
 import Telephone from "./basicInput/Telephone.vue";
 import TextArea from "./basicInput/TextArea.vue";
 import CheckBox from "./basicInput/CheckBox.vue";
+import { useRouter } from "vue-router";
 export default {
   components: { BaseInput, Telephone, TextArea, CheckBox },
+
   data() {
     return {
+      success: false,
+      error: false,
+      router: useRouter(),
       information: {
-        firstName: "",
-        lastName: "",
-        employeeID: "",
+        firstName: "hh",
+        lastName: "hh",
+        employeeID: "hh",
         phone: "",
-        email: "",
+        email: "mm@gmail.com",
         reasonForTravel: "",
         department: "",
         depaturDate: "",
@@ -307,23 +293,61 @@ export default {
         depatureCity: "",
         arivalCity: "",
         travelNeeded: [],
-        other:'',
+        other: "",
         required: true,
       },
-    
-      // baeInput=[{
-      //   name,
-      //   type,
-
-      // }]
+      loot:[]
     };
   },
-  methods:{
-    other(){
-      console.log(this.information.travelNeeded.includes('Other'))
-      return this.information.travelNeeded.includes('Other')
-    }
-  }
+  methods: {
+    others() {
+      // console.log(this.information.travelNeeded.includes('Other'))
+      return this.information.travelNeeded.includes("Other");
+    },
+    onsubmitForm() {
+      if (this.others()) {
+        this.information.travelNeeded = this.information.travelNeeded.filter(
+          function (e) {
+            return e !== "Other";
+          }
+        );
+        this.information.travelNeeded.push(this.information.other);
+      }
+
+      axios
+        .post("/tour", this.information)
+        .then((response) => {
+          this.router.push("/dashboard");
+
+          toast.fire({
+            icon: "success",
+            title: "Request sent success fully!!!",
+          });
+        })
+        .catch((error) => {
+          console.log(
+            " Something wrong hapen when you sent data to email        " + error
+          );
+        });
+    },
+    onSuccess(message) {
+      this.success = true;
+      console.log(message);
+    },
+    onFailure(message) {
+      this.error = true;
+    },
+  },
+
+  created() {
+console.log('Hi, It is created'+ this.information.email)
+   this.information.email="gashaw@gmail.com"
+   console.log('Hi, It is created'+ this.information.email)
+    axios.get("/eService/tour-form").then((response) => {
+    ;
+     console.log("Hi  "+ response.data.data);
+    });
+  },
 };
 </script>
 

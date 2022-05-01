@@ -238,7 +238,7 @@ div#loading img {
 }
 
 .preloader img {
-  width: 200px;
+  width: 250px;
 }
 
 /*Header Css StaRT*/
@@ -3575,3 +3575,12 @@ img.spin {
 }
 
 /*# sourceMappingURL=maps/main.css.map */
+
+
+.text-bg-logo {
+  display: inline-block;
+  max-width: 421px;
+  padding-left: 70px;
+  padding-bottom: 60px;
+  float: right;
+  }

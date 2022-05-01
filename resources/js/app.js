@@ -75,19 +75,17 @@ Alpine.plugin(collapse);
 
 Alpine.start();
 
+
+
 ///// It is the entry point for vue file
-
-// <font-awesome-icon icon="fa-solid fa-house-person-leave" />
-
 
 
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import '@formkit/themes/genesis'
 library.add(fas);
-
-
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import 'sweetalert2/dist/sweetalert2.css';
@@ -96,7 +94,7 @@ const toast = Swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
-    timer: 3000,
+    timer: 4000,
     timeProgressBar: true,
 });
 window.toast = toast;
@@ -104,8 +102,20 @@ window.toast = toast;
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index.js'
+import CustomerFormComponent from './components/eService/CustomerFormComponent.vue'
+import LeaveForm from './components/eService/LeaveForm.vue'
+import TourForm from './components/eService/TourForm.vue'
 
-const app = createApp(App)
-app.use(router)
-app.component('fa', FontAwesomeIcon)
+
+// const app = createApp(App)
+// app.use(router)
+// app.component('fa', FontAwesomeIcon)
+// app.mount('#app')
+
+const app=createApp({});
+app.component("leave-form", LeaveForm);
+app.component("tour-form", TourForm);
 app.mount('#app')
+const app2=createApp({});
+app2.component("customer-form", CustomerFormComponent);
+app2.mount('#service')

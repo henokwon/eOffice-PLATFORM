@@ -18,10 +18,8 @@
     <div class="py-6">
         @php
         $variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'black'];
-
         $sizes = ['sm', 'base', 'lg'];
         @endphp
-
         <div class="grid items-center gap-4">
             @foreach ($variants as $variant)
             <div class="grid items-start grid-cols-3 gap-4 justify-items-center">

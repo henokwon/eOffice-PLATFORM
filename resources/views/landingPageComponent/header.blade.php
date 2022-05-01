@@ -5,11 +5,15 @@
             <!-- Brand Logo-->
             <div class="brand-logo">
                 <a href="#">
+                 
                     <!-- light version logo (logo must be black)-->
-                    <img src="images/logo/logo-black.png" alt="" class="light-version-logo">
+                    <img src="images/logo/white.png" alt="" class="light-version-logo">
 
                     <!-- Dark version logo (logo must be White)-->
-                    <img src="images/logo/logo-white.png" alt="" class="dark-version-logo">
+                    <img src="images/logo/whie.png" alt="" class="dark-version-logo"> 
+                    {{-- <div class="text-bg">
+                        <h1>eOffice</h1>
+                    </div> --}}
 
                 </a>
             </div>
@@ -60,28 +64,28 @@
             <div class="header-btns  header-btn-l-17 ms-auto  d-xs-inline-flex align-items-center">
 
                 @if (Route::has('login'))
-                    @auth
-                        <a href="{{ url('/dashboard') }}"
-                            class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="btn sign-in-btn focus-reset">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="start-trail-btn btn focus-reset">Register</a>
-                        @endif
-                    @endauth
-                @endif
-                @if (Route::has('service'))
                 @auth
-                    <a href="{{ url('/service') }}"
-                     class="text-sm text-gray-700 dark:text-gray-500 underline">Service</a>
+                <a href="{{ url('/dashboard') }}"
+                    class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                 @else
-                    <a href="{{ route('service') }}" class="btn sign-in-btn focus-reset">Log in</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="start-trail-btn btn focus-reset">Register</a>
-                    @endif
+                <a href="{{ route('login') }}" class="btn sign-in-btn focus-reset">Log in</a>
+
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="start-trail-btn btn focus-reset">Register</a>
+                @endif
                 @endauth
-            @endif
+                @endif
+
+                {{-- @if (Route::has('service'))
+                @auth
+                <a href="{{ url('/service') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Service</a>
+                @else
+                <a href="{{ route('service') }}" class="btn sign-in-btn focus-reset">Log in</a>
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="start-trail-btn btn focus-reset">Register</a>
+                @endif
+                @endauth
+                @endif --}}
             </div>
             <!-- mobile menu trigger -->
             <div class="mobile-menu-trigger">
