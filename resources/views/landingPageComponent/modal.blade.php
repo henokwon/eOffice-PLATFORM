@@ -99,23 +99,23 @@
                             </x-button>
                         </div>
 
-                        @if (Route::has('register'))
-                            <p class="text-sm text-gray-600 dark:text-gray-400">
-                                {{ __('Don’t have an account?') }}
-                                <a data-bs-toggle="modal" data-bs-target="#register" data-bs-dismiss="modal"
-                                    class="text-blue-500 hover:underline" style="cursor: pointer">
-                                    {{ __('Register') }}
-                                </a>
-                            </p>
-                        @endif
+
                     </div>
                 </form>
             </div>
             {{-- </div> --}}
-            {{-- <div class="modal-footer">
+            <div class="modal-footer" style="display: flex; justify-content:space-between">
+                @if (Route::has('register'))
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        {{ __('Don’t have an account?') }}
+                        <a data-bs-toggle="modal" data-bs-target="#register" data-bs-dismiss="modal"
+                            class="text-blue-500 hover:underline" style="cursor: pointer">
+                            {{ __('Register') }}
+                        </a>
+                    </p>
+                @endif
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>
@@ -193,19 +193,22 @@
                             </x-button>
                         </div>
                         <div style="display: flex; justify-content:space-between">
-                            <p class="text-sm text-gray-600 dark:text-gray-400" style="display: inline;">
-                                {{ __('Already registered?') }}
-                                <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-dismiss="modal"
-                                    class="text-blue-500 hover:underline" style="cursor: pointer;">
-                                    {{ __('Login') }}
-                                </a>
-                            </p>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                style="width: 25%; display:inline;">Close</button>
+                            
                         </div>
 
                     </div>
                 </form>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content:space-between">
+                <p class="text-sm text-gray-600 dark:text-gray-400" style="display: inline;">
+                    {{ __('Already registered?') }}
+                    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-dismiss="modal"
+                        class="text-blue-500 hover:underline" style="cursor: pointer;">
+                        {{ __('Login') }}
+                    </a>
+                </p>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                  >Close</button>
             </div>
         </div>
     </div>
