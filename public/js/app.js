@@ -39661,12 +39661,8 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     storeForm: function storeForm() {
-      var _this = this;
-
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/customer", this.information).then(function (response) {
-        console.log(response);
-
-        _this.router.push("/dashboard");
+        console.log(response); // this.router.push("/dashboard");
 
         toast.fire({
           icon: "success",

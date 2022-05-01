@@ -18,15 +18,13 @@ Route::post('/tour', [TourFormController::class,'sent']);
 Route::post('/customer',[CustomerFormController::class, 'sendData']);
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
 
-Route::get('/eService/customer-form', function () {
-
 Route::get('/service', function(){
     return view('service');
 })->name('dashboard')->middleware(['auth', 'verified']);
 
 Route::get('/customerForm', [HighchartController::class, 'handleChart'])->name('customerForm')->middleware(['auth', 'verified']);
 
-Route::get('/customer-form', function () {
+Route::get('eService/customer-form', function () {
 
     return view('eService.customerForm');
 })->middleware(['auth'])->name('eService.customer-form');

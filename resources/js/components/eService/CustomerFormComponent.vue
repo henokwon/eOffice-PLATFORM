@@ -147,7 +147,7 @@ export default {
         .post("/customer", this.information)
         .then((response) => {
           console.log(response);
-      this.router.push("/dashboard");
+      // this.router.push("/dashboard");
       
       toast.fire({
       icon: "success",
