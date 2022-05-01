@@ -41604,6 +41604,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router_index_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./router/index.js */ "./resources/js/router/index.js");
 /* harmony import */ var _components_eService_CustomerFormComponent_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/eService/CustomerFormComponent.vue */ "./resources/js/components/eService/CustomerFormComponent.vue");
 /* harmony import */ var _components_eService_LeaveForm_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/eService/LeaveForm.vue */ "./resources/js/components/eService/LeaveForm.vue");
+/* harmony import */ var _components_eService_TourForm_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/eService/TourForm.vue */ "./resources/js/components/eService/TourForm.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -41703,6 +41704,7 @@ window.toast = toast;
 
 
 
+
  // const app = createApp(App)
 // app.use(router)
 // app.component('fa', FontAwesomeIcon)
@@ -41710,8 +41712,11 @@ window.toast = toast;
 
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_9__.createApp)({});
 app.component("leave-form", _components_eService_LeaveForm_vue__WEBPACK_IMPORTED_MODULE_13__["default"]);
-app.component("customer-form", _components_eService_CustomerFormComponent_vue__WEBPACK_IMPORTED_MODULE_12__["default"]);
+app.component("tour-form", _components_eService_TourForm_vue__WEBPACK_IMPORTED_MODULE_14__["default"]);
 app.mount('#app');
+var app2 = (0,vue__WEBPACK_IMPORTED_MODULE_9__.createApp)({});
+app2.component("customer-form", _components_eService_CustomerFormComponent_vue__WEBPACK_IMPORTED_MODULE_12__["default"]);
+app2.mount('#service');
 
 /***/ }),
 

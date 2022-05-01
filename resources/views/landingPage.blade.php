@@ -16,11 +16,12 @@
   <div class="site-wrapper overflow-hidden position-relative">
     <!-- Site Header -->
     <!-- Preloader -->
-    <!-- <div id="loading">
-    <div class="preloader">
-     <img src="./image/preloader.gif" alt="preloader">
-   </div>
-   </div>    -->
+    <div id="loading" >
+      <div class="preloader" >
+     
+        <img src="./images/loading.gif" alt="preloader" width="380px;">
+      </div>
+    </div>
     <!--Site Header Area -->
     @include('landingPageComponent.header')
     <!-- Hero Area -->
@@ -28,10 +29,10 @@
     @include('landingPageComponent.modal')
     <!--Feature Area -->
     @include('landingPageComponent.feature')
-    
+
     <!--Content Area 1-->
     @include('landingPageComponent.content1')
-   
+
     <!--Content Area 2-->
     @include('landingPageComponent.content2')
     <!--Video Area-->
@@ -47,7 +48,8 @@
             <div class="content text-center">
               <p>We are proud to have some big brands as our customer</p>
             </div>
-            <div class="brand-area-l-17-items d-flex justify-content-center justify-content-xl-between align-items-center flex-wrap ">
+            <div
+              class="brand-area-l-17-items d-flex justify-content-center justify-content-xl-between align-items-center flex-wrap ">
               <div class="single-brand " data-aos="fade-right" data-aos-duration="500" data-aos-once="true">
                 <img src="images/l8/brand-logo-1.svg" alt="">
               </div>
