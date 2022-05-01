@@ -1,11 +1,11 @@
 <template>
-  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0" style="padding-top: 65px">
+  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0" >
     <div class="text-center py-2 my-2">
       <h1 class="text-3xl">Leave Request Form</h1>
       <h5 class="text-xl">Please let us know when you're leaving us!</h5>
     </div>
     <hr />
-    <form class="py-4 my-4">
+    <form class="py-4 my-4" @submit.prevent="sendData">
       <div class="grid grid-cols-2 gap-4">
         <div class="form-group mb-6">
           <BaseInput
@@ -39,7 +39,7 @@
            :required="information.required"
         />
       </div>
-      <div class="form-group mb-6">
+      <!-- <div class="form-group mb-6">
         <BaseInput
           v-bind="$attrs"
           label="E-mail"
@@ -47,7 +47,7 @@
           types="email"
            :required="information.required"
         />
-      </div>
+      </div> -->
       <div class="form-group mb-6">
         <div>Department: {{ information.department }}</div>
 
@@ -130,6 +130,7 @@ j          <option>PR</option>
         Submit
       </button>
     </form>
+    <!-- <h1 v-for="item in  leaveForm" :key="item.id">{{item.name}} llok</h1> -->
   </div>
 </template>
 
@@ -137,11 +138,16 @@ j          <option>PR</option>
 import BaseInput from "./basicInput/TextField.vue";
 import Telephone from "./basicInput/Telephone.vue";
 import TextArea from './basicInput/TextArea.vue'
+
+import axios from 'axios';
 // import leaveIcon from '../assets/leavIcon.svg'
+
+
 export default {
   components: { BaseInput, Telephone,TextArea},
   data() {
     return {
+      leave_form: [],
       information: {
         firstName: "",
         lastName: "",
@@ -155,6 +161,35 @@ export default {
         required:true,
       },
     };
+  },
+  methods: {
+getLeave_form(){
+  axios.get("/api/leaveForm").then(response=>{
+    this.leave_form=response.data;
+    console.log(this.leave_form);
+  })
+},
+sendData(){
+   axios
+        .post("/api/form/save", this.information)
+        .then((response) => {
+          console.log(response);
+      this.router.push("/dashboard");
+      
+      // toast.fire({
+      // icon: "success",
+      // title: "Request sent success fully!!!",
+      // });
+        })
+        .catch((error) => {
+          console.log(" Something wrong hapen when you sent data to email        "+error);
+        });
+
+}
+
+  },
+  mounted(){
+this.getLeave_form()
   },
 };
 </script>

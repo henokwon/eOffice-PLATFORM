@@ -1,6 +1,7 @@
 <template>
 <!-- If your content or parts of form is  -->
-  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto" style="padding-top: 65px">
+<!-- for pushing your form down style="padding-top: 65px" add this -->
+  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto" >
     <div class="text-center py-2 my-2">
       <h1 class="text-3xl ">Service Request Form</h1>
     </div>
@@ -34,7 +35,7 @@
           :required="information.required"
         />
       </div>
-      <div class="form-group mb-6">
+      <!-- <div class="form-group mb-6">
         <BaseInput
           v-bind="$attrs"
           label="E-mail"
@@ -42,7 +43,7 @@
           types="email"
           :required="information.required"
         />
-      </div>
+      </div> -->
       <div class="form-group mb-6">
         <TextArea
           label="DETAILS OF REQUEST"

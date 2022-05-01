@@ -8,6 +8,7 @@ use App\Http\Resources\CustomerFormResource;
 use App\Mail\CustomerRequest;
 use App\Models\CustomerForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class CustomerFormController extends Controller
@@ -15,12 +16,14 @@ class CustomerFormController extends Controller
     /**
      * @return \Illuminate\Http\Response
      */
-    public function sendData(Request $request){
+    public function sendData(Request $request)
+    {
+   
         $data=new CustomerForm();
         $data->firstName=$request->firstName;
         $data->lastName=$request->lastName;
         $data->phone=$request->phone;
-        $data->emaile=$request->email;
+        $data->email=Auth::user()->email;
         $data->detailOfRequest=$request->detailOfRequest;   
         Mail::to('kidanugashaw@gmail.com')->send(new CustomerRequest( $data));
     }
@@ -36,7 +39,7 @@ class CustomerFormController extends Controller
      */
     public function store(CustomerFormRequest $request)
     {
-        //
+        
      $customerForm=CustomerForm::create($request->validated());
      return new CustomerFormResource($customerForm);
 
@@ -76,7 +79,6 @@ class CustomerFormController extends Controller
      */
     public function destroy(CustomerForm $customerForm)
     {
-        //
         $customerForm->delete();
         return response()->noContent();
     }

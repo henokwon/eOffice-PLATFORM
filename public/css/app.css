@@ -1001,6 +1001,9 @@ select{
 .inline-flex{
   display: inline-flex;
 }
+.table{
+  display: table;
+}
 .flow-root{
   display: flow-root;
 }
@@ -1369,13 +1372,13 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgba(238, 242, 255, var(--tw-bg-opacity));
 }
-.bg-gray-800{
-  --tw-bg-opacity: 1;
-  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
-}
 .bg-gray-50{
   --tw-bg-opacity: 1;
   background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
+}
+.bg-gray-800{
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
 }
 .bg-gray-900{
   --tw-bg-opacity: 1;
@@ -1694,6 +1697,9 @@ select{
 }
 .grayscale{
   --tw-grayscale: grayscale(100%);
+  filter: var(--tw-filter);
+}
+.filter{
   filter: var(--tw-filter);
 }
 .transition{
@@ -2026,13 +2032,13 @@ select{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgba(0, 0, 0, var(--tw-ring-opacity));
 }
-.focus\:ring-white:focus{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(255, 255, 255, var(--tw-ring-opacity));
-}
 .focus\:ring-indigo-500:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgba(99, 102, 241, var(--tw-ring-opacity));
+}
+.focus\:ring-white:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(255, 255, 255, var(--tw-ring-opacity));
 }
 .focus\:ring-blue-500:focus{
   --tw-ring-opacity: 1;

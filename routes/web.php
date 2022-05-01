@@ -3,25 +3,36 @@
 use App\Http\Controllers\Api\CustomerFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
+use App\Http\Controllers\LegacyFileController;
+use App\Http\Controllers\TourFormController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/route', function () {
+    return view('eService.service');
+});
 
+// eServic
+Route::post('/tour', [TourFormController::class,'sent']);
+Route::post('/customer',[CustomerFormController::class, 'sendData']);
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
-
-
-
-Route::get('/customer-form', function () {
+Route::get('/eService/customer-form', function () {
     return view('eService.customerForm');
-})->middleware(['auth'])->name('customer-form');
-Route::get('/leave-form', function () {
+})->middleware(['auth'])->name('eService.customer-form');
+Route::get('/eService/leave-form', function () {
     return view('eService.leaveForm');
-})->middleware(['auth'])->name('leave-form');
-Route::get('/tour-form', function () {
-    return view('eService.tourForm');
-})->middleware(['auth'])->name('tour-form');
+})->middleware(['auth'])->name('eService.leave-form');
+Route::get('/eService/tour-form', [TourFormController::class,'renderForm'] )->middleware(['auth'])->name('eService.tour-form');
 
+// Legacy document
+
+Route::get('/uploadFile', [LegacyFileController::class, 'uploadFile']);
+Route::post('/submitForm', [LegacyFileController::class, 'submitForm']);
+Route::get('/showFile', [LegacyFileController::class, 'showFile']);
+Route::get('download/{file}', [LegacyFileController::class, 'downloadFile']);
+Route::get('/view/{id}', [LegacyFileController::class, 'viewFile']);
+// 
 
 Route::get('/buttons/text', function () {
     return view('buttons-showcase.text');
@@ -38,20 +49,6 @@ Route::get('/buttons/text-icon', function () {
 require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
 
-
-// Route::get('/s', function () {
-//     return view('buttons-showcase.vue');
-// });
-
-// Route::get('/customer-form', function () {
-//     return view('layouts.vue');
-// });
-// Route::post('/customer', function () {
-//     //return view('layouts.vue');
-//     $data=request('firstName',' lastName','phone',' email',' detailOfRequest');
-//     return $data;
-// });
-Route::post('/customer',[CustomerFormController::class, 'sendData']);
 
 Route::get('/{pathMatch}', function () {
     return view('welcome');

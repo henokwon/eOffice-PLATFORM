@@ -10,15 +10,15 @@ const routes = [
         component: DepartementsIndex
     },
     {
-        path: '/customer-form',
+        path: '/eService/customer-form',
         component: CustomerFormComponent,
     },
     {
-        path: "/leave-form",
+        path: "/eService/leave-form",
         component: LeaveForm,
     },
     {
-        path: '/tour-form',
+        path: '/eService/tour-form',
         component: TourForm,
     },
 ];
