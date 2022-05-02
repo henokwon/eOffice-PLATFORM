@@ -43,8 +43,8 @@
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>
-<a href="" class="btn btn-info" style="margin: 12px">Edit</a>
-<a href="" class="btn btn-danger">Delete</a>
+<a href="{{ route('users.edit', $user->id) }}" class="btn btn-info" style="margin: 12px">Edit</a>
+<a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger">Delete</a>
         </td>
 
       </tr>
