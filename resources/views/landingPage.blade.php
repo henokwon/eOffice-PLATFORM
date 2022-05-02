@@ -16,12 +16,12 @@
   <div class="site-wrapper overflow-hidden position-relative">
     <!-- Site Header -->
     <!-- Preloader -->
-    <div id="loading" >
+    {{-- <div id="loading" >
       <div class="preloader" >
      
         <img src="./images/loading.gif" alt="preloader" width="380px;">
       </div>
-    </div>
+    </div> --}}
     <!--Site Header Area -->
     @include('landingPageComponent.header')
     <!-- Hero Area -->

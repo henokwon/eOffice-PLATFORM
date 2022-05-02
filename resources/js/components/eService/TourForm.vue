@@ -317,7 +317,8 @@ export default {
       axios
         .post("/tour", this.information)
         .then((response) => {
-          this.router.push("/dashboard");
+          // this.router.push("/dashboard");
+          console.log("hi tour form")
 
           toast.fire({
             icon: "success",

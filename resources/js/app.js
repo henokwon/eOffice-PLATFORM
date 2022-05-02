@@ -99,6 +99,12 @@ const toast = Swal.mixin({
 });
 window.toast = toast;
 
+
+
+import { plugin, defaultConfig } from '@formkit/vue'
+import '@formkit/themes/genesis'
+
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index.js'
@@ -115,7 +121,8 @@ import TourForm from './components/eService/TourForm.vue'
 const app=createApp({});
 app.component("leave-form", LeaveForm);
 app.component("tour-form", TourForm);
-app.mount('#app')
-const app2=createApp({});
-app2.component("customer-form", CustomerFormComponent);
-app2.mount('#service')
+app.use(plugin, defaultConfig).mount('#app')
+
+// const app2=createApp({});
+// app2.component("customer-form", CustomerFormComponent);
+// app2.mount('#service')

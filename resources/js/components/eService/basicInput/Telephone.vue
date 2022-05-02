@@ -1,9 +1,10 @@
 <template>
 <div>
-  <label for="">{{label }}  <span v-if="required" style="color:red">*</span></label>
+  <!-- <label for="">{{label }}  <span v-if="required" style="color:red">*</span></label> -->
   <input
     :required="required"
     type="text"
+    :label="label"
     :placeholder="template"
     v-model="number"
     @input="$emit('update:modelValue', $event.target.value)"

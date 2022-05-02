@@ -129,6 +129,7 @@ j          <option>PR</option>
       >
         Submit
       </button>
+      <!-- <h1 v-for="item in leave_form" :key="item.id">{{item.name}}<h1> -->
     </form>
     <!-- <h1 v-for="item in  leaveForm" :key="item.id">{{item.name}} llok</h1> -->
   </div>
@@ -165,17 +166,20 @@ export default {
   methods: {
 getLeave_form(){
   axios.get("/api/leaveForm").then(response=>{
+
     this.leave_form=response.data;
     console.log(this.leave_form);
-    console.log(this.leave_form.email +'Hkk dud');
+    console.log(this.leave_form.data +'Hkk dud');
   })
 },
 sendData(){
    axios
         .post("/api/form/save", this.information)
         .then((response) => {
-          console.log(response);
-      // this.router.push("/dashboard");
+          console.log("Hi Guys");
+          console.log(response+ 'This is returned data');
+          
+     /// this.router.push("/dashboard");
       
       // toast.fire({
       // icon: "success",
@@ -191,6 +195,7 @@ sendData(){
   },
   mounted(){
 this.getLeave_form()
+console.log('Mounted');
   },
 };
 </script>

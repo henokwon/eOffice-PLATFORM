@@ -1,11 +1,13 @@
 <template>
 <div>
-  <label for="">{{ label }} <span v-if="required" style="color:red">*</span></label>
-  <input
+ <!-- // FormKit -->
+  <!-- <label for="">{{ label }} <span v-if="required" style="color:red">*</span></label> -->
+  <FormKit
+    :label="label"
     :placeholder="label"
     :type="types"
-    :required="required"
-    @input="$emit('update:modelValue', $event.target.value)"
+    validation="required"
+    @change="$emit('update:modelValue', $event.target.value)"
     class="
       my-3
       focus:ring-2 focus:ring-blue-500 focus:outline-none
