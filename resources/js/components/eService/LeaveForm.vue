@@ -1,4 +1,9 @@
 <template>
+<ul>
+  <li>Apply</li>
+  <li>View leave history</li>
+  <li>Notification</li>
+</ul>
   <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0" >
     <div class="text-center py-2 my-2">
       <h1 class="text-3xl">Leave Request Form</h1>
@@ -129,9 +134,22 @@ j          <option>PR</option>
       >
         Submit
       </button>
-      <!-- <h1 v-for="item in leave_form" :key="item.id">{{item.name}}<h1> -->
+
     </form>
-    <!-- <h1 v-for="item in  leaveForm" :key="item.id">{{item.name}} llok</h1> -->
+  </div>
+  <!-- <modal>
+    <h1>Hello</h1>
+  </modal> -->
+  <!-- <Modal  title="Hello Gashaw" >
+   
+
+  </Modal>
+  {{leave_form}} -->
+  <div v-for="item in leave_form" :key="item.id">
+    <ul>
+      <li>{{item.first_name}}</li>
+         <li>{{item.email}}</li>
+    </ul>
   </div>
 </template>
 
@@ -141,11 +159,12 @@ import Telephone from "./basicInput/Telephone.vue";
 import TextArea from './basicInput/TextArea.vue'
 
 import axios from 'axios';
+import Modal from '../modal.vue';
 // import leaveIcon from '../assets/leavIcon.svg'
 
 
 export default {
-  components: { BaseInput, Telephone,TextArea},
+  components: { BaseInput, Telephone,TextArea, Modal},
   data() {
     return {
       leave_form: [],
@@ -166,10 +185,18 @@ export default {
   methods: {
 getLeave_form(){
   axios.get("/api/leaveForm").then(response=>{
+  if(response.status==200){
+    console.log("Ok, Fine")
+    console.log(response);
+  }
 
     this.leave_form=response.data;
     console.log(this.leave_form);
-    console.log(this.leave_form.data +'Hkk dud');
+    let data;
+    for(data in response){
+      console.log(data.phone);
+    }
+
   })
 },
 sendData(){

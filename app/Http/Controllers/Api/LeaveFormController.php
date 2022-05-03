@@ -25,7 +25,7 @@ class LeaveFormController extends Controller
       // $userID = 1;
       // $user = User::find($userID);
       // return LeaveForm::find();
-      return LeaveForm::all();
+      return LeaveForm::all()->toJson();
     }
     public function sendData(Request $request){  
       // dd(Auth::user()->email)  ;

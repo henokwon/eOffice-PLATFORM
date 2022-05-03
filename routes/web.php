@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CustomerFormController;
+use App\Http\Controllers\GenerateFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
 use App\Http\Controllers\LegacyFileController;
@@ -52,6 +53,9 @@ Route::get('/buttons/text-icon', function () {
 require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
 
-Route::get('/{pathMatch}', function () {
-    return view('welcome');
- })->where('pathMatch', ".*");
+// Route::get('/{pathMatch}', function () {
+//     return view('welcome');
+//  })->where('pathMatch', ".*");
+
+//  generate form route
+Route::get('/generate/form',[GenerateFormController::class,'index']);
