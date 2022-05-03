@@ -54,7 +54,7 @@
         />
       </div> -->
       <div class="form-group mb-6">
-        <div>Department: {{ information.department }}</div>
+        <div>Department</div>
 
         <select
           v-model="information.department"

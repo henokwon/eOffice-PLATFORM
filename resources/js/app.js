@@ -119,6 +119,7 @@ import Form from './components/generate/Form.vue'
 // app.mount('#app')
 
 const app=createApp({});
+app.component('fa', FontAwesomeIcon)
 app.component("leave-form", LeaveForm);
 app.component("tour-form", TourForm);
 app.component("generate-form", Form);

@@ -1,77 +1,141 @@
 <template>
-  <form class="py-4 my-4" @submit.prevent="sendData">
-    <!-- <div class="grid grid-cols-2 gap-4">
-      <div class="form-group mb-6">
-        <BaseInput
-          v-bind="$attrs"
-          label="First Name"
-          v-model="information.firstName"
-          types="text"
-          :required="information.required"
-        />
-      </div>
-      <div class="form-group mb-6">
-        <BaseInput
-          v-bind="$attrs"
-          label="Last Name"
-          v-model="information.lastName"
-          types="text"
-          :required="information.required"
-        />
-      </div>
-    </div> -->
+  <form
+    class="
+      py-4
+      my-4
+      flex flex-col
+      justify-center
+      items-center
+      bg-white
+      shadow-md
+      rounded
+    "
+    @submit.prevent="sendData"
+  >
+    <!-- <input type="radio" v-model="pick" :value="first" />
+    <input type="radio" v-model="pick" :value="second" /> -->
+    <div class="flex justify-end">
+      <button >Add Question</button>
+    </div>
 
     <div v-if="formInput.length > 0">
-      <div
-        class="form-group mb-6"
-        v-for="(input, index) in formInput"
-        :key="index"
-      >
+      <div class="form-group" v-for="(input, index) in formInput" :key="index">
         <label for="">{{ input.label }}</label>
-        <input
-          :type="input.inputType"
-          :placeholder="input.type"
-          v-model="input.type"
-        />
+        <div
+          class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10"
+        >
+          <div v-if="input.inputType == 'textarea'">
+            <textarea :placeholder="input.type" :type="input.inputType" />
+          </div>
+          <div v-else-if="input.inputType == 'select'">
+            <select>
+              <option disabled value="">Select value</option>
+              <option
+                v-for="option in options"
+                :value="option.value"
+                :key="option"
+              >
+                {{ option.text }}
+              </option>
+            </select>
+          </div>
+          <div v-else>
+            <input :placeholder="input.type" :type="input.inputType" />
+          </div>
+          <div class="flex space-x-10">
+            
+            <button @click="create(input, index)" >
+              <fa
+                class="flex-shrink-0 h-6 w-6 text-indigo-600 bg-rose-400"
+                icon="pencil"
+              />
+            </button>
+            <button @click="remove(index)">
+              <fa
+                class="flex-shrink-0 h-6 w-6 text-red-600 bg-dark-eval-2"
+                icon="close"
+              />
+            </button>
+          </div>
+        </div>
+
         <div v-if="input.edit">
           <hr />
-          <form @submit.prevent="save(index)">
-            <label for="">Write label name</label>
-            <input type="text" v-model="input.label" /> -->
-          <!-- <label for="">type</label>
-            <input type="text" v-model="input.inputType" /> -->
-         <button>save</button> 
-          <!-- </form>  -->
-          <!-- Form kit start
-          <h5 style="text-align: center">Edit properties</h5>
+          <div
+            class="
+              bg-yellow-300
+              text-center
+              max-w-sm
+              rounded
+              overflow-hidden
+              shadow-lg
+              py-5
+            "
+          >
+            <form
+              @submit.prevent="save(index)"
+              class="flex flex-col justify-center items-center"
+            >
+              <div>
+                <label for="">Write label name</label>
+                <br />
+                <input type="text" v-model="input.label" />
+              </div>
+              <div>
+                <div class="form-group mb-6">
+                  <div>Select Question type:</div>
 
-          <form @submit.prevent="save(index)">
-             <FormKit
-              type="text"
-              name="name"
-              label="Label Name"
-              placeholder="Write field Name"
-              v-model="input.label"
-            />
+                  <select
+                    v-model="input.inputType"
+                    class="
+                      my-3
+                      focus:ring-2 focus:ring-blue-500 focus:outline-none
+                      appearance-none
+                      text-sm
+                      leading-6
+                      text-slate-900
+                      placeholder-slate-400
+                      rounded-md
+                      py-2
+                      pl-10
+                      ring-1 ring-slate-200
+                      shadow-sm
+                    "
+                  >
+                    <option disabled value="">Select Type</option>
+                    <option>checkbox</option>
+                    <option>text</option>
+                    <option>textarea</option>
+                    <option>email</option>
+                    <option>radio</option>
+                    <option>select</option>
+                    <option>number</option>
+                  </select>
+                </div>
+              </div>
+              <div v-if="input.inputType == 'select'">
+                <input type="text" v-model="value" />
+                <button @click="SelectValue(index)">Add Option</button>
+              </div>
 
-            <FormKit
-              type="select"
-              name="type"
-              label="Select Field Type"
-              placeholder="Select Field Type"
-              :options="['text', 'checkbox', 'textarea', 'email']"
-              v-model="input.inputType"
-            /> -->
-            <!-- <button>save</button>
-          </form> -->
-          
-          <!-- Form kit end-->
-              </form> 
+              <button
+                class="
+                  bg-blue-500
+                  hover:bg-blue-700
+                  text-white
+                  font-bold
+                  py-2
+                  px-4
+                  rounded-full
+                "
+              >
+                save
+              </button>
+            </form>
+          </div>
 
           <hr />
         </div>
-        <button @click="create(input, index)">Edit</button>
-        <button @click="remove(index)">Remove Field</button>
       </div>
     </div>
     <button
@@ -80,6 +144,7 @@
         w-full
         px-6
         py-2.5
+        my-8
         bg-blue-600
         text-white
         font-medium
@@ -121,34 +186,25 @@ class Pr {
   }
 }
 
-class inputC {
-  type;
-  inputType;
-  label;
-  constructor(type = "input", inputType = "text", label = "label Name") {
-    this.type = type;
-    this.inputType = inputType;
-    this.label = label;
+class Select {
+  text;
+  constructor(text) {
+    this.text = text;
   }
 }
 
 export default {
   data() {
     return {
+      tp: "textarea",
+      value: "",
       formInput: [],
       inputCustomize: [],
-      currentState: [],
-      field: {
-        name: "label name",
-        type: "textarea",
-        required: false,
-        createForm: false,
-        createField: false,
-      },
-      formComponent: {
-        textField: "Text Field",
-        textArea: "Text Area",
-      },
+      options: [],
+      type: "",
+      inputType: "text",
+      label: "No name",
+      edit: false,
     };
   },
   methods: {
@@ -169,6 +225,12 @@ export default {
     fill() {},
     save(index) {
       this.formInput[index].edit = false;
+    },
+    SelectValue(index) {
+      var option = new Select(this.value);
+      this.options.push(option);
+      this.value = "";
+      this.formInput[index].edit = true;
     },
   },
 };
