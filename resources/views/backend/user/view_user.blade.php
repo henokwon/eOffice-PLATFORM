@@ -44,7 +44,7 @@
         <td style="color: #8998ae; background-color: #252c44;">{{ $user->email }}</td>
         <td>
 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info" style="margin: 12px">Edit</a>
-<a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger">Delete</a>
+<a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger" id="delete">Delete</a>
         </td>
 
       </tr>
