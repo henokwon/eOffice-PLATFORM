@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\ProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +27,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
-  
 
 // User Management All Routes
 
 Route::prefix('users')->group(function(){
-  
+
   Route::get('/view', [UserController::class, 'UserView'])->name('users.view');
 
   Route::get('/add', [UserController::class, 'UserAdd'])->name('users.add');  
@@ -42,10 +43,15 @@ Route::prefix('users')->group(function(){
 
   Route::get('/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');  
 
-
 });
 
+// User Profile and Change Passsword
+Route::prefix('profile')->group(function(){
+  
+  Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
 
+
+});
 
 
 
