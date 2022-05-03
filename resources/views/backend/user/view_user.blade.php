@@ -38,10 +38,10 @@
     <tbody>
       @foreach($allData as $key => $user)
       <tr>
-        <td>{{ $key+1 }}</td>
-        <td>{{ $user->usertype }}</td>
-        <td>{{ $user->name }}</td>
-        <td>{{ $user->email }}</td>
+        <td style="color: #8998ae; background-color: #252c44;">{{ $key+1 }}</td>
+        <td style="color: #8998ae; background-color: #252c44;">{{ $user->usertype }}</td>
+        <td style="color: #8998ae; background-color: #252c44;">{{ $user->name }}</td>
+        <td style="color: #8998ae; background-color: #252c44;">{{ $user->email }}</td>
         <td>
 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info" style="margin: 12px">Edit</a>
 <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger">Delete</a>
