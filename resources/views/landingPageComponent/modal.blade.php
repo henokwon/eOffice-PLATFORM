@@ -124,7 +124,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c748daa9aac7c8ad1932c30ccc159fda6a96997
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                 <form method="POST" action="{{ route('register') }}">
