@@ -103,7 +103,9 @@
                       bg-transparent
                       w-full py-2 px-3 text-gray-700 leading-tight
                       border-none
+                      border-b-2 border-gray-400
                       focus:outline-none
+                      focus:border-none
                     "
                     type="text"
                     placeholder="Title"
@@ -111,7 +113,7 @@
                   />
                 </div>
                 <div class="mb-4">
-                  <textarea name="" id="" placeholder="Form description" class="                      bg-transparent
+                  <textarea name="" id="" placeholder="Form description" class=" bg-transparent
                       w-full py-2 px-3 text-gray-700 leading-tight
                       border-none
                       focus:outline-none"></textarea>
@@ -296,6 +298,7 @@
                     <option>radio</option>
                     <option>select</option>
                     <option>number</option>
+                    <option>date</option>
                   </select>
                 </div>
               </div>
