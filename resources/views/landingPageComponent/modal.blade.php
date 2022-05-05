@@ -1,9 +1,4 @@
-<!-- Button trigger modal -->
 
-{{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-  </button> --}}
-<!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -128,7 +123,7 @@
                 <h5 class="modal-title" id="staticBackdropLabel">Register</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            {{-- <div class="modal-body">
+            <div class="modal-body">
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                 <form method="POST" action="{{ route('register') }}">
@@ -210,7 +205,7 @@
                   >Close</button>
             </div>
 
-            </div> --}}
+            </div>
             <div id="service">
                 <customer-form />
                 </div>

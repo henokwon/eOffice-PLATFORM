@@ -111,7 +111,7 @@ import router from './router/index.js'
 import CustomerFormComponent from './components/eService/CustomerFormComponent.vue'
 import LeaveForm from './components/eService/LeaveForm.vue'
 import TourForm from './components/eService/TourForm.vue'
-import Form from './components/generate/Form.vue'
+import Form from './components/forms/Generate.vue'
 
 // const app = createApp(App)
 // app.use(router)

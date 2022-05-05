@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TourForm extends Model
 {
     use HasFactory;
+    protected $fillable=[];
+    protected $travel_needed=[
+        'travel_needed' => 'array'
+
+    ];
 }

@@ -148,6 +148,7 @@
                     <option>radio</option>
                     <option>select</option>
                     <option>number</option>
+                     <option>date</option>
                   </select>
                 </div>
               </div>
