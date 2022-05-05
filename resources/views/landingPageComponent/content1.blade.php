@@ -6,10 +6,10 @@
                     <div class="col-lg-6 col-md-8" data-aos="fade-right" data-aos-duration="800" data-aos-once="true">
                         <div class="content-img position-relative">
                             <div class="image-1">
-                                <img src="image/l8/content-image-1.png" alt="">
+                                <img src="images/l8/content-image-1.png" alt="">
                             </div>
                             <div class="image-2">
-                                <img src="image/l8/content-image-2.png" alt="">
+                                <img src="images/l8/content-image-2.png" alt="">
                             </div>
                         </div>
                     </div>

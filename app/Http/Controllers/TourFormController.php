@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TourForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+// use Illuminate\Encryption\Encrypter;
 
 class TourFormController extends Controller
 {
@@ -23,7 +24,7 @@ class TourFormController extends Controller
         $data->return_date=$request->returnDate;
         $data->depature_city=$request->depatureCity;
         $data->arival_city=$request-> arivalCity;
-        $data->reason=$request-> reasonForTravel;
+        $data->reason=($request-> reasonForTravel);
         //$data->travel_needed=$request->travelNeeded;
 
 

@@ -66,7 +66,7 @@
             "
           >
             <h5 class="text-1xl font-semibold text-center">
-            Form title and description 
+              Form title and description
             </h5>
             <button v-on:click="toggleModal()">
               <span
@@ -93,31 +93,43 @@
             </button>
           </div>
           <!--body-->
-          <div class="relative p-4 flex-auto">
-            <form class="w-full max-w-sm">
+          <div class="relative flex-auto">
+            <form class="w-full max-w-lg">
               <div class="bg-white px-1 pt-1 pb-2 mb-2">
-                <div >
+                <div>
                   <input
-                    class="
-                      appearance-none
-                      bg-transparent
-                      w-full py-2 px-3 text-gray-700 leading-tight
-        
-                      border-none
-                      border-b-2 border-gray-400
-                   
-                      focus:border-none
-                    "
                     type="text"
                     placeholder="Form title"
                     aria-label="Form title"
+                    style="
+                      width: 100%;
+                      padding: 8px 20px;
+                      margin: 8px 0;
+                      box-sizing: border-box;
+                      border: none;
+                      border-bottom: 2px solid black;
+                      outline: none;
+                    "
                   />
                 </div>
                 <div class="mb-4">
-                  <textarea name="" id="" placeholder="Form description" class=" bg-transparent
-                      w-full py-2 px-3 text-gray-700 leading-tight
-                      underline
-                      focus:outline-none"></textarea>
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="Form description"
+                    rows="3"
+                    cols="33"
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      padding: 8px 20px;
+                      margin: 8px 0;
+                      box-sizing: border-box;
+                      border: none;
+                      border-bottom: 2px solid black;
+                      outline: none;
+                    "
+                  ></textarea>
                 </div>
               </div>
             </form>
@@ -161,7 +173,8 @@
             </button>
             <button
               class="
-                text-red-500
+                text-blue-500
+                bg-white hover:bg-gray-100 
                 background-transparent
                 font-bold
                 uppercase
@@ -179,7 +192,7 @@
               type="button"
               v-on:click="toggleModal()"
             >
-              Save Changes
+              Next
             </button>
           </div>
         </div>

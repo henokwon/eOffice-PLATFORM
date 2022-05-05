@@ -41585,7 +41585,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_7 = [_hoisted_6];
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative p-4 flex-auto\"><form class=\"w-full max-w-sm\"><div class=\"bg-white px-1 pt-1 pb-2 mb-2\"><div><input class=\"appearance-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight border-none border-b-2 border-gray-400 focus:border-none\" type=\"text\" placeholder=\"Form title\" aria-label=\"Form title\"></div><div class=\"mb-4\"><textarea name=\"\" id=\"\" placeholder=\"Form description\" class=\"bg-transparent w-full py-2 px-3 text-gray-700 leading-tight underline focus:outline-none\"></textarea></div></div></form></div>", 1);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative flex-auto\"><form class=\"w-full max-w-lg\"><div class=\"bg-white px-1 pt-1 pb-2 mb-2\"><div><input type=\"text\" placeholder=\"Form title\" aria-label=\"Form title\" style=\"width:100%;padding:8px 20px;margin:8px 0;box-sizing:border-box;border:none;border-bottom:2px solid black;outline:none;\"></div><div class=\"mb-4\"><textarea name=\"\" id=\"\" placeholder=\"Form description\" rows=\"3\" cols=\"33\" style=\"width:100%;height:100%;padding:8px 20px;margin:8px 0;box-sizing:border-box;border:none;border-bottom:2px solid black;outline:none;\"></textarea></div></div></form></div>", 1);
 
 var _hoisted_9 = {
   "class": "flex items-center justify-end p-2 border-t border-solid border-slate-200 rounded-b"
@@ -41759,12 +41759,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.toggleModal();
     })
   }, " Close "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "text-red-500 background-transparent font-bold uppercase px-4 py-1 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+    "class": "text-blue-500 bg-white hover:bg-gray-100 background-transparent font-bold uppercase px-4 py-1 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
     type: "button",
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return $options.toggleModal();
     })
-  }, " Save Changes ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  }, " Next ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "py-4 my-4 flex flex-col justify-center items-center bg-white shadow-md rounded",
     onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return _ctx.sendData && _ctx.sendData.apply(_ctx, arguments);

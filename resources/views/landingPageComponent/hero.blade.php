@@ -11,7 +11,7 @@
         </div>
         <div class="col-xl-8 col-lg-9 order-lg-1 order-0">
           <div class="hero-area-image">
-            <img src="image/l8/hero-img.png" alt="" class="w-100">
+            <img src="images/l8/hero-img.png" alt="" class="w-100">
           </div>
         </div>
       </div>

@@ -7,10 +7,10 @@
                 <a href="#">
                  
                     <!-- light version logo (logo must be black)-->
-                    <img src="images/logo/white.png" alt="" class="light-version-logo">
+                    {{-- <img src="images/logo/white.png" alt="" class="light-version-logo"> --}}
 
                     <!-- Dark version logo (logo must be White)-->
-                    <img src="images/logo/whie.png" alt="" class="dark-version-logo"> 
+                    {{-- <img src="images/logo/whie.png" alt="" class="dark-version-logo">  --}}
                     {{-- <div class="text-bg">
                         <h1>eOffice</h1>
                     </div> --}}

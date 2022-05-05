@@ -17,10 +17,10 @@
                         data-aos="fade-right" data-aos-duration="800" data-aos-once="true">
                         <div class="content-img position-relative">
                             <div class="image-1">
-                                <img src="image/l8/content-image-3.png" alt="">
+                                <img src="images/l8/content-image-3.png" alt="">
                             </div>
                             <div class="image-2">
-                                <img src="image/l8/content-image-4.png" alt="">
+                                <img src="images/l8/content-image-4.png" alt="">
                             </div>
                         </div>
                     </div>
