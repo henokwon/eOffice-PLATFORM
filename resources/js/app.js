@@ -112,6 +112,7 @@ import CustomerFormComponent from './components/eService/CustomerFormComponent.v
 import LeaveForm from './components/eService/LeaveForm.vue'
 import TourForm from './components/eService/TourForm.vue'
 import Form from './components/generate/Form.vue'
+import ModalVue from './components/generate/modalV.vue'
 
 // const app = createApp(App)
 // app.use(router)
@@ -123,6 +124,7 @@ app.component('fa', FontAwesomeIcon)
 app.component("leave-form", LeaveForm);
 app.component("tour-form", TourForm);
 app.component("generate-form", Form);
+app.component("modal-vue", ModalVue);
 app.use
 app.use(plugin, defaultConfig).mount('#app')
 

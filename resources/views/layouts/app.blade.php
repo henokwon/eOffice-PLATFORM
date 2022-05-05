@@ -32,6 +32,7 @@
             <!-- Sidebar -->
             <x-sidebar.sidebar />
             <!-- Page Wrapper -->
+            
             <div class="flex flex-col min-h-screen" :class="{ 
                     'lg:ml-64': isSidebarOpen,
                     'md:ml-16': !isSidebarOpen
@@ -47,6 +48,7 @@
                 </header>
                 <!-- Page Content -->
                 <div id="app">
+                  
                     <main class="px-4 sm:px-6 flex-1">
                         {{ $slot }}
                     </main>
