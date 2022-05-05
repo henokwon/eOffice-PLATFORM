@@ -1,41 +1,192 @@
 <template>
-<button type="button"
-  class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
-
-
-
-<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
-  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog relative w-auto pointer-events-none">
+  <div>
+    <button
+      class="
+        inline-block
+        px-6
+        py-2.5
+        bg-blue-600
+        text-white
+        font-medium
+        text-xs
+        leading-tight
+        uppercase
+        rounded
+        shadow-md
+        hover:bg-blue-700 hover:shadow-lg
+        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+        active:bg-blue-800 active:shadow-lg
+        transition
+        duration-150
+        ease-in-out
+      "
+      type="button"
+      v-on:click="toggleModal()"
+    >
+      Add title and description
+    </button>
     <div
-      class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-      <div
-        class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-        <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">
-          Modal title
-        </h5>
-        <button type="button"
-          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-          data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body relative p-4">
-        ...
-      </div>
-      <div
-        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-        <button type="button"
-          class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
-          data-bs-dismiss="modal">Close</button>
-        <button type="button"
-          class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">Understood</button>
+      v-if="showModal"
+      class="
+        overflow-x-hidden overflow-y-auto
+        fixed
+        inset-0
+        z-50
+        outline-none
+        focus:outline-none
+        justify-center
+        items-center
+        flex
+      "
+    >
+      <div class="relative w-auto my-6 mx-auto max-w-3xl">
+        <!--content-->
+        <div
+          class="
+            border-0
+            rounded-lg
+            shadow-lg
+            relative
+            flex flex-col
+            w-full
+            bg-white
+            outline-none
+            focus:outline-none
+          "
+        >
+          <!--header-->
+          <div
+            class="
+              flex
+              items-start
+              justify-between
+              p-3
+              border-b border-solid border-slate-200
+              rounded-t
+            "
+          >
+            <h5 class="text-1xl font-semibold text-center">
+            Form title and description 
+            </h5>
+            <button v-on:click="toggleModal()">
+              <span
+                class="
+                  text-red-500
+                  bg-transparent
+                  hover:bg-red-500 hover:text-white
+                  active:bg-red-600
+                  font-bold
+                  uppercase
+                  text-lg
+                  rounded
+                  outline-none
+                  focus:outline-none
+                  mr-1
+                  mb-1
+                  ease-linear
+                  transition-all
+                  duration-150
+                "
+              >
+                X
+              </span>
+            </button>
+          </div>
+          <!--body-->
+          <div class="relative p-4 flex-auto">
+            <form class="w-full max-w-sm">
+              <div class="bg-white px-1 pt-1 pb-2 mb-2">
+                <div >
+                  <input
+                    class="
+                      appearance-none
+                      bg-transparent
+                      w-full py-2 px-3 text-gray-700 leading-tight
+        
+                      border-none
+                      border-b-2 border-gray-400
+                   
+                      focus:border-none
+                    "
+                    type="text"
+                    placeholder="Form title"
+                    aria-label="Form title"
+                  />
+                </div>
+                <div class="mb-4">
+                  <textarea name="" id="" placeholder="Form description" class=" bg-transparent
+                      w-full py-2 px-3 text-gray-700 leading-tight
+                      underline
+                      focus:outline-none"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--footer-->
+          <div
+            class="
+              flex
+              items-center
+              justify-end
+              p-2
+              border-t border-solid border-slate-200
+              rounded-b
+            "
+          >
+            <button
+              class="
+                text-red-500
+                bg-transparent
+                border border-solid border-red-500
+                hover:bg-red-500 hover:text-white
+                active:bg-red-600
+                font-bold
+                uppercase
+                text-sm
+                px-4
+                py-1
+                rounded
+                outline-none
+                focus:outline-none
+                mr-1
+                mb-1
+                ease-linear
+                transition-all
+                duration-150
+              "
+              type="button"
+              v-on:click="toggleModal()"
+            >
+              Close
+            </button>
+            <button
+              class="
+                text-red-500
+                background-transparent
+                font-bold
+                uppercase
+                px-4
+                py-1
+                text-sm
+                outline-none
+                focus:outline-none
+                mr-1
+                mb-1
+                ease-linear
+                transition-all
+                duration-150
+              "
+              type="button"
+              v-on:click="toggleModal()"
+            >
+              Save Changes
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+    <div v-if="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
   </div>
-</div>
 
   <form
     class="
@@ -148,7 +299,11 @@
                     <option>radio</option>
                     <option>select</option>
                     <option>number</option>
+<<<<<<< HEAD:resources/js/components/forms/Generate.vue
                      <option>date</option>
+=======
+                    <option>date</option>
+>>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957:resources/js/components/generate/Form.vue
                   </select>
                 </div>
               </div>
@@ -365,10 +520,12 @@ class Select {
   }
 }
 
-
 export default {
+  name: "large-modal",
   data() {
     return {
+      showModal: false,
+      showModal2: false,
       value: "",
       formInput: [],
       options: [],
@@ -380,6 +537,12 @@ export default {
     };
   },
   methods: {
+    toggleModal: function () {
+      this.showModal = !this.showModal;
+    },
+    toggleModal2: function () {
+      this.showModal2 = !this.showModal2;
+    },
     add() {
       var ps = new Pr(this.type, this.inputType, this.label, this.edit);
       this.formInput.push(ps);
@@ -404,14 +567,14 @@ export default {
       this.formInput[index].edit = true;
     },
     previewForm() {
-      this.isPreview = this.isPreview;
+      this.isPreview = !this.isPreview;
     },
     postForm() {
       console.log("form content is saved to database");
     },
-    removeAll(){
-      this.formInput.length=0;
-    }
+    removeAll() {
+      this.formInput.length = 0;
+    },
   },
 };
 </script>
