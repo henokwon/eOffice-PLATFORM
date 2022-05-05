@@ -18,7 +18,7 @@ use App\Http\Controllers\Backend\ProfileController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
