@@ -65,9 +65,9 @@
               rounded-t
             "
           >
-            <h3 class="text-2xl font-semibold text-center">
-              Form title and description
-            </h3>
+            <h5 class="text-1xl font-semibold text-center">
+            Form title and description 
+            </h5>
             <button v-on:click="toggleModal()">
               <span
                 class="
@@ -102,20 +102,21 @@
                       appearance-none
                       bg-transparent
                       w-full py-2 px-3 text-gray-700 leading-tight
+        
                       border-none
                       border-b-2 border-gray-400
-                      focus:outline-none
+                   
                       focus:border-none
                     "
                     type="text"
-                    placeholder="Title"
+                    placeholder="Form title"
                     aria-label="Form title"
                   />
                 </div>
                 <div class="mb-4">
                   <textarea name="" id="" placeholder="Form description" class=" bg-transparent
                       w-full py-2 px-3 text-gray-700 leading-tight
-                      border-none
+                      underline
                       focus:outline-none"></textarea>
                 </div>
               </div>

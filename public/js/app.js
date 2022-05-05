@@ -41571,8 +41571,8 @@ var _hoisted_4 = {
   "class": "flex items-start justify-between p-3 border-b border-solid border-slate-200 rounded-t"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
-  "class": "text-2xl font-semibold text-center"
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "text-1xl font-semibold text-center"
 }, " Form title and description ", -1
 /* HOISTED */
 );
@@ -41585,7 +41585,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_7 = [_hoisted_6];
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative p-4 flex-auto\"><form class=\"w-full max-w-sm\"><div class=\"bg-white px-1 pt-1 pb-2 mb-2\"><div><input class=\"appearance-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight border-none border-b-2 border-gray-400 focus:outline-none focus:border-none\" type=\"text\" placeholder=\"Title\" aria-label=\"Form title\"></div><div class=\"mb-4\"><textarea name=\"\" id=\"\" placeholder=\"Form description\" class=\"bg-transparent w-full py-2 px-3 text-gray-700 leading-tight border-none focus:outline-none\"></textarea></div></div></form></div>", 1);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative p-4 flex-auto\"><form class=\"w-full max-w-sm\"><div class=\"bg-white px-1 pt-1 pb-2 mb-2\"><div><input class=\"appearance-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight border-none border-b-2 border-gray-400 focus:border-none\" type=\"text\" placeholder=\"Form title\" aria-label=\"Form title\"></div><div class=\"mb-4\"><textarea name=\"\" id=\"\" placeholder=\"Form description\" class=\"bg-transparent w-full py-2 px-3 text-gray-700 leading-tight underline focus:outline-none\"></textarea></div></div></form></div>", 1);
 
 var _hoisted_9 = {
   "class": "flex items-center justify-end p-2 border-t border-solid border-slate-200 rounded-b"
