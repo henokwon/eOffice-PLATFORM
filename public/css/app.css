@@ -1142,13 +1142,8 @@ select{
 .w-12{
   width: 3rem;
 }
-<<<<<<< HEAD
-.max-w-xs{
-  max-width: 20rem;
-=======
 .max-w-6xl{
   max-width: 72rem;
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957
 }
 .max-w-xl{
   max-width: 36rem;
@@ -1524,14 +1519,8 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-.bg-purple-600{
-  --tw-bg-opacity: 1;
-  background-color: rgba(124, 58, 237, var(--tw-bg-opacity));
-=======
 .bg-transparent{
   background-color: transparent;
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957
 }
 .bg-dark-eval-2{
   --tw-bg-opacity: 1;
@@ -1546,13 +1535,10 @@ select{
   background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
 }
 .bg-blue-500{
-<<<<<<< HEAD
-=======
   --tw-bg-opacity: 1;
   background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 .bg-purple-600{
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957
   --tw-bg-opacity: 1;
   background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
@@ -1720,12 +1706,9 @@ select{
 .pl-10{
   padding-left: 2.5rem;
 }
-<<<<<<< HEAD
-=======
 .pb-2{
   padding-bottom: 0.5rem;
 }
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957
 .text-left{
   text-align: left;
 }
@@ -2143,8 +2126,6 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-=======
 .hover\:bg-red-500:hover{
   --tw-bg-opacity: 1;
   background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
@@ -2153,18 +2134,10 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgba(30, 64, 175, var(--tw-bg-opacity));
 }
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957
 .hover\:bg-purple-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-.hover\:bg-blue-800:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgba(30, 64, 175, var(--tw-bg-opacity));
-}
-=======
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957
 .hover\:text-gray-500:hover{
   --tw-text-opacity: 1;
   color: rgba(107, 114, 128, var(--tw-text-opacity));
@@ -2503,12 +2476,6 @@ select{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgba(30, 64, 175, var(--tw-ring-opacity));
 }
-<<<<<<< HEAD
-.dark .dark\:focus\:ring-offset-dark-eval-2:focus{
-  --tw-ring-offset-color: #2A2F42;
-}
-=======
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957
 .dark .dark\:focus\:ring-offset-dark-eval-1:focus{
   --tw-ring-offset-color: #222738;
 }

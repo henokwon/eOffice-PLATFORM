@@ -299,11 +299,7 @@
                     <option>radio</option>
                     <option>select</option>
                     <option>number</option>
-<<<<<<< HEAD:resources/js/components/forms/Generate.vue
-                     <option>date</option>
-=======
                     <option>date</option>
->>>>>>> d720920ded8dca1a89d47e5650e888a98fb10957:resources/js/components/generate/Form.vue
                   </select>
                 </div>
               </div>
