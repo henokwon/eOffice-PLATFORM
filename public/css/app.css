@@ -1142,8 +1142,8 @@ select{
 .w-12{
   width: 3rem;
 }
-.max-w-6xl{
-  max-width: 72rem;
+.max-w-xs{
+  max-width: 20rem;
 }
 .max-w-xl{
   max-width: 36rem;
@@ -1540,7 +1540,7 @@ select{
 }
 .bg-purple-600{
   --tw-bg-opacity: 1;
-  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  background-color: rgba(124, 58, 237, var(--tw-bg-opacity));
 }
 .bg-opacity-75{
   --tw-bg-opacity: 0.75;
@@ -1747,10 +1747,6 @@ select{
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 .font-medium{
   font-weight: 500;
@@ -2475,6 +2471,9 @@ select{
 .dark .dark\:focus\:ring-blue-800:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgba(30, 64, 175, var(--tw-ring-opacity));
+}
+.dark .dark\:focus\:ring-offset-dark-eval-2:focus{
+  --tw-ring-offset-color: #2A2F42;
 }
 .dark .dark\:focus\:ring-offset-dark-eval-1:focus{
   --tw-ring-offset-color: #222738;
