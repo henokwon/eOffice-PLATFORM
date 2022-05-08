@@ -626,12 +626,12 @@ export default {
       this.isPreview = !this.isPreview;
     },
     postForm() {
-      this.formInput.push(this.form_header);
+      // this.formInput.push(this.form_header);
       console.log("form content is saved to database");
       console.log(this.formInput);
 
       axios
-        .post("/post/form/", { items: this.formInput })
+        .post("/post/form",  {items: this.formInput} )
         .then((response) => {
           // your server response
           console.log(response);

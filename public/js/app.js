@@ -40184,10 +40184,10 @@ var Select = /*#__PURE__*/_createClass(function Select(text) {
       this.isPreview = !this.isPreview;
     },
     postForm: function postForm() {
-      this.formInput.push(this.form_header);
+      // this.formInput.push(this.form_header);
       console.log("form content is saved to database");
       console.log(this.formInput);
-      axios.post("/post/form/", {
+      axios.post("/post/form", {
         items: this.formInput
       }).then(function (response) {
         // your server response

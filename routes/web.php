@@ -62,5 +62,6 @@ Route::get('/chart', [HighchartController::class, 'handleChart']);
 Route::get('/generate/form',[GenerateFormController::class,'index']);
 Route::get('/td',[FormController::class,'addForms']);
 Route::get('/input/{id}',[FormController::class,'addInputs']);
-Route::get('/post/form/{1}',[FormController::class,'addInputs']);
+// Route::get('/post/form/{1}',[FormController::class,'addInputs']);
 Route::get('/get/input/{id}',[FormController::class,'getInputsByForm']);
+Route::post('/post/form',[FormController::class,'addFormm']);

@@ -1,12 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Form;
 use App\Models\FormInput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Symfony\Component\Console\Input\Input;
+use SebastianBergmann\Environment\Console;
 
 class FormController extends Controller
 {
@@ -48,7 +47,7 @@ class FormController extends Controller
         $inputs->label = 'First Name';
         $inputs->type = 'text';
         $inputs->required = true;
-        // $inputs->save();
+
         $form->forms()->save($inputs);
         return 'form input submited to database';
     }
@@ -56,14 +55,53 @@ class FormController extends Controller
         // here the 'forms' is the method in Form class
         try{
             $inputs=Form::find($id)->forms;
-            // return $inputs;
+           
         }
         catch(ModelNotFoundException $exception){
-            // return 'No form';
+
             return back()->withError($exception->getMessage())->withInput();
         }
         return $inputs;
 
        
     }
+   public function addFormm( Request $request){
+    $forms = new Form();
+    $forms->title = 'fill form';
+    $forms->description = 'Fill the contact form';
+    $forms->save();
+    // return 'Nothhing';
+
+ 
+
+    $inputs = new FormInput();
+    $inputs->label = 'last Name';
+    $inputs->type = 'text';
+    $inputs->required = true;
+    $forms->forms()->save($inputs);
+    //  return  +'';
+    // dd($request);
+    
+    // Console::info('mymessage');
+    error_log(print_r($_REQUEST, true));
+    error_log($request);
+
+    foreach ($request as $item) {
+    //     error_log($item);
+    }
+      
+     
+      
+
+
+    foreach ($request as $key => $value) {
+        // echo "$key: $value"; // username: John;
+        // echo "current iteration: $loop->iteration"; // undefined
+        //  error_log($value);
+        
+    }
+    
+    
+     return $request;
+   }
 }
