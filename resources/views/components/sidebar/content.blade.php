@@ -19,6 +19,19 @@
             :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown>
 
+    <x-sidebar.link title="Messaging" href="{{ route('chat') }}" :isActive="request()->routeIs('chat')">
+        <x-slot name="icon">
+            <x-icons.message class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+    <x-sidebar.link title="Video Conference" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
+        <x-slot name="icon">
+            <x-icons.video class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+
     <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-gray-500">Departement</div>
 
     @php

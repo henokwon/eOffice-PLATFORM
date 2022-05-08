@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "V": "nodemon video-chat.js"
     },
     "devDependencies": {
         "@alpinejs/collapse": "^3.4.2",
@@ -24,8 +25,22 @@
         "tailwindcss": "^2.2.16"
     },
     "dependencies": {
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "express": "^4.18.1",
+        "helmet": "^5.0.2",
+        "https": "^1.0.0",
+        "jquery": "^3.6.0",
+        "jsdom": "^19.0.0",
+        "mongodb": "^4.5.0",
+        "mysql": "^2.18.1",
+        "nodemon": "^2.0.16",
+        "password-hash": "^1.2.2",
+        "public-ip": "^5.0.0",
+        "socket.io": "^4.5.0",
         "vue": "^3.2.22",
         "vue-loader": "^16.8.3",
-        "vue-router": "^4.0.12"
+        "vue-router": "^4.0.12",
+        "zlib": "^1.0.5"
     }
 }

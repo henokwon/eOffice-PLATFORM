@@ -20,15 +20,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-
-// })->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/dashboard', function () {
+  //  return view('dashboard');
+ //})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
+//Route::get('/Video-Conference', [VideoController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
 
-//Route::get('/chatify', [ChatController::class, 'handleChat'])->name('chatify')->middleware(['auth', 'verified']);
-// useless routes
+Route::get('/video-Conference', function () {
+   return view('video-Conference');
+})->middleware(['auth', 'verified'])->name('video-Conference');
+
+
 // Just to demo sidebar dropdown links active states.
 Route::get('/buttons/text', function () {
     return view('buttons-showcase.text');
