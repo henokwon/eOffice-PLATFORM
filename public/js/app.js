@@ -40187,9 +40187,7 @@ var Select = /*#__PURE__*/_createClass(function Select(text) {
       // this.formInput.push(this.form_header);
       console.log("form content is saved to database");
       console.log(this.formInput);
-      axios.post("/post/form", {
-        items: this.formInput
-      }).then(function (response) {
+      axios.post("/post/form", this.formInput).then(function (response) {
         // your server response
         console.log(response);
       })["catch"](function (error) {

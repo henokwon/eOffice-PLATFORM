@@ -28,6 +28,7 @@ class FormController extends Controller
   
     public function addForms(Request $request)
     {
+        
         $forms = new Form();
         // $inputs->label = $request->label;
         // $inputs->type = $request->type;
@@ -66,6 +67,21 @@ class FormController extends Controller
        
     }
    public function addFormm( Request $request){
+    error_log(print_r($_REQUEST, true));
+    // dd($request[0]);
+    // error_log($request[0]);
+// foreach($request as $input){
+   
+//     error_log($$input);
+
+// }
+
+// [{"type":"","inputType":"text","label":"No name","edit":false},{"type":"","inputType":"text","label":"No name","edit":false}]
+
+
+
+
+
     $forms = new Form();
     $forms->title = 'fill form';
     $forms->description = 'Fill the contact form';
@@ -79,27 +95,9 @@ class FormController extends Controller
     $inputs->type = 'text';
     $inputs->required = true;
     $forms->forms()->save($inputs);
-    //  return  +'';
-    // dd($request);
-    
-    // Console::info('mymessage');
-    error_log(print_r($_REQUEST, true));
-    error_log($request);
-
-    foreach ($request as $item) {
-    //     error_log($item);
-    }
-      
-     
-      
-
-
-    foreach ($request as $key => $value) {
-        // echo "$key: $value"; // username: John;
-        // echo "current iteration: $loop->iteration"; // undefined
-        //  error_log($value);
-        
-    }
+   
+    // error_log(print_r($_REQUEST, true));
+    // error_log($request);
     
     
      return $request;

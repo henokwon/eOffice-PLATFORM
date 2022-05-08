@@ -631,7 +631,7 @@ export default {
       console.log(this.formInput);
 
       axios
-        .post("/post/form",  {items: this.formInput} )
+        .post("/post/form",  this.formInput)
         .then((response) => {
           // your server response
           console.log(response);
