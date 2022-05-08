@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class GenerateForm extends Model
 {
-    use HasFactory;
+//    protected $fillable=[]
 }

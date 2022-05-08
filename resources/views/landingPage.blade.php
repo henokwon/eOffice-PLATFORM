@@ -10,15 +10,32 @@
   <!-- Bootstrap , fonts & icons  -->
   @include('landingPageComponent.style')
 
+  {{-- If you use the j query for managing modal --}}
+  
+  {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"> --}}
+  {{-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> --}}
+
+  {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>  --}}
+
 </head>
 
 <body data-theme-mode-panel-active data-theme="light" style="font-family: 'Mazzard H';">
   <div class="site-wrapper overflow-hidden position-relative">
     <!-- Site Header -->
     <!-- Preloader -->
-    {{-- <div id="loading" >
-      <div class="preloader" >
-     
+    {{-- <div id="loading">
+      <div class="preloader">
+
         <img src="./images/loading.gif" alt="preloader" width="380px;">
       </div>
     </div> --}}
@@ -126,12 +143,63 @@
         </div>
       </div>
     </div>
+
     <!--CTA Area-->
     @include('landingPageComponent.CTA')
     <!--Footer Area-->
     @include('landingPageComponent.footer')
+
+    {{-- Login and register button --}}
+
+    <div class="row">
+      <div class="col-md-12" align="center">
+        <div class="jumbotron">
+          <div>
+            <p class="home-text">Please login or register</p>
+            <button class="btn btn-success login_button1">Login</button>&nbsp;<button
+              class="btn btn-primary register_button">Register</button>
+          </div>
+          {{-- <div class="mt-5">
+            <form action="{{route('subscribe')}}" method="post">
+              @csrf
+              <div class="form-group">
+                <input type="email" name="subscriber_email" placeholder="Enter your email"
+                  class="form-control col-md-4 col-xs-12" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+                @if($errors->any('subscriber_email'))
+                <span class="text-danger">{{$errors->first('subscriber_email')}}</span>
+                @endif
+              </div>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div> --}}
+        </div>
+      </div>
+    </div>
+
+    {{-- login and register blade --}}
+    {{-- @include('modal.login')
+    @include('modal.register') --}}
   </div>
+
+
+  
+
+
+
+  {{-- <script type="text/javascript" src="{{asset('js/auth.js')}}" defer></script> --}}
+  {{-- @yield('scripts') --}}
   <!-- Vendor Scripts -->
+  {{-- <script type="text/javascript">
+    window.baseUrl="{{URL::to('/')}}";
+    @if(session('success'))
+    toastr.success('{{session("success")}}', 'Success', {timeOut: 5000});
+    @endif
+    @if(session('error'))
+    toastr.error('{{session("error")}}', 'Error', {timeOut: 5000});
+    @endif
+  </script> --}}
   <script src="jss/vendor.min.js"></script>
   <!-- Plugin's Scripts -->
   <script src="./pluginss/fancybox/jquery.fancybox.min.js"></script>

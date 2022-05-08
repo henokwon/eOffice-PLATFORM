@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGenerateFormsTable extends Migration
+class CreateFormInputsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateGenerateFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('generate_forms', function (Blueprint $table) {
+        Schema::create('form_inputs', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('description')->nullable();
-            
-            $table->id();
+            $table->bigInteger('form_id')->unsigned();
+            $table->string('label');
+            $table->string('type');
+            $table->boolean('required');
             $table->timestamps();
+            $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');
         });
     }
 
@@ -30,6 +31,6 @@ class CreateGenerateFormsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('generate_forms');
+        Schema::dropIfExists('form_inputs');
     }
 }

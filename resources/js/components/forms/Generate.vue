@@ -174,7 +174,8 @@
             <button
               class="
                 text-blue-500
-                bg-white hover:bg-gray-100 
+                bg-white
+                hover:bg-gray-100
                 background-transparent
                 font-bold
                 uppercase
@@ -214,10 +215,52 @@
     "
     @submit.prevent="sendData"
   >
-    <!-- <input type="radio" v-model="pick" :value="first" />
-    <input type="radio" v-model="pick" :value="second" /> -->
     <div class="flex justify-end">
       <button>Add Question</button>
+    </div>
+<div  class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10 col-span-3 content-center" >
+
+     <div class="relative flex-auto">
+      <form class="w-full max-w-lg">
+        <div class="bg-white px-1 pt-1 pb-2 mb-2">
+          <div>
+            <input
+              type="text"
+              placeholder="Form title"
+              aria-label="Form title"
+              style="
+                width: 100%;
+                padding: 8px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border: none;
+                border-bottom: 2px solid black;
+                outline: none;
+              "
+            />
+          </div>
+          <div class="mb-4">
+            <textarea
+              name=""
+              id=""
+              placeholder="Form description"
+              rows="3"
+              cols="33"
+              style="
+                width: 100%;
+                height: 100%;
+                padding: 8px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border: none;
+                border-bottom: 2px solid black;
+                outline: none;
+              "
+            ></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
     </div>
 
     <div v-if="formInput.length > 0">
@@ -227,7 +270,7 @@
           class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10"
         >
           <div v-if="input.inputType == 'textarea'">
-            <textarea :placeholder="input.type" :type="input.inputType" />
+            <textarea :placeholder="input.type" :type="input.inputType" class=" w-full" />
           </div>
           <div v-else-if="input.inputType == 'select'">
             <select>
@@ -376,6 +419,8 @@
         </div>
       </div>
     </div>
+
+  <div  class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10 col-span-3 content-center w-full" >
     <button
       type="submit"
       class="
@@ -402,6 +447,7 @@
     >
       Submit
     </button>
+  </div>
   </form>
   <div class="flex justify-between">
     <button
@@ -543,6 +589,7 @@ export default {
       label: "No name",
       edit: false,
       isPreview: false,
+      form_header:{form_title:'', form_description:''} 
     };
   },
   methods: {
@@ -579,7 +626,20 @@ export default {
       this.isPreview = !this.isPreview;
     },
     postForm() {
+      this.formInput.push(this.form_header);
       console.log("form content is saved to database");
+      console.log(this.formInput);
+
+      axios
+        .post("/post/form/", { items: this.formInput })
+        .then((response) => {
+          // your server response
+          console.log(response);
+        })
+        .catch((error) => {
+          // error callback
+          console.log();
+        });
     },
     removeAll() {
       this.formInput.length = 0;
