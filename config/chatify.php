@@ -7,7 +7,7 @@ return [
     | Messenger display name
     |-------------------------------------
     */
-    'name' => env('CHATIFY_NAME', 'eOffice Chat'),
+    'name' => env('CHATIFY_NAME', 'eOffice Messaging'),
 
     /*
     |-------------------------------------

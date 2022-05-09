@@ -176,7 +176,7 @@ function drawChartAll(type){
             'rgba(255,255,255,0.25)'
     },
     series: [ {
-        name: 'Number of Files',
+        name: 'Annual Report',
         type: 'spline',
         data: dataDynamic,
         tooltip: {
