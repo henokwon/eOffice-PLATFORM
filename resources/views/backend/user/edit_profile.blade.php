@@ -25,34 +25,7 @@
            <div class="row">
            <div class="col-12">	
 
-
-            
-<div class="row">
-  <div class="col-md-6">
-
-    <div class="form-group">
-      <h5>User Name <span class="text-danger">*</span></h5>
-      <div class="controls">
-        <input type="text" name="name" class="form-control" value="{{ $editData->name }}" required=""> </div>
-    
-    </div> 
-
-  </div> {{-- End Col Md-6 --}}
-
-  <div class="col-md-6">
- 
-  <div class="form-group">
-    <h5>User Email <span class="text-danger">*</span></h5>
-    <div class="controls">
-      <input type="email" name="email" class="form-control" value="{{ $editData->email }}" required=""> </div>
-  </div>
-  
-  </div>{{-- End Col Md-6 --}}
-  
-
-
-</div> {{-- End Row --}}
-
+         
 
 <div class="row">
   <div class="col-md-6">
@@ -77,6 +50,41 @@
   </div>{{-- End Col Md-6 --}}
   
 </div> {{-- End Row --}}
+
+
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="form-group">
+      <h5>User Name <span class="text-danger">*</span></h5>
+      <div class="controls">
+        <input type="text" name="name" class="form-control" value="{{ $editData->name }}" required=""> </div>
+    
+    </div> 
+
+  </div> {{-- End Col Md-6 --}}
+
+  <div class="col-md-6">
+ 
+  <div class="form-group">
+    <h5>User Email <span class="text-danger">*</span></h5>
+    <div class="controls">
+      <input type="email" name="email" class="form-control" value="{{ $editData->email }}" required=""> </div>
+  </div>
+  
+  </div>{{-- End Col Md-6 --}}
+  
+
+
+
+
+
+</div> {{-- End Row --}}
+
+
+
+
 
 
 
