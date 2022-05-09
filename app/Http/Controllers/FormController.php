@@ -9,7 +9,26 @@ use SebastianBergmann\Environment\Console;
 
 class FormController extends Controller
 {
-    //
+  
+ private  $form_idd;
+ public function __construct(){
+     
+ }
+ 
+    public function setForm(Request $request)
+    {
+        $forms = new Form();
+        $forms->title = $request->form_title;
+        $forms->description = $request->form_description;
+        $forms->save();
+        
+        $this->form_idd=$forms->id;
+        error_log(print_r($_REQUEST, true));
+        error_log($this->form_idd);
+        error_log('no no mp');
+
+
+    }
     public function view()
     {
         $data = Form::find(1);
@@ -66,40 +85,30 @@ class FormController extends Controller
 
        
     }
-   public function addFormm( Request $request){
-    error_log(print_r($_REQUEST, true));
-    // dd($request[0]);
-    // error_log($request[0]);
-// foreach($request as $input){
-   
-//     error_log($$input);
-
-// }
-
-// [{"type":"","inputType":"text","label":"No name","edit":false},{"type":"","inputType":"text","label":"No name","edit":false}]
 
 
 
-
-
-    $forms = new Form();
-    $forms->title = 'fill form';
-    $forms->description = 'Fill the contact form';
+public function addFormm( Request $request)  {
+ error_log(print_r($_REQUEST, true));
+ $forms = new Form();
+if($request->form_title){
+    $forms->title = $request->form_title;
+    $forms->description = $request->form_description;
     $forms->save();
-    // return 'Nothhing';
-
- 
-
+    
+    $this->form_idd=$forms->id;
+    error_log($this->form_idd);
+    error_log('"Form title is saved"');
+}
+error_log('$form_idd');
+   $l=$this->form_idd;
+   error_log($l);
+    $forms = Form::find($l);
     $inputs = new FormInput();
-    $inputs->label = 'last Name';
-    $inputs->type = 'text';
+    $inputs->label = $request->label;
+    $inputs->type =  $request->inputType;
     $inputs->required = true;
     $forms->forms()->save($inputs);
-   
-    // error_log(print_r($_REQUEST, true));
-    // error_log($request);
-    
-    
-     return $request;
+
    }
 }

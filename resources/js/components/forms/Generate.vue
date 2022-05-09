@@ -218,49 +218,60 @@
     <div class="flex justify-end">
       <button>Add Question</button>
     </div>
-<div  class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10 col-span-3 content-center" >
-
-     <div class="relative flex-auto">
-      <form class="w-full max-w-lg">
-        <div class="bg-white px-1 pt-1 pb-2 mb-2">
-          <div>
-            <input
-              type="text"
-              placeholder="Form title"
-              aria-label="Form title"
-              style="
-                width: 100%;
-                padding: 8px 20px;
-                margin: 8px 0;
-                box-sizing: border-box;
-                border: none;
-                border-bottom: 2px solid black;
-                outline: none;
-              "
-            />
+    <div
+      class="
+        grid
+        gap-2
+        grid-cols-2 grid-rows-1
+        py-2
+        px-6
+        mx-8
+        space-x-10
+        col-span-3
+        content-center
+      "
+    >
+      <div class="relative flex-auto">
+        <form class="w-full max-w-lg">
+          <div class="bg-white px-1 pt-1 pb-2 mb-2">
+            <div>
+              <input
+                type="text"
+                placeholder="Form title"
+                aria-label="Form title"
+                style="
+                  width: 100%;
+                  padding: 8px 20px;
+                  margin: 8px 0;
+                  box-sizing: border-box;
+                  border: none;
+                  border-bottom: 2px solid black;
+                  outline: none;
+                "
+              />
+            </div>
+            <div class="mb-4">
+              <textarea
+                name=""
+                id=""
+                placeholder="Form description"
+                rows="3"
+                cols="33"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  padding: 8px 20px;
+                  margin: 8px 0;
+                  box-sizing: border-box;
+                  border: none;
+                  border-bottom: 2px solid black;
+                  outline: none;
+                "
+              ></textarea>
+            </div>
           </div>
-          <div class="mb-4">
-            <textarea
-              name=""
-              id=""
-              placeholder="Form description"
-              rows="3"
-              cols="33"
-              style="
-                width: 100%;
-                height: 100%;
-                padding: 8px 20px;
-                margin: 8px 0;
-                box-sizing: border-box;
-                border: none;
-                border-bottom: 2px solid black;
-                outline: none;
-              "
-            ></textarea>
-          </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
     </div>
 
     <div v-if="formInput.length > 0">
@@ -270,7 +281,11 @@
           class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10"
         >
           <div v-if="input.inputType == 'textarea'">
-            <textarea :placeholder="input.type" :type="input.inputType" class=" w-full" />
+            <textarea
+              :placeholder="input.type"
+              :type="input.inputType"
+              class="w-full"
+            />
           </div>
           <div v-else-if="input.inputType == 'select'">
             <select>
@@ -420,34 +435,47 @@
       </div>
     </div>
 
-  <div  class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10 col-span-3 content-center w-full" >
-    <button
-      type="submit"
+    <div
       class="
-        w-full
+        grid
+        gap-2
+        grid-cols-2 grid-rows-1
+        py-2
         px-6
-        py-2.5
-        my-8
-        mx-6
-        bg-blue-600
-        text-white
-        font-medium
-        text-xs
-        leading-tight
-        uppercase
-        rounded
-        shadow-md
-        hover:bg-blue-700 hover:shadow-lg
-        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-        active:bg-blue-800 active:shadow-lg
-        transition
-        duration-150
-        ease-in-out
+        mx-8
+        space-x-10
+        col-span-3
+        content-center
+        w-full
       "
     >
-      Submit
-    </button>
-  </div>
+      <button
+        type="submit"
+        class="
+          w-full
+          px-6
+          py-2.5
+          my-8
+          mx-6
+          bg-blue-600
+          text-white
+          font-medium
+          text-xs
+          leading-tight
+          uppercase
+          rounded
+          shadow-md
+          hover:bg-blue-700 hover:shadow-lg
+          focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+          active:bg-blue-800 active:shadow-lg
+          transition
+          duration-150
+          ease-in-out
+        "
+      >
+        Submit
+      </button>
+    </div>
   </form>
   <div class="flex justify-between">
     <button
@@ -589,7 +617,7 @@ export default {
       label: "No name",
       edit: false,
       isPreview: false,
-      form_header:{form_title:'', form_description:''} 
+      form_header: { form_title: "No Title", form_description: "No Description" },
     };
   },
   methods: {
@@ -627,19 +655,32 @@ export default {
     },
     postForm() {
       // this.formInput.push(this.form_header);
-      console.log("form content is saved to database");
-      console.log(this.formInput);
 
       axios
-        .post("/post/form",  this.formInput)
+        .post("/post/form", this.form_header)
         .then((response) => {
-          // your server response
+      
           console.log(response);
         })
         .catch((error) => {
-          // error callback
-          console.log();
+     
+          console.log("Hi erorr");
         });
+
+      this.formInput.forEach((element) => {
+        axios
+          .post("/post/form", element)
+          .then((response) => {
+       
+            console.log(response);
+          })
+          .catch((error) => {
+       
+            console.log("Hi erorr");
+          });
+      });
+      console.log("form content is saved to database");
+
     },
     removeAll() {
       this.formInput.length = 0;

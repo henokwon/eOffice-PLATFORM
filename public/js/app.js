@@ -40146,8 +40146,8 @@ var Select = /*#__PURE__*/_createClass(function Select(text) {
       edit: false,
       isPreview: false,
       form_header: {
-        form_title: '',
-        form_description: ''
+        form_title: "No Title",
+        form_description: "No Description"
       }
     };
   },
@@ -40185,15 +40185,19 @@ var Select = /*#__PURE__*/_createClass(function Select(text) {
     },
     postForm: function postForm() {
       // this.formInput.push(this.form_header);
-      console.log("form content is saved to database");
-      console.log(this.formInput);
-      axios.post("/post/form", this.formInput).then(function (response) {
-        // your server response
+      axios.post("/post/form", this.form_header).then(function (response) {
         console.log(response);
       })["catch"](function (error) {
-        // error callback
-        console.log();
+        console.log("Hi erorr");
       });
+      this.formInput.forEach(function (element) {
+        axios.post("/post/form", element).then(function (response) {
+          console.log(response);
+        })["catch"](function (error) {
+          console.log("Hi erorr");
+        });
+      });
+      console.log("form content is saved to database");
     },
     removeAll: function removeAll() {
       this.formInput.length = 0;
