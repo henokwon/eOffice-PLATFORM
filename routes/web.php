@@ -66,4 +66,9 @@ Route::get('/input/{id}',[FormController::class,'addInputs']);
 Route::get('/get/input/{id}',[FormController::class,'getInputsByForm']);
 Route::post('/post/form',[FormController::class,'addFormm']);
 Route::post('/post/formT',[FormController::class,'setForm']);
+Route::get('/get/forms',[FormController::class,'view']);
+Route::get('/gf',function(){
+    return view('form.view');
+});
+
 

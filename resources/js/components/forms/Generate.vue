@@ -98,6 +98,7 @@
               <div class="bg-white px-1 pt-1 pb-2 mb-2">
                 <div>
                   <input
+                  v-model=" form_header.form_title"
                     type="text"
                     placeholder="Form title"
                     aria-label="Form title"
@@ -114,6 +115,7 @@
                 </div>
                 <div class="mb-4">
                   <textarea
+                 
                     name=""
                     id=""
                     placeholder="Form description"
@@ -236,6 +238,7 @@
           <div class="bg-white px-1 pt-1 pb-2 mb-2">
             <div>
               <input
+               v-model=" form_header.form_title"
                 type="text"
                 placeholder="Form title"
                 aria-label="Form title"
@@ -252,6 +255,7 @@
             </div>
             <div class="mb-4">
               <textarea
+              v-model="form_header.form_description"
                 name=""
                 id=""
                 placeholder="Form description"
@@ -273,7 +277,6 @@
         </form>
       </div>
     </div>
-
     <div v-if="formInput.length > 0">
       <div class="form-group" v-for="(input, index) in formInput" :key="index">
         <label for="">{{ input.label }}</label>
@@ -617,7 +620,10 @@ export default {
       label: "No name",
       edit: false,
       isPreview: false,
-      form_header: { form_title: "No Title", form_description: "No Description" },
+      form_header: {
+        form_title: "No Title",
+        form_description: "No Description",
+      },
     };
   },
   methods: {
@@ -654,16 +660,13 @@ export default {
       this.isPreview = !this.isPreview;
     },
     postForm() {
-      // this.formInput.push(this.form_header);
-
+      console.log(this.form_header.form_description+"hiiiii")
       axios
-        .post("/post/form", this.form_header)
+        .post("/post/formT", this.form_header)
         .then((response) => {
-      
           console.log(response);
         })
         .catch((error) => {
-     
           console.log("Hi erorr");
         });
 
@@ -671,16 +674,13 @@ export default {
         axios
           .post("/post/form", element)
           .then((response) => {
-       
             console.log(response);
           })
           .catch((error) => {
-       
             console.log("Hi erorr");
           });
       });
       console.log("form content is saved to database");
-
     },
     removeAll() {
       this.formInput.length = 0;
