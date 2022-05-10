@@ -40243,32 +40243,35 @@ __webpack_require__.r(__webpack_exports__);
     getForm: function getForm() {
       var _this = this;
 
+      //get the form title and description
       axios__WEBPACK_IMPORTED_MODULE_3___default().get("/get/forms").then(function (response) {
         if (response.status == 200) {
-          console.log("Ok, Fine");
-          console.log(response);
+          console.log(response.data);
         }
 
-        _this.data = response.data; // console.log(this.data);
+        _this.data = response.data;
 
         _this.data.forEach(function (element) {
-          console.log(element.id);
-          axios__WEBPACK_IMPORTED_MODULE_3___default().get('/get/input/' + element.id).then(function (response) {
-            console.log("Ok, Fine");
-            console.log(response);
-          }); // console.log('element.title')
+          axios__WEBPACK_IMPORTED_MODULE_3___default().get("/get/input/" + element.id).then(function (response) {
+            console.log("for id" + element.id);
+            var inputs = response.data;
 
-          var data = response.data;
-          console.log(data);
+            _this.formHeader.push(response);
 
-          _this.formHeader.push(data);
+            console.log(_this.formHeader);
+            console.log(inputs); // this.formHeader.push(response.data)
+
+            response.data.forEach(function (elements) {
+              _this.formHeader.push(response.data);
+            });
+          });
         });
       });
     },
     storeForm: function storeForm() {
-      console.log(this.formHeader + '   hello');
+      console.log(this.formHeader);
       this.formHeader.forEach(function (element) {
-        console.log(element.label + '   hello');
+        console.log(element.label + "   hello");
       });
     }
   },
