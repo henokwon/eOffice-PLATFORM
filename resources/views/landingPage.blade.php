@@ -30,6 +30,12 @@
     <!--Feature Area -->
     @include('landingPageComponent.feature')
 
+
+    <div>
+      <p class="home-text">Please login or  register</p>
+      <button class="btn btn-success login_button" >Login</button>&nbsp;<button class="btn btn-primary register_button" >Register</button>
+    </div>
+
     <!--Content Area 1-->
     @include('landingPageComponent.content1')
 
@@ -139,6 +145,7 @@
   <script src="./pluginss/menu/menu.js"></script>
   <!-- Activation Script -->
   <script src="jss/custom.js"></script>
+  <script type="text/javascript" src="{{ asset('js/auth.js') }}"></script>
 </body>
 
 </html>
