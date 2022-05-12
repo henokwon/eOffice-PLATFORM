@@ -112,6 +112,8 @@ import CustomerFormComponent from './components/eService/CustomerFormComponent.v
 import LeaveForm from './components/eService/LeaveForm.vue'
 import TourForm from './components/eService/TourForm.vue'
 import Form from './components/forms/Generate.vue'
+import View from './components/forms/View.vue'
+
 
 
 // const app = createApp(App)
@@ -124,6 +126,7 @@ app.component('fa', FontAwesomeIcon)
 app.component("leave-form", LeaveForm);
 app.component("tour-form", TourForm);
 app.component("generate-form", Form);
+app.component("view-form", View);
 app.use
 app.use(plugin, defaultConfig).mount('#app')
 

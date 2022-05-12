@@ -5,12 +5,12 @@
             <!-- Brand Logo-->
             <div class="brand-logo">
                 <a href="#">
-                 
+
                     <!-- light version logo (logo must be black)-->
-                    <img src="images/logo/white.png" alt="" class="light-version-logo">
+                    {{-- <img src="images/logo/white.png" alt="" class="light-version-logo"> --}}
 
                     <!-- Dark version logo (logo must be White)-->
-                    <img src="images/logo/whie.png" alt="" class="dark-version-logo"> 
+                    {{-- <img src="images/logo/whie.png" alt="" class="dark-version-logo"> --}}
                     {{-- <div class="text-bg">
                         <h1>eOffice</h1>
                     </div> --}}
@@ -53,6 +53,13 @@
                                 <li class="sub-menu--item">
                                     <a href="#">Another Link</a>
                                 </li>
+                                {{-- <li class="sub-menu--item">
+                                    <a class="nav-link" style="cursor: pointer"  data-bs-toggle="modal"
+                                        data-bs-target="#loginModal">{{ __('Login') }}</a>
+                                </li> --}}
+                                <li>
+
+                                </li>
                             </ul>
                         </li>
 
@@ -60,7 +67,7 @@
                             <a href="#" class="nav-link-item">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://uxtheme.net/product-support/" class="nav-link-item">Support</a>
+                            <a href="#" class="nav-link-item">Support</a>
                         </li>
                         <li class="nav-item nav-item-has-children">
                             <a href="#" class="nav-link-item drop-trigger">More <i class="fas fa-angle-down"></i>
@@ -86,7 +93,7 @@
                 <a href="{{ url('/dashboard') }}"
                     class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                 @else
-                <a href="{{ route('login') }}" class="btn sign-in-btn focus-reset">Log in</a>
+                <a href="{{ route('login') }}" class="btn sign-in-btn focus-reset" >Log in</a>
 
                 @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="start-trail-btn btn focus-reset">Register</a>

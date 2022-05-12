@@ -66,7 +66,7 @@
             "
           >
             <h5 class="text-1xl font-semibold text-center">
-            Form title and description 
+              Form title and description
             </h5>
             <button v-on:click="toggleModal()">
               <span
@@ -93,31 +93,45 @@
             </button>
           </div>
           <!--body-->
-          <div class="relative p-4 flex-auto">
-            <form class="w-full max-w-sm">
+          <div class="relative flex-auto">
+            <form class="w-full max-w-lg">
               <div class="bg-white px-1 pt-1 pb-2 mb-2">
-                <div >
+                <div>
                   <input
-                    class="
-                      appearance-none
-                      bg-transparent
-                      w-full py-2 px-3 text-gray-700 leading-tight
-        
-                      border-none
-                      border-b-2 border-gray-400
-                   
-                      focus:border-none
-                    "
+                  v-model=" form_header.form_title"
                     type="text"
                     placeholder="Form title"
                     aria-label="Form title"
+                    style="
+                      width: 100%;
+                      padding: 8px 20px;
+                      margin: 8px 0;
+                      box-sizing: border-box;
+                      border: none;
+                      border-bottom: 2px solid black;
+                      outline: none;
+                    "
                   />
                 </div>
                 <div class="mb-4">
-                  <textarea name="" id="" placeholder="Form description" class=" bg-transparent
-                      w-full py-2 px-3 text-gray-700 leading-tight
-                      underline
-                      focus:outline-none"></textarea>
+                  <textarea
+                 
+                    name=""
+                    id=""
+                    placeholder="Form description"
+                    rows="3"
+                    cols="33"
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      padding: 8px 20px;
+                      margin: 8px 0;
+                      box-sizing: border-box;
+                      border: none;
+                      border-bottom: 2px solid black;
+                      outline: none;
+                    "
+                  ></textarea>
                 </div>
               </div>
             </form>
@@ -161,7 +175,9 @@
             </button>
             <button
               class="
-                text-red-500
+                text-blue-500
+                bg-white
+                hover:bg-gray-100
                 background-transparent
                 font-bold
                 uppercase
@@ -179,7 +195,7 @@
               type="button"
               v-on:click="toggleModal()"
             >
-              Save Changes
+              Next
             </button>
           </div>
         </div>
@@ -201,12 +217,66 @@
     "
     @submit.prevent="sendData"
   >
-    <!-- <input type="radio" v-model="pick" :value="first" />
-    <input type="radio" v-model="pick" :value="second" /> -->
     <div class="flex justify-end">
       <button>Add Question</button>
     </div>
-
+    <div
+      class="
+        grid
+        gap-2
+        grid-cols-2 grid-rows-1
+        py-2
+        px-6
+        mx-8
+        space-x-10
+        col-span-3
+        content-center
+      "
+    >
+      <div class="relative flex-auto">
+        <form class="w-full max-w-lg">
+          <div class="bg-white px-1 pt-1 pb-2 mb-2">
+            <div>
+              <input
+               v-model=" form_header.form_title"
+                type="text"
+                placeholder="Form title"
+                aria-label="Form title"
+                style="
+                  width: 100%;
+                  padding: 8px 20px;
+                  margin: 8px 0;
+                  box-sizing: border-box;
+                  border: none;
+                  border-bottom: 2px solid black;
+                  outline: none;
+                "
+              />
+            </div>
+            <div class="mb-4">
+              <textarea
+              v-model="form_header.form_description"
+                name=""
+                id=""
+                placeholder="Form description"
+                rows="3"
+                cols="33"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  padding: 8px 20px;
+                  margin: 8px 0;
+                  box-sizing: border-box;
+                  border: none;
+                  border-bottom: 2px solid black;
+                  outline: none;
+                "
+              ></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <div v-if="formInput.length > 0">
       <div class="form-group" v-for="(input, index) in formInput" :key="index">
         <label for="">{{ input.label }}</label>
@@ -214,7 +284,11 @@
           class="grid gap-2 grid-cols-2 grid-rows-1 py-2 px-6 mx-8 space-x-10"
         >
           <div v-if="input.inputType == 'textarea'">
-            <textarea :placeholder="input.type" :type="input.inputType" />
+            <textarea
+              :placeholder="input.type"
+              :type="input.inputType"
+              class="w-full"
+            />
           </div>
           <div v-else-if="input.inputType == 'select'">
             <select>
@@ -363,32 +437,48 @@
         </div>
       </div>
     </div>
-    <button
-      type="submit"
+
+    <div
       class="
-        w-full
+        grid
+        gap-2
+        grid-cols-2 grid-rows-1
+        py-2
         px-6
-        py-2.5
-        my-8
-        mx-6
-        bg-blue-600
-        text-white
-        font-medium
-        text-xs
-        leading-tight
-        uppercase
-        rounded
-        shadow-md
-        hover:bg-blue-700 hover:shadow-lg
-        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-        active:bg-blue-800 active:shadow-lg
-        transition
-        duration-150
-        ease-in-out
+        mx-8
+        space-x-10
+        col-span-3
+        content-center
+        w-full
       "
     >
-      Submit
-    </button>
+      <button
+        type="submit"
+        class="
+          w-full
+          px-6
+          py-2.5
+          my-8
+          mx-6
+          bg-blue-600
+          text-white
+          font-medium
+          text-xs
+          leading-tight
+          uppercase
+          rounded
+          shadow-md
+          hover:bg-blue-700 hover:shadow-lg
+          focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+          active:bg-blue-800 active:shadow-lg
+          transition
+          duration-150
+          ease-in-out
+        "
+      >
+        Submit
+      </button>
+    </div>
   </form>
   <div class="flex justify-between">
     <button
@@ -530,6 +620,10 @@ export default {
       label: "No name",
       edit: false,
       isPreview: false,
+      form_header: {
+        form_title: "No Title",
+        form_description: "No Description",
+      },
     };
   },
   methods: {
@@ -566,6 +660,26 @@ export default {
       this.isPreview = !this.isPreview;
     },
     postForm() {
+      console.log(this.form_header.form_description+"hiiiii")
+      axios
+        .post("/post/formT", this.form_header)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log("Hi erorr");
+        });
+
+      this.formInput.forEach((element) => {
+        axios
+          .post("/post/form", element)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log("Hi erorr");
+          });
+      });
       console.log("form content is saved to database");
     },
     removeAll() {

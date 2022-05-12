@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CustomerFormController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\GenerateFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
@@ -59,3 +60,15 @@ Route::get('/chart', [HighchartController::class, 'handleChart']);
 
 //  generate form route
 Route::get('/generate/form',[GenerateFormController::class,'index']);
+Route::get('/td',[FormController::class,'addForms']);
+Route::get('/input/{id}',[FormController::class,'addInputs']);
+// Route::get('/post/form/{1}',[FormController::class,'addInputs']);
+Route::get('/get/input/{id}',[FormController::class,'getInputsByForm']);
+Route::post('/post/form',[FormController::class,'addFormm']);
+Route::post('/post/formT',[FormController::class,'setForm']);
+Route::get('/get/forms',[FormController::class,'view']);
+Route::get('/gf',function(){
+    return view('form.view');
+});
+
+

@@ -223,6 +223,7 @@ sendData(){
   mounted(){
 this.getLeave_form()
 console.log('Mounted');
+
   },
 };
 </script>

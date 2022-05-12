@@ -239,7 +239,6 @@ aria-hidden="true">
                     @endif
                     <div><button type="submit" class="btn btn-primary mt-2">Submit</button>&nbsp; Don't have an
                         account <a class="register_button" href="javascript:void(0)">sign up</a> here</div>
-
                     <div> <a href="{{ route('password.request') }}">Forget Password</a></div>
 
                 </form>

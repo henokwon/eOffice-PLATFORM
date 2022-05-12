@@ -28,6 +28,7 @@ class CreateTourFormsTable extends Migration
             $table->string('depature_city');
             $table->string('arival_city');
             $table->text('reason');
+            // $table->json('travel_needed')->nullable();
             $table->json('travel_needed')->nullable();
             $table->timestamps();
           

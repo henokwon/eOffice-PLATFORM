@@ -1,4 +1,7 @@
-$('.login_button').on('click',function(){
+
+
+$('.login_button1').on('click',function(){
+
 
     $('#registerModal').modal('hide');
     $('#loginModal').modal('show');
@@ -11,107 +14,108 @@ $('.register_button').on('click',function(){
 });
 
 
-function recaptchaDataCallbackRegister(response){
-  $('#hiddenRecaptchaRegister').val(response);
-  $('#hiddenRecaptchaRegisterError').html('');
-}
+// function recaptchaDataCallbackRegister(response){
+//   $('#hiddenRecaptchaRegister').val(response);
+//   $('#hiddenRecaptchaRegisterError').html('');
+// }
 
-function recaptchaExpireCallbackRegister(){
- $('#hiddenRecaptchaRegister').val('');
-}
+// function recaptchaExpireCallbackRegister(){
+//  $('#hiddenRecaptchaRegister').val('');
+// }
 
 
-function recaptchaDataCallbackLogin(response){
-  $('#hiddenRecaptchaLogin').val(response);
-  $('#hiddenRecaptchaLoginError').html('');
-}
+// function recaptchaDataCallbackLogin(response){
+//   $('#hiddenRecaptchaLogin').val(response);
+//   $('#hiddenRecaptchaLoginError').html('');
+// }
 
-function recaptchaExpireCallbackLogin(){
- $('#hiddenRecaptchaLogin').val('');
-}
+// function recaptchaExpireCallbackLogin(){
+//  $('#hiddenRecaptchaLogin').val('');
+// }
 
-$('#regitration_form').validate({
-    ignore:'.ignore',
-    errorClass:'invalid',
-    validClass:'success',
-    rules:{
-     first_name:{
-     	required:true,
-     	minlength:2,
-     	maxlength:100
-     },
-     last_name:{
-     	required:true,
-     	minlength:2,
-     	maxlength:100
-     },
-     email:{
-     	required:true,
-     	email:true,
-        remote: {
-            // url: baseUrl+"/auth/check_email_unique",
-            type: "post",
-            data: {
-              email: function() {
-                return $( "#email" ).val();
-              },
-              '_token':$('meta[name="csrf-token"]').attr('content')
-            }
-        }
+
+// $('#regitration_form').validate({
+//     ignore:'.ignore',
+//     errorClass:'invalid',
+//     validClass:'success',
+//     rules:{
+//      first_name:{
+//      	required:true,
+//      	minlength:2,
+//      	maxlength:100
+//      },
+//      last_name:{
+//      	required:true,
+//      	minlength:2,
+//      	maxlength:100
+//      },
+//      email:{
+//      	required:true,
+//      	email:true,
+//         remote: {
+//             url: baseUrl+"/auth/check_email_unique",
+//             type: "post",
+//             data: {
+//               email: function() {
+//                 return $( "#email" ).val();
+//               },
+//               '_token':$('meta[name="csrf-token"]').attr('content')
+//             }
+//         }
         
-     },
-     password:{
-     	required:true,
-     	minlength:6,
-     	maxlength:100
-     },
-     confirm_password:{
-     	required:true,
-     	equalTo:'#password'
-     },
-     terms:"required",
-     grecaptcha:"required"
+//      },
+//      password:{
+//      	required:true,
+//      	minlength:6,
+//      	maxlength:100
+//      },
+//      confirm_password:{
+//      	required:true,
+//      	equalTo:'#password'
+//      },
+//      terms:"required",
+//      grecaptcha:"required"
 
-    },
-	 messages: {
-	    first_name: {
-	  		required:"Please enter first name"
-	    },
-	    last_name: {
-	  		required:"Please enter last name"
-	    },
-	    email: {
-	      required: "We need your email address to contact you",
-	      email: "Your email address must be in the format of name@domain.com",
-	      remote:"Email already in use. Try with different email"
-	    },
-	    password:{
-	    	required:"Enter your password"
-	    },
-	    confirm_password:{
-	    	required:"Need to confirm your password"
-	    },
-	    terms:"Please accept our terms and conditions",
-	    grecaptcha:"Captcha field is required"
-	 },
-	 errorPlacement:function(error,element){
-        if(element.attr('name')=='terms'){
-        	error.appendTo($('#terms_error'));
-        }
-        else if(element.attr('name')=='grecaptcha'){
-            error.appendTo($('#hiddenRecaptchaRegisterError'));
-        }
-        else{
-        	error.insertAfter(element);
-        }
-	 },
-     submitHandler:function(form){
+//     },
+// 	 messages: {
+// 	    first_name: {
+// 	  		required:"Please enter first name"
+// 	    },
+// 	    last_name: {
+// 	  		required:"Please enter last name"
+// 	    },
+// 	    email: {
+// 	      required: "We need your email address to contact you",
+// 	      email: "Your email address must be in the format of name@domain.com",
+// 	      remote:"Email already in use. Try with different email"
+// 	    },
+// 	    password:{
+// 	    	required:"Enter your password"
+// 	    },
+// 	    confirm_password:{
+// 	    	required:"Need to confirm your password"
+// 	    },
+// 	    terms:"Please accept our terms and conditions",
+// 	    grecaptcha:"Captcha field is required"
+// 	 },
+// 	 errorPlacement:function(error,element){
+//         if(element.attr('name')=='terms'){
+//         	error.appendTo($('#terms_error'));
+//         }
+//         else if(element.attr('name')=='grecaptcha'){
+//             error.appendTo($('#hiddenRecaptchaRegisterError'));
+//         }
+//         else{
+//         	error.insertAfter(element);
+//         }
+// 	 },
+//      submitHandler:function(form){
         
-        $.LoadingOverlay("show");
-        form.submit();
-     }
+//         $.LoadingOverlay("show");
+//         form.submit();
+//      }
 
-});
+// });
 
 var register_validator=$('#modal_regitration_form').validate({
     ignore:'.ignore',

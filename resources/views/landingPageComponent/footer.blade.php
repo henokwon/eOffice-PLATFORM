@@ -1,6 +1,6 @@
 <footer class="footer-area-l-17 position-relative">
     <div class="footer-shape">
-      <img src="image/l8/footer-shape.svg" alt="">
+      <img src="images/l8/footer-shape.svg" alt="">
     </div>
     <div class="container pt-lg-23 pt-15 pb-12">
       <div class="row footer-area-l-17-items justify-content-between" data-aos="fade-left" data-aos-duration="800" data-aos-once="true">
