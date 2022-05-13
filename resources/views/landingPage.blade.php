@@ -48,10 +48,10 @@
     @include('landingPageComponent.feature')
 
 
-    <div>
+    {{-- <div>
       <p class="home-text">Please login or  register</p>
       <button class="btn btn-success login_button" >Login</button>&nbsp;<button class="btn btn-primary register_button" >Register</button>
-    </div>
+    </div> --}}
 
     <!--Content Area 1-->
     @include('landingPageComponent.content1')

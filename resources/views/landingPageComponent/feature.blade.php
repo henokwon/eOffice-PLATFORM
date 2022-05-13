@@ -10,6 +10,8 @@
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto libero cumque asperiores
                         dolore officia nobis veniam nam quas modi eaque eum, non voluptates laborum similique doloribus
                         assumenda, excepturi ipsam veritatis.</p>
+                        <button
+                        class="btn btn-primary register_button">Apply now</button>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-9">
@@ -21,6 +23,8 @@
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa rem odit et numquam iure nostrum
                         cum, reiciendis porro debitis, temporibus cumque necessitatibus libero excepturi praesentium
                         sint, suscipit iusto officia quis?</p>
+                        <button
+                        class="btn btn-primary register_button">Apply now</button>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-9">
@@ -32,6 +36,8 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum fugiat vero quasi id eaque
                         exercitationem culpa ad architecto animi sequi inventore impedit mollitia enim placeat nam
                         reprehenderit perspiciatis, temporibus fugit?</p>
+                        <button
+                        class="btn btn-primary register_button">Apply now</button>
                 </div>
             </div>
         </div>
