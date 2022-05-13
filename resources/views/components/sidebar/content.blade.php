@@ -32,14 +32,26 @@
     </x-sidebar.link>
 
 
-    <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-gray-500">Departement</div>
-
-    @php
-        $links = array_fill(0, 5, '');
-    @endphp
-
-    @foreach ($links as $index => $link)
-        <x-sidebar.link title="Dummy link {{ $index + 1 }}" href="#" />
-    @endforeach
-       
+    <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-gray-500">Services</div>
+    <x-sidebar.link title="Knowledge Management" href="{{ route('chat') }}" :isActive="request()->routeIs('chat')">
+        <x-slot name="icon">
+            <x-icons.video class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+     <x-sidebar.link title="eLeave" href="{{ route('chat') }}" :isActive="request()->routeIs('chat')">
+        <x-slot name="icon">
+            <x-icons.video class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+     <x-sidebar.link title="eTour" href="{{ route('chat') }}" :isActive="request()->routeIs('chat')">
+        <x-slot name="icon">
+            <x-icons.video class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+     <x-sidebar.link title="Employee Services" href="{{ route('chat') }}" :isActive="request()->routeIs('chat')">
+        <x-slot name="icon">
+            <x-icons.video class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+   
 </x-perfect-scrollbar>
