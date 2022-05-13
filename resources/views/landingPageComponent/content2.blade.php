@@ -10,17 +10,17 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius amet tempora soluta,
                                 architecto facere quibusdam odit numquam rem sint suscipit neque aliquid at explicabo
                                 molestias adipisci minima voluptatibus blanditiis officia.</p>
-                            <a href="#" class="btn focus-reset">Start free 14 days trial</a>
+                            <a href="#" class="btn focus-reset">Start today</a>
                         </div>
                     </div>
                     <div class="offset-xxl-1 col-xxl-6 col-xl-6 col-lg-6 col-md-8 order-lg-1 order-0"
                         data-aos="fade-right" data-aos-duration="800" data-aos-once="true">
                         <div class="content-img position-relative">
                             <div class="image-1">
-                                <img src="images/l8/content-image-3.png" alt="">
+                                {{-- <img src="images/l8/content-image-3.png" alt=""> --}}
                             </div>
                             <div class="image-2">
-                                <img src="images/l8/content-image-4.png" alt="">
+                                {{-- <img src="images/l8/content-image-4.png" alt=""> --}}
                             </div>
                         </div>
                     </div>

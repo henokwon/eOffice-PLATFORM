@@ -31,10 +31,13 @@
                         <li class="nav-item">
                             <a href="/" class="nav-link-item">Home</a>
                         </li>
-                        <li class="nav-item nav-item-has-children">
+                        <li class="nav-item">
+                            <a href="{{ route('services') }}" class="nav-link-item">Services</a>
+                        </li>
+                        {{-- <li class="nav-item nav-item-has-children">
                             <a href="#" class="nav-link-item drop-trigger">Pages <i class="fas fa-angle-down"></i>
-                            </a>
-                            <ul class="sub-menu" id="submenu-9">
+                            </a> --}}
+                            {{-- <ul class="sub-menu" id="submenu-9">
                                 <li class="sub-menu--item">
                                     <a href="#">Contact us</a>
                                 </li>
@@ -60,11 +63,11 @@
                                 <li>
 
                                 </li>
-                            </ul>
-                        </li>
+                            {{-- </ul> --}}
+                        {{-- </li> --}}
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link-item">Blog</a>
+                            <a href="{{ route('posts') }}" class="nav-link-item">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link-item">Support</a>
@@ -73,6 +76,12 @@
                             <a href="#" class="nav-link-item drop-trigger">More <i class="fas fa-angle-down"></i>
                             </a>
                             <ul class="sub-menu" id="submenu-9">
+                                <li class="sub-menu--item">
+                                    <a href="#">Contact us</a>
+                                </li>
+                                <li class="sub-menu--item">
+                                    <a href="#">View New Events</a>
+                                </li>
                                 <li class="sub-menu--item">
                                     <a href="#">About eOffice</a>
                                 </li>

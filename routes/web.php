@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HighchartController;
 use App\Http\Controllers\LegacyFileController;
 use App\Http\Controllers\TourFormController;
+use App\Http\Controllers\BlogPostController;
 
 Route::get('/', function () {
     return view('landingPage');
@@ -70,5 +71,20 @@ Route::get('/get/forms',[FormController::class,'view']);
 Route::get('/gf',function(){
     return view('form.view');
 });
+
+Route::get('services',function(){
+    return view('service.service');
+})->name('services');
+Route::get('/posts',function(){
+    return view('posts.post');
+})->name('posts');
+
+// BlogPost Routes
+Route::get('/blog/create/post', [BlogPostController::class, 'create']);  //shows create post form
+Route::post('/blog/create/post', [BlogPostController::class, 'store']);  //saves the created post to the databse
+Route::get('/blog/{blogPost}/edit', [BlogPostController::class, 'edit']); //shows edit post form
+Route::put('/blog/{blogPost}/edit', [BlogPostController::class, 'update']); //commits edited post to the database 
+Route::delete('/blog/{blogPost}', [BlogPostController::class, 'destroy']); //deletes post from the database
+// end for BlogPost routes
 
 
