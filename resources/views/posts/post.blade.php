@@ -51,7 +51,12 @@
 
 <body>
 
-    <div class="fh5co-loader"></div>
+    <div id="loading">
+        <div class="preloader">
+  
+          {{-- <img src="./image/loader.gif" alt="preloader" width="380px;"> --}}
+        </div>
+      </div>
 
     <div id="page">
         @include('landingPageComponent.header')

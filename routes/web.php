@@ -55,9 +55,9 @@ Route::get('/buttons/text-icon', function () {
 require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
 
-Route::get('/{pathMatch}', function () {
-    return view('service');
- })->where('pathMatch', ".*");
+// Route::get('/{any}', function () {
+//     return view('service');
+//  })->where('any', ".*");
 
 //  generate form route
 Route::get('/generate/form',[GenerateFormController::class,'index']);

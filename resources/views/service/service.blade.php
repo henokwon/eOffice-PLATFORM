@@ -9,6 +9,12 @@
 </head>
 <body  data-theme-mode-panel-active data-theme="light" style="font-family: 'Mazzard H';">
     <div class="site-wrapper overflow-hidden position-relative">
+      <div id="loading">
+        <div class="preloader">
+  
+          {{-- <img src="./image/loader.gif" alt="preloader" width="380px;"> --}}
+        </div>
+      </div>
     @include('landingPageComponent.header')
     {{-- @include('landingPageComponent.hero') --}}
 
@@ -45,6 +51,8 @@
 <script src="./pluginss/menu/menu.js"></script>
 <!-- Activation Script -->
 <script src="jss/custom.js"></script>
+</body>
+
 </body>
 </html>
 <div>

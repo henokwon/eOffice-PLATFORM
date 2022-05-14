@@ -34,42 +34,6 @@
                         <li class="nav-item">
                             <a href="{{ route('services') }}" class="nav-link-item">Services</a>
                         </li>
-                        {{-- <li class="nav-item">
-                            <      "{{ route('services') }}" class="nav-link-item">Services</=>
-                        </li> --}}
-                       {{-- <router-link to='/'></router-link> --}}
-                        {{-- <li class="nav-item nav-item-has-children">
-                            <a href="#" class="nav-link-item drop-trigger">Pages <i class="fas fa-angle-down"></i>
-                            </a> --}}
-                            {{-- <ul class="sub-menu" id="submenu-9">
-                                <li class="sub-menu--item">
-                                    <a href="#">Contact us</a>
-                                </li>
-                                <li class="sub-menu--item">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Service</a>
-                                </li>
-                                <li class="sub-menu--item">
-                                    <a href="#">Another Link</a>
-                                </li>
-                                <li class="sub-menu--item">
-                                    <a href="#">View New Events</a>
-                                </li>
-                                <li class="sub-menu--item">
-                                    <a href="#">Another Link</a>
-                                </li>
-                                <li class="sub-menu--item">
-                                    <a href="#">Another Link</a>
-                                </li>
-                                {{-- <li class="sub-menu--item">
-                                    <a class="nav-link" style="cursor: pointer"  data-bs-toggle="modal"
-                                        data-bs-target="#loginModal">{{ __('Login') }}</a>
-                                </li> --}}
-                                <li>
-
-                                </li>
-                            {{-- </ul> --}}
-                        {{-- </li> --}}
-
                         <li class="nav-item">
                             <a href="{{ route('posts') }}" class="nav-link-item">Blog</a>
                         </li>

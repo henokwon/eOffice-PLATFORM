@@ -84,9 +84,9 @@
             </div>
 
         </div>
-        <div id="service">
+        {{-- <div id="service">
             <customer-form />
-        </div>
+        </div> --}}
     </div>
 </div>
 </div>
