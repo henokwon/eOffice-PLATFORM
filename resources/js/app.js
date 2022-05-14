@@ -101,8 +101,8 @@ window.toast = toast;
 
 
 
-import { plugin, defaultConfig } from '@formkit/vue'
-import '@formkit/themes/genesis'
+// import { plugin, defaultConfig } from '@formkit/vue'
+// import '@formkit/themes/genesis'
 
 
 import { createApp } from 'vue'
@@ -113,6 +113,8 @@ import LeaveForm from './components/eService/LeaveForm.vue'
 import TourForm from './components/eService/TourForm.vue'
 import Form from './components/forms/Generate.vue'
 import View from './components/forms/View.vue'
+
+import Navbar from './components/Navbar.vue'
 
 
 
@@ -128,8 +130,14 @@ app.component("tour-form", TourForm);
 app.component("generate-form", Form);
 app.component("view-form", View);
 app.use
-app.use(plugin, defaultConfig).mount('#app')
+app.mount('#app')
 
 // const app2=createApp({});
 // app2.component("customer-form", CustomerFormComponent);
+// app2.component("nav-bar", Navbar);
 // app2.mount('#service')
+
+const app3 = createApp(App)
+app3.use(router)
+app3.component('fa', FontAwesomeIcon)
+app3.mount('#service')

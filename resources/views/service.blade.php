@@ -10,7 +10,7 @@
 
     <!-- Fonts -->
 
-    <link
+    {{-- <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
 
@@ -19,7 +19,7 @@
         [x-cloak] {
             display: none;
         }
-    </style>
+    </style> --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
@@ -35,12 +35,16 @@
 
 
             <!-- Navbar -->
-            <x-navbar />
+            {{-- <x-navbar /> --}}
             <!-- Page Heading -->
 
             <!-- Page Content -->
+            <div id="service">
+               {{-- <nav-bar/> --}}
+                {{-- <customer-form/> --}}
+            </div>
             
-                <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                {{-- <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -54,10 +58,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!-- Page Footer -->
-            <x-footer />
+            {{-- <x-footer /> --}}
         </div>
     </div>
     </div>

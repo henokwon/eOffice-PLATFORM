@@ -3,22 +3,27 @@ import DepartementsIndex from '../components/departements/DepartementsIndex.vue'
 import CustomerFormComponent from '../components/eService/CustomerFormComponent.vue'
 import LeaveForm from '../components/eService/LeaveForm.vue'
 import TourForm from '../components/eService/TourForm.vue'
+import Home from '../components/Home.vue'
 const routes = [
     {
-        path: '/departement',
+        path: '/departement', 
         name: 'departements.index',
         component: DepartementsIndex
     },
     {
-        path: '/eService/customer-form',
+        path: '/customer-form',
         component: CustomerFormComponent,
     },
     {
-        path: "/eService/leave-form",
+        path: '/',
+        component: Home,
+    },
+    {
+        path: "/leave-form",
         component: LeaveForm,
     },
     {
-        path: '/eService/tour-form',
+        path: '/tour-form',
         component: TourForm,
     },
 ];

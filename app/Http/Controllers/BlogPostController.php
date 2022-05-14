@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogPostController extends Controller
 {
@@ -43,5 +44,10 @@ class BlogPostController extends Controller
     public function destroy(BlogPost $blogPost)
     {
         //delete a post
+    }
+    public function logout()
+    {
+       Auth::logout();
+    //    return redirect('/');
     }
 }

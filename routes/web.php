@@ -55,9 +55,9 @@ Route::get('/buttons/text-icon', function () {
 require __DIR__ . '/auth.php';
 Route::get('/chart', [HighchartController::class, 'handleChart']);
 
-// Route::get('/{pathMatch}', function () {
-//     return view('welcome');
-//  })->where('pathMatch', ".*");
+Route::get('/{pathMatch}', function () {
+    return view('service');
+ })->where('pathMatch', ".*");
 
 //  generate form route
 Route::get('/generate/form',[GenerateFormController::class,'index']);
@@ -85,6 +85,7 @@ Route::post('/blog/create/post', [BlogPostController::class, 'store']);  //saves
 Route::get('/blog/{blogPost}/edit', [BlogPostController::class, 'edit']); //shows edit post form
 Route::put('/blog/{blogPost}/edit', [BlogPostController::class, 'update']); //commits edited post to the database 
 Route::delete('/blog/{blogPost}', [BlogPostController::class, 'destroy']); //deletes post from the database
+Route::post('/logouts', [BlogPostController::class, 'logout']); //
 // end for BlogPost routes
 
 
