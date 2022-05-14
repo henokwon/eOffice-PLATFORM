@@ -34,9 +34,9 @@
                         <li class="nav-item">
                             <a href="{{ route('services') }}" class="nav-link-item">Services</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <      "{{ route('services') }}" class="nav-link-item">Services</=>
-                        </li>
+                        </li> --}}
                        {{-- <router-link to='/'></router-link> --}}
                         {{-- <li class="nav-item nav-item-has-children">
                             <a href="#" class="nav-link-item drop-trigger">Pages <i class="fas fa-angle-down"></i>
