@@ -20,7 +20,8 @@
        <div class="row">
        <div class="col">
 
-   <form method="post" action="{{ route('users.update', $editData->id) }}">
+
+   <form method="post" action="{{ route('profile.store') }}" enctype="multipart/form-data">
     @csrf
            <div class="row">
            <div class="col-12">	
@@ -44,7 +45,7 @@
   <div class="form-group">
     <h5>User Address <span class="text-danger">*</span></h5>
     <div class="controls">
-      <input type="email" name="address" class="form-control" value="{{ $editData->address }}" required=""> </div>
+      <input type="text" name="address" class="form-control" value="{{ $editData->address }}" required=""> </div>
   </div>
   
   </div>{{-- End Col Md-6 --}}
@@ -86,14 +87,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <div class="row">
   <div class="col-md-6">
 
@@ -101,7 +94,7 @@
       <h5>User Gender <span class="text-danger">*</span></h5>
       <div class="controls">
         <select name="gender" id="gender" required="" class="form-control">
-          <option value="" selected="" disabled="">Select Role</option>
+          <option value="" selected="" disabled="">Select Gender</option>
           <option value="Male" {{ ($editData->gender == "Male" ? "selected": "") }}>Male</option>
           <option value="Female" {{ ($editData->gender == "Female" ? "selected": "") }}>Female</option>
         </select>
