@@ -297,7 +297,8 @@
                   >
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                  <a
+                <button @click="logout">
+<a
                     href="#"
                     :class="[
                       active ? 'bg-gray-100' : '',
@@ -305,6 +306,8 @@
                     ]"
                     >Sign out</a
                   >
+                </button>
+                  
                 </MenuItem>
               </MenuItems>
             </transition>
@@ -359,6 +362,8 @@ import {
   MenuItems,
 } from "@headlessui/vue";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
+import axios from 'axios';
+import { useRouter } from 'vue-router';
 
 
 const service = [
@@ -396,6 +401,11 @@ const navigation = [
 ];
 
 export default {
+  data() {
+    return {
+      rouuter: useRouter(),
+    }
+  },
   components: {
     Disclosure,
     DisclosureButton,
@@ -403,11 +413,11 @@ export default {
     Menu,
     MenuButton,
     MenuItem,
+
     MenuItems,
     BellIcon,
     MenuIcon,
     XIcon,
-
     Popover,
     PopoverButton,
     PopoverGroup,
@@ -421,5 +431,14 @@ export default {
       callsToAction,
     };
   },
+  methods:{
+    logout(){
+      console.log('Hell you signed  out')
+      axios.post('/logouts').then((response)=>{
+        this.rouuter.push('/');
+        console.log('ff')
+      })
+    }
+  }
 };
 </script>
