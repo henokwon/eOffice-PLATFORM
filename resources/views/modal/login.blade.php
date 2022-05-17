@@ -65,7 +65,7 @@
                         </div>
 
                         <div>
-                            <x-button class="justify-center w-full gap-2">
+                            <x-button class="justify-center w-full gap-2 login1">
                                 <x-heroicon-o-login class="w-6 h-6" aria-hidden="true" />
                                 <span>{{ __('Log in') }}</span>
                             </x-button>
@@ -90,3 +90,12 @@
     </div>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+     $(document).ready(function(){
+         $(".login1").click(function(){
+       
+            $("#staticBackdrop").show();
+          });
+    });
+</script>

@@ -60,7 +60,9 @@
                                     <a href="#">Terms and Policy</a>
                                 </li>
                         </li>
+
                     </ul>
+
                 </nav>
             </div>
             <div class="header-btns  header-btn-l-17 ms-auto  d-xs-inline-flex align-items-center">
@@ -70,12 +72,22 @@
                 <a href="{{ url('/dashboard') }}"
                     class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                 @else
-                <a href="{{ route('login') }}" class="btn sign-in-btn focus-reset" >Log in</a>
+                <a href="{{ route('login') }}" class="btn sign-in-btn focus-reset">Log in</a>
 
                 @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="start-trail-btn btn focus-reset">Register</a>
                 @endif
                 @endauth
+                @endif
+                @if(Auth::id())
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                </form>
                 @endif
 
                 {{-- @if (Route::has('service'))

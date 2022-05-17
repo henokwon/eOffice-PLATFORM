@@ -1,4 +1,6 @@
-{{-- <head>
+{{--
+
+<head>
     @include('landingPageComponent.style')
 </head> --}}
 <nav aria-label="secondary" x-data="{ open: false }"
@@ -50,7 +52,7 @@
                 </form>
             </x-slot>
         </x-dropdown> --}}
-   
+
         {{-- @include('landingPageComponent.header')
         @include('landingPageComponent.modal') --}}
         <x-dropdown align="right" width="48">

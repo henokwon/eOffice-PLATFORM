@@ -11,40 +11,20 @@
         content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
     <meta name="author" content="freehtml5.co" />
 
-
     <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-
-    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="blog/css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="blog/css/icomoon.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="blog/css/bootstrap.css">
-
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="blog/css/magnific-popup.css">
-
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="blog/css/flexslider.css">
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="blog/css/style.css">
-
-    <!-- Modernizr JS -->
-    <script src="blog/js/modernizr-2.6.2.min.js"></script>
+    @include('posts.style')
     @include('landingPageComponent.style')
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Styles -->
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
 
 
 </head>
@@ -53,11 +33,11 @@
 
     <div id="loading">
         <div class="preloader">
-  
-          {{-- <img src="./image/loader.gif" alt="preloader" width="380px;"> --}}
-        </div>
-      </div>
 
+            {{-- <img src="./image/loader.gif" alt="preloader" width="380px;"> --}}
+        </div>
+    </div>
+    @if(!Auth::id())
     <div id="page">
         @include('landingPageComponent.header')
         <div class="hero-area-l-17 position-relative">
@@ -77,14 +57,13 @@
             </div>
         </div>
         <div class="container-wrap">
-            
+
             <div id="fh5co-blog">
                 <div class="row">
                     {{-- Elemnt container - --}}
                     <div class="col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-bg"
-                                style="background-image: url(blog/images/blog-1.jpg);"></a>
+                            <a href="#" class="blog-bg" style="background-image: url(blog/images/blog-1.jpg);"></a>
                             <div class="blog-text">
                                 <span class="posted_on">Feb. 15th 2022</span>
                                 <h3><a href="#">Photoshoot On The Street</a></h3>
@@ -100,8 +79,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-bg"
-                                style="background-image: url(blog/images/blog-2.jpg);"></a>
+                            <a href="#" class="blog-bg" style="background-image: url(blog/images/blog-2.jpg);"></a>
                             <div class="blog-text">
                                 <span class="posted_on">Feb. 15th 2022</span>
                                 <h3><a href="#">Surfing at Philippines</a></h3>
@@ -117,8 +95,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-bg"
-                                style="background-image: url(blog/images/blog-3.jpg);"></a>
+                            <a href="#" class="blog-bg" style="background-image: url(blog/images/blog-3.jpg);"></a>
                             <div class="blog-text">
                                 <span class="posted_on">Feb. 15th 2022</span>
                                 <h3><a href="#">Focus On Uderwater</a></h3>
@@ -134,8 +111,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-bg"
-                                style="background-image: url(blog/images/blog-1.jpg);"></a>
+                            <a href="#" class="blog-bg" style="background-image: url(blog/images/blog-1.jpg);"></a>
                             <div class="blog-text">
                                 <span class="posted_on">Feb. 15th 2022</span>
                                 <h3><a href="#">Photoshoot On The Street</a></h3>
@@ -151,8 +127,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-bg"
-                                style="background-image: url(blog/images/blog-2.jpg);"></a>
+                            <a href="#" class="blog-bg" style="background-image: url(blog/images/blog-2.jpg);"></a>
                             <div class="blog-text">
                                 <span class="posted_on">Feb. 15th 2022</span>
                                 <h3><a href="#">Surfing at Philippines</a></h3>
@@ -168,8 +143,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-bg"
-                                style="background-image: url(blog/images/blog-3.jpg);"></a>
+                            <a href="#" class="blog-bg" style="background-image: url(blog/images/blog-3.jpg);"></a>
                             <div class="blog-text">
                                 <span class="posted_on">Feb. 15th 2022</span>
                                 <h3><a href="#">Focus On Uderwater</a></h3>
@@ -187,20 +161,24 @@
             </div>
         </div><!-- END container-wrap -->
 
-    @include('landingPageComponent.footer')
-    @include('modal.login')
-    @include('modal.register')
+        @include('landingPageComponent.footer')
+        @include('modal.login')
+        @include('modal.register')
     </div>
+     @else
+     @include('landingPageComponent.header')
+     @include('posts.manage1')
+     @endif
 
-{{-- Header style js for interactive --}}
-<script src="jss/vendor.min.js"></script>
-<!-- Plugin's Scripts -->
-<script src="./pluginss/fancybox/jquery.fancybox.min.js"></script>
-<script src="./pluginss/aos/aos.min.js"></script>
-<script src="./pluginss/menu/menu.js"></script>
-<!-- Activation Script -->
-<script src="jss/custom.js"></script>
-{{-- end header --}}
+    {{-- Header style js for interactive --}}
+    <script src="jss/vendor.min.js"></script>
+    <!-- Plugin's Scripts -->
+    <script src="./pluginss/fancybox/jquery.fancybox.min.js"></script>
+    <script src="./pluginss/aos/aos.min.js"></script>
+    <script src="./pluginss/menu/menu.js"></script>
+    <!-- Activation Script -->
+    <script src="jss/custom.js"></script>
+    {{-- end header --}}
 
 
 

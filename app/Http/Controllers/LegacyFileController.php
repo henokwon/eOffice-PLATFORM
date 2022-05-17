@@ -12,7 +12,7 @@ class LegacyFileController extends Controller
     }
     public function submitForm(Request $request)
     {
-        // dd($request);
+        //  dd($request);
         $data = new LegacyFile();
         $file = $request->file;
         $fileName = time() . '.' . $file->getClientOriginalExtension();

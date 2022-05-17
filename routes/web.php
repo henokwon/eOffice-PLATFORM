@@ -82,10 +82,16 @@ Route::get('/posts',function(){
 // BlogPost Routes
 Route::get('/blog/create/post', [BlogPostController::class, 'create']);  //shows create post form
 Route::post('/blog/create/post', [BlogPostController::class, 'store']);  //saves the created post to the databse
-Route::get('/blog/{blogPost}/edit', [BlogPostController::class, 'edit']); //shows edit post form
-Route::put('/blog/{blogPost}/edit', [BlogPostController::class, 'update']); //commits edited post to the database 
-Route::delete('/blog/{blogPost}', [BlogPostController::class, 'destroy']); //deletes post from the database
+Route::get('/edit-post/{id}', [BlogPostController::class, 'edit']); //shows edit post form
+Route::put('/update-post/{id}', [BlogPostController::class, 'update']); //commits edited post to the database 
+Route::get('/delete/{id}', [BlogPostController::class, 'destroy']); //deletes post from the database
+Route::get('/manage', [BlogPostController::class, 'manage']); //deletes post from the database
+Route::get('/search', [BlogPostController::class, 'search']); //deletes post from the database
+
 Route::post('/logouts', [BlogPostController::class, 'logout']); //
+Route::get('/posts', [BlogPostController::class, 'index'])->name('posts');; //
+
+
 // end for BlogPost routes
 
 
