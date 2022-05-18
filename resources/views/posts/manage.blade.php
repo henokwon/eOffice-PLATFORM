@@ -12,8 +12,31 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
     @include('posts.style')
     @include('landingPageComponent.style')
+
+    <style type="text/css">
+        .read-more-show {
+            cursor: pointer;
+            color: #ed8323;
+            /* display: none; */
+            /* background-color: blueviolet; */
+        }
+
+        .read-more-hide {
+            cursor: pointer;
+            color: #ed8323;
+        }
+
+        .hide_content {
+            display: none;
+            background-color: blueviolet;
+        }
+       .hide_content{
+display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -106,7 +129,30 @@
                                     <div class="blog-text">
                                         <span class="posted_on">Posted on {{$item->created_at->diffForHumans()}}</span>
                                         <h3><a href="#">{{$item->title}}</a></h3>
+                                        {{-- <p class="ArticleBody">
+                                        <p class="ArticleBody">{{ substr(strip_tags($item->body), 0, 500) }}
+                                            @if(strlen(strip_tags($item->body)) > 50)
+                                            <a href="">...Read More<i class="icon-arrow-right22"></i></a>
+                                            @endif
+                                        </p>
+                                        </p> --}}
+
+                                        @if(strlen($item->body) > 50)
+                                        {{substr($item->body,0,50)}}
+                                       
+                                        <span class="hide_content">More
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <span class="read-more-content">
+                                            
+                                            {{substr($item->body,50,strlen($item->body))}}
+                                            <span class="read-more-hide hide_content">Less 
+                                                <i class="fa fa-angle-up"></i></span>
+                                        </span>
+                                        @else
                                         <p>{{$item->body}}</p>
+                                        <h1 class=" hide_content">htrtdfjgdfgjdgjg</h1>
+                                        @endif
                                         <ul class="stuff">
                                             <li><a href="delete/{{ $item->id }}"
                                                     class="bg-gray-200 hover:bg-gray-100 border-b-4 border-gray-400 hover:border-gray-200 text-black text-center py-2 px-4 rounded">
@@ -116,7 +162,9 @@
                                                     class="bg-gray-200 hover:bg-gray-100 border-b-4 border-gray-400 hover:border-gray-200 text-black text-center py-2 px-4 rounded">
                                                     Edit
                                                 </a></li>
-                                            <li><a type="button" class="ReadMor">Read More<i class="icon-arrow-right22"></i></a></li>
+                                            {{-- <li><a type="button" class="ReadMor">Read More<i
+                                                        class="icon-arrow-right22"></i></a></li> --}}
+
                                         </ul>
 
                                     </div>
@@ -200,7 +248,8 @@
                                     <div class="blog-text">
                                         <span class="posted_on">Feb. 15th 2022</span>
                                         <h3><a href="#">Photoshoot On The Street</a></h3>
-                                        <p id="test">Far far away, behind the word mountains, far from the countries Vokalia and
+                                        <p id="test">Far far away, behind the word mountains, far from the countries
+                                            Vokalia and
                                             Consonantia, there live the blind texts.</p>
                                         <ul class="stuff">
                                             <li><i class="icon-heart3"></i>249</li>
@@ -265,12 +314,30 @@
     @include('posts.script')
     <script>
         $(document).ready(function(){
-         $(".ReadMor").click(function(){
+        //  $(".ReadMor").click(function(){
             // alert("You try to load more!");
-            $('p').toggle();
+            // $('p').toggle();
           //#endregion
             // $(this).parent().toggleClass('showContent');
-          });
+        //   });
+        $('.read-more-content').addClass('hide_content')
+            $('.read-more-show, .read-more-hide').removeClass('hide_content')
+
+            // Set up the toggle effect:
+            $('.read-more-show').on('click', function(e) {
+              $(this).next('.read-more-content').removeClass('hide_content');
+              $(this).addClass('hide_content');
+              console.log('Hi')
+              e.preventDefault();
+            });
+
+            // Changes contributed by @diego-rzg
+            $('.read-more-hide').on('click', function(e) {
+              var p = $(this).parent('.read-more-content');
+              p.addClass('hide_content');
+              p.prev('.read-more-show').removeClass('hide_content'); // Hide only the preceding "Read More"
+              e.preventDefault();
+            });
     });
     </script>
 </body>
