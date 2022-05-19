@@ -413,7 +413,6 @@ export default {
     Menu,
     MenuButton,
     MenuItem,
-
     MenuItems,
     BellIcon,
     MenuIcon,
