@@ -59,14 +59,20 @@ Route::get('/chart', [HighchartController::class, 'handleChart']);
 //     return view('service');
 //  })->where('any', ".*");
 
-//  generate form route
+
+
+
+// Form generator
 Route::get('/generate/form',[GenerateFormController::class,'index']);
 Route::get('/td',[FormController::class,'addForms']);
 Route::get('/input/{id}',[FormController::class,'addInputs']);
-// Route::get('/post/form/{1}',[FormController::class,'addInputs']);
 Route::get('/get/input/{id}',[FormController::class,'getInputsByForm']);
-Route::post('/post/form',[FormController::class,'addFormm']);
-Route::post('/post/formT',[FormController::class,'setForm']);
+
+Route::post('/post/form_title',[FormController::class,'postFormTitle']);
+Route::post('/post/form_element',[FormController::class,'postFormElement']);
+Route::get('/get/form_title',[FormController::class,'getFormTitle']);
+Route::get('/get/form_element/{id}',[FormController::class,'getFormElement']);
+
 Route::get('/get/forms',[FormController::class,'view']);
 Route::get('/gf',function(){
     return view('form.view');
@@ -85,7 +91,7 @@ Route::post('/blog/create/post', [BlogPostController::class, 'store']);  //saves
 Route::get('/edit-post/{id}', [BlogPostController::class, 'edit']); //shows edit post form
 Route::put('/update-post/{id}', [BlogPostController::class, 'update']); //commits edited post to the database 
 Route::get('/delete/{id}', [BlogPostController::class, 'destroy']); //deletes post from the database
-Route::get('/manage', [BlogPostController::class, 'manage']); //deletes post from the database
+Route::get('/manage/mange', [BlogPostController::class, 'manage']); //deletes post from the database
 Route::get('/search', [BlogPostController::class, 'search']); //deletes post from the database
 
 Route::post('/logouts', [BlogPostController::class, 'logout']); //

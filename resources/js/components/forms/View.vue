@@ -55,7 +55,6 @@
       </form>
     </div>
   </div>
-
   <div v-for="item in data" :key="item.id">
     <ul>
       <li>{{ item.title }}</li>
@@ -88,7 +87,6 @@ export default {
           console.log(response.data);
         }
         this.data = response.data;
-
         this.data.forEach((element) => {
           axios.get("/get/input/" + element.id).then((response) => {
             console.log("for id"+element.id)
@@ -100,11 +98,9 @@ export default {
             response.data.forEach((elements) => {
               this.formHeader.push(response.data);   
             });
-        
           });
         });
       });
-
     },
     storeForm() {
       console.log(this.formHeader );

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button
+    <!-- <button
       class="
         inline-block
         px-6
@@ -24,7 +24,7 @@
       v-on:click="toggleModal()"
     >
       Add title and description
-    </button>
+    </button> -->
     <div
       v-if="showModal"
       class="
@@ -98,7 +98,7 @@
               <div class="bg-white px-1 pt-1 pb-2 mb-2">
                 <div>
                   <input
-                  v-model=" form_header.form_title"
+                    v-model="form_header.form_title"
                     type="text"
                     placeholder="Form title"
                     aria-label="Form title"
@@ -115,7 +115,6 @@
                 </div>
                 <div class="mb-4">
                   <textarea
-                 
                     name=""
                     id=""
                     placeholder="Form description"
@@ -238,7 +237,7 @@
           <div class="bg-white px-1 pt-1 pb-2 mb-2">
             <div>
               <input
-               v-model=" form_header.form_title"
+                v-model="form_header.form_title"
                 type="text"
                 placeholder="Form title"
                 aria-label="Form title"
@@ -255,7 +254,7 @@
             </div>
             <div class="mb-4">
               <textarea
-              v-model="form_header.form_description"
+                v-model="form_header.form_description"
                 name=""
                 id=""
                 placeholder="Form description"
@@ -660,9 +659,9 @@ export default {
       this.isPreview = !this.isPreview;
     },
     postForm() {
-      console.log(this.form_header.form_description+"hiiiii")
+      console.log(this.form_header.form_description + "hiiiii");
       axios
-        .post("/post/formT", this.form_header)
+        .post("/post/form_title", this.form_header)
         .then((response) => {
           console.log(response);
         })
@@ -672,7 +671,7 @@ export default {
 
       this.formInput.forEach((element) => {
         axios
-          .post("/post/form", element)
+          .post("/post/form_element", element)
           .then((response) => {
             console.log(response);
           })

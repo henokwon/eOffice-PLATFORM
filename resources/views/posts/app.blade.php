@@ -22,3 +22,14 @@
 </div>
 </body>
 </html>
+
+
+{{-- @if (Auth::check())
+@if(Auth::user()->role_id == 1)
+  @include('layouts.adminnav')
+@elseif (Auth::user()->role_id == 2)
+  @include('layouts.devnav')
+@else
+ @include('layouts.usernav')
+@endif
+@endif --}}

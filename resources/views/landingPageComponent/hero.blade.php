@@ -3,9 +3,9 @@
       <div class="row position-relative justify-content-center">
         <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-11 order-lg-1 order-1" data-aos="fade-right" data-aos-duration="800" data-aos-once="true">
           <div class="content text-center">
-            <h1>Atmosphere to grow!</h1>
-            <p>Plan, Launch, Grow </p>
-            <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Start</a>
+            <h1>eOffice Platform</h1>
+            <p>Atmosphere to grow! </p>
+            {{-- <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Start</a> --}}
             {{-- <span>No credit card required</span> --}}
           </div>
         </div>

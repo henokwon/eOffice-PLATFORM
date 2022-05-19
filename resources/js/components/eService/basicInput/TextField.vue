@@ -2,7 +2,7 @@
 <div>
  <!-- // FormKit -->
   <!-- <label for="">{{ label }} <span v-if="required" style="color:red">*</span></label> -->
-  <FormKit
+  <input
     :label="label"
     :placeholder="label"
     :type="types"
