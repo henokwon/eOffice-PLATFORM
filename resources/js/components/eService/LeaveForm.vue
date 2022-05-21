@@ -4,7 +4,7 @@
   <li>View leave history</li>
   <li>Notification</li>
 </ul>
-  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0" >
+  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0"   >
     <div class="text-center py-2 my-2">
       <h1 class="text-3xl">Leave Request Form</h1>
       <h5 class="text-xl">Please let us know when you're leaving us!</h5>

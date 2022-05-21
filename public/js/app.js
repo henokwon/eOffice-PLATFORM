@@ -41265,7 +41265,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0"
+  "class": "block p-6 rounded-lg shadow-lg bg-white max-w-md m-auto z-0",
+  style: {
+    "padding-top": "65px"
+  }
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -41690,10 +41693,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = ["label", "placeholder", "type"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_FormKit = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("FormKit");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" // FormKit "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <label for=\"\">{{ label }} <span v-if=\"required\" style=\"color:red\">*</span></label> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" // FormKit "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <label for=\"\">{{ label }} <span v-if=\"required\" style=\"color:red\">*</span></label> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     label: $props.label,
     placeholder: $props.label,
     type: $props.types,
@@ -41703,9 +41705,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "class": "my-3 focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm",
     "aria-describedby": "emailHelp123"
-  }, null, 8
-  /* PROPS */
-  , ["label", "placeholder", "type"])]);
+  }, null, 40
+  /* PROPS, HYDRATE_EVENTS */
+  , _hoisted_1)]);
 }
 
 /***/ }),

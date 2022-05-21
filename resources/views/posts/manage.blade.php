@@ -33,9 +33,6 @@
             display: none;
             background-color: blueviolet;
         }
-       .hide_content{
-display: none;
-        }
     </style>
 </head>
 
@@ -140,18 +137,19 @@ display: none;
                                         @if(strlen($item->body) > 50)
                                         {{substr($item->body,0,50)}}
                                        
-                                        <span class="hide_content">More
-                                            <i class="fa fa-angle-down"></i>
+                                        <span class="read-more-show hide_content">More
+                                            {{-- <i class="fa fa-angle-down"></i> --}}
                                         </span>
                                         <span class="read-more-content">
                                             
                                             {{substr($item->body,50,strlen($item->body))}}
                                             <span class="read-more-hide hide_content">Less 
-                                                <i class="fa fa-angle-up"></i></span>
+                                                {{-- <i class="fa fa-angle-up"></i> --}}
+                                            </span>
                                         </span>
                                         @else
                                         <p>{{$item->body}}</p>
-                                        <h1 class=" hide_content">htrtdfjgdfgjdgjg</h1>
+                                        <h1 class="read-more-show hide_content">htrtdfjgdfgjdgjg</h1>
                                         @endif
                                         <ul class="stuff">
                                             <li><a href="delete/{{ $item->id }}"
