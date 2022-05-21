@@ -17,11 +17,11 @@
         </div>
         <div class="col">
           <div class="footer-widget widget3">
-            <p class="widget-title">About</p>
+            <p class="widget-title">Resources</p>
             <ul class="widget-links pl-0 list-unstyled ">
-              <li><a href="">Catalog</a></li>
-              <li><a href="">Popular</a></li>
-              <li><a href="">Features</a></li>
+              <li><a href="">eOffice</a></li>
+              <li><a href="">eService</a></li>
+              <li><a href="">Blog</a></li>
             </ul>
           </div>
         </div>

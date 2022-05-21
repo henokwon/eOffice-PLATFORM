@@ -13,20 +13,20 @@
  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 
  <!-- Animate.css -->
- <link rel="stylesheet" href="blog/css/animate.css">
+ <link rel="stylesheet" href="{{ URL::asset('blog/css/animate.css') }}">
  <!-- Icomoon Icon Fonts-->
- <link rel="stylesheet" href="blog/css/icomoon.css">
+ <link rel="stylesheet" href="{{ URL::asset('blog/css/icomoon.css') }}">
  <!-- Bootstrap  -->
- <link rel="stylesheet" href="blog/css/bootstrap.css">
+ <link rel="stylesheet" href="{{ URL::asset('blog/css/bootstrap.css') }}">
 
  <!-- Magnific Popup -->
- <link rel="stylesheet" href="blog/css/magnific-popup.css">
+ <link rel="stylesheet" href="{{ URL::asset('blog/css/magnific-popup.css') }}">
 
  <!-- Flexslider  -->
- <link rel="stylesheet" href="blog/css/flexslider.css">
+ <link rel="stylesheet" href="{{ URL::asset('blog/css/flexslider.css') }}">
 
  <!-- Theme style  -->
- <link rel="stylesheet" href="blog/css/style.css">
+ <link rel="stylesheet" href="{{ URL::asset('blog/css/style.css') }}">
 
  <!-- Modernizr JS -->
- <script src="blog/js/modernizr-2.6.2.min.js"></script>
+ <script src="{{ URL::asset('blog/js/modernizr-2.6.2.min.js') }}"></script>

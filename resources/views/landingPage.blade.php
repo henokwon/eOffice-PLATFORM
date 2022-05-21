@@ -25,8 +25,12 @@
     </div>
     <!--Site Header Area -->
     @include('landingPageComponent.header')
+    {{-- <button id="launch-modal">Lounch modal</button> --}}
     <!-- Hero Area -->
     @include('landingPageComponent.hero')
+    <button id="launch-modall" >Lounch modalllll</button>
+    <button 
+    data-bs-target="#staticBackdrop" data-bs-toggle="modal">Apply now</button>
     <!--Feature Area -->
     @include('landingPageComponent.feature')
 
@@ -39,11 +43,10 @@
 
     @include('landingPageComponent.videoArea')
     <!--Pricing Area-->
+    <h1 class=" text-center text-3xl text-purple-900 p-8 m-4 underline">Recent Posts from the "Company Name"</h1>
     @include('landingPageComponent.princing')
     @include('landingPageComponent.brand')
     @include('landingPageComponent.testimonia')
-   
-
     <!--CTA Area-->
     @include('landingPageComponent.CTA')
     <!--Footer Area-->
@@ -72,6 +75,21 @@
   <script src="./pluginss/menu/menu.js"></script>
   <!-- Activation Script -->
   <script src="jss/custom.js"></script>
+  <script>
+    $(document).ready(function() {
+       console.log('script file');
+       $('#staticBackdrop').modal('show');
+       $('#launch-modall').click(function(){
+         console.log('cliked');
+
+         $('#staticBackdrop').modal('show');
+
+       $('#staticBackdrop').modal({
+              show: true,
+          });
+        });
+    });
+</script>
 </body>
 
 </html>
