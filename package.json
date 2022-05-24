@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "V": "nodemon video-chat.js"
+        "start": "nodemon app.js"
     },
     "devDependencies": {
         "@alpinejs/collapse": "^3.4.2",
@@ -37,7 +37,7 @@
         "nodemon": "^2.0.16",
         "password-hash": "^1.2.2",
         "public-ip": "^5.0.0",
-        "socket.io": "^4.5.0",
+        "socket.io": "^4.5.1",
         "vue": "^3.2.22",
         "vue-loader": "^16.8.3",
         "vue-router": "^4.0.12",

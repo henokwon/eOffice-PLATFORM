@@ -25,12 +25,14 @@ Route::get('/', function () {
  //})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [HighchartController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
-//Route::get('/Video-Conference', [VideoController::class, 'handleChart'])->name('dashboard')->middleware(['auth', 'verified']);
 
 Route::get('/video-Conference', function () {
    return view('video-Conference');
 })->middleware(['auth', 'verified'])->name('video-Conference');
 
+Route::get('/video', function () {
+   return view('video');
+})->middleware(['auth', 'verified'])->name('video');
 
 // Just to demo sidebar dropdown links active states.
 Route::get('/buttons/text', function () {

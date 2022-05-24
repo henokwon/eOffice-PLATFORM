@@ -12,8 +12,13 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/autolink.js', 'public/js')
+    .js('resources/js/events.js', 'public/js')
+    .js('resources/js/helpers.js', 'public/js')
+    .js('resources/js/rtc.js', 'public/js')
     .vue()
     .css('resources/css/ChartStyles.css', 'public/css')
+    .css('resources/css/video.css', 'public/css')
     .css('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),

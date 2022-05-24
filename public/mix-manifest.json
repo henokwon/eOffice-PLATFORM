@@ -1,5 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/autolink.js": "/js/autolink.js",
+    "/js/events.js": "/js/events.js",
+    "/js/helpers.js": "/js/helpers.js",
+    "/js/rtc.js": "/js/rtc.js",
+    "/js/stream.js": "/js/stream.js",
     "/css/app.css": "/css/app.css",
+    "/css/video.css": "/css/video.css",
     "/css/ChartStyles.css": "/css/ChartStyles.css"
 }

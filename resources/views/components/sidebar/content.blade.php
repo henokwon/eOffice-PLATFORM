@@ -25,7 +25,7 @@
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.link title="Video Conference" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
+    <x-sidebar.link title="Video Conference" href="{{ route('video-Conference') }}" :isActive="request()->routeIs('video-Conference')">
         <x-slot name="icon">
             <x-icons.video class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>

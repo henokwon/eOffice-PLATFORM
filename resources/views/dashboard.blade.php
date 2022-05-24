@@ -100,8 +100,7 @@ Highcharts.chart('container', {
 
 function drawChartAll(type){
    var typeString = type.toString();
-   console.log(type+":"+ typeString);
-
+   //console.log(type+":"+ typeString);
    switch(typeString){
     case '0':
         dataDynamic = Open;  
@@ -130,8 +129,7 @@ function drawChartAll(type){
     }
 
     var titleString = `container${title}`;
-    console.log(dataDynamic,title,typeString,type,titleString);
-
+    //console.log(dataDynamic,title,typeString,type,titleString);
     // Actual Graph
     Highcharts.chart(`${titleString}`, {
     chart: {
@@ -189,4 +187,5 @@ function drawChartAll(type){
 for(var i= 0; i < 6; i++) {
     drawChartAll(i);
 };
+
 </script>
