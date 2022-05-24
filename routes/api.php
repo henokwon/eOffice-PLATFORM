@@ -13,3 +13,4 @@ Route::apiResource('departements', DepartementController::class);
 Route::apiResource("customerForm",CustomerFormController::class);
 Route::get("leaveForm",[LeaveFormController::class, 'data']);
 Route::post("/form/save",[LeaveFormController::class, 'sendData']);
+

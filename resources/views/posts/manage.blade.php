@@ -56,10 +56,10 @@
                         <div class=" justify-center grid gap-4 grid-cols-2">
                             <div class="mb-3 xl:w-96">
                                 <div class="input-group relative flex flex-wrap items-stretch w-full mb-4">
-                                    <a href="/blog/create/post"
+                                    {{-- <a href="/blog/create/post"
                                         class=" cursor-pointer text-2xl py-2.5 px-5 mr-2 mb-2  font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                                         Post Blogs
-                                    </a>
+                                    </a> --}}
                                 </div>
 
                             </div>
@@ -136,8 +136,6 @@
                                                     @endif
                                                 </p>
                                                 </p>
-
-
                                         @if(strlen($item->body) > 50)
                                         {{substr($item->body,0,50)}}
                                        
