@@ -10,10 +10,14 @@ use App\Models\Departement;
 
 class DepartementController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Departement::class, 'departement');
+    }
     
     public function index()
     {
-        return DepartementResource::collection(Departement::all());
+        return DepartementResource::collection(Departement::paginate(25));
     }
 
     public function store(DepartementRequest $request)

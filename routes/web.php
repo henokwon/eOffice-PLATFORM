@@ -46,4 +46,4 @@ Route::get('/buttons/text-icon', function () {
 })->middleware(['auth'])->name('buttons.text-icon');
 
 require __DIR__ . '/auth.php';
-Route::get('/chart', [HighchartController::class, 'handleChart']);
+Route::get('/chart', [HighchartController::class, 'handleChart'])->middleware(['auth', 'verified']);

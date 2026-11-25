@@ -13,7 +13,7 @@ class DepartementRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->user() && $this->user()->can('manage-departments');
     }
 
     /**

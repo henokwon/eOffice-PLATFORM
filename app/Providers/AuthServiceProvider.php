@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        \App\Models\Departement::class => \App\Policies\DepartementPolicy::class,
     ];
 
     /**
@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('manage-departments', function ($user) {
+            return in_array((string) $user->getAuthIdentifier(), config('security.admin_user_ids', []), true);
+        });
     }
 }
