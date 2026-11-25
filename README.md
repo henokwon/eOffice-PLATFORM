@@ -1,3 +1,28 @@
+# eOffice Platform
+
+[![Authorization CI](https://github.com/henokwon/eOffice-PLATFORM/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/henokwon/eOffice-PLATFORM/actions/workflows/ci.yml)
+
+## Authorization continuous integration
+
+Pull requests and pushes to `master` run the department authorization feature
+tests against SQLite in memory.
+
+CI uses PHP 8.1 to match the existing Composer lockfile, with Composer 2.11.3.
+This compatibility check is not a recommendation to deploy an old PHP runtime;
+runtime and framework upgrades remain separate work.
+
+```bash
+composer install --no-interaction --prefer-dist --no-progress --no-scripts --no-plugins
+php artisan package:discover --ansi
+php vendor/bin/phpunit --filter DepartmentAuthorizationTest
+```
+
+The selected tests configure an in-memory database, test-only app key and
+isolated sessions/cache. They cover anonymous access, ordinary-user permissions,
+approved-operator CRUD and Sanctum token privilege boundaries. This workflow
+does not run the complete legacy suite, frontend build or live service checks.
+For operator configuration, see [SECURITY.md](SECURITY.md).
+
 <p align="center"><a href="https://laravel.com" target="_blank">
 <svg xmlns="http://www.w3.org/2000/svg" fill="#A855F7" width="80" height="40" viewBox="0 0 21.166666 10.583334" {{ $attributes }}  >
     <path
@@ -33,7 +58,6 @@
 </p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
